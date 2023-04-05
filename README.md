@@ -9,6 +9,7 @@ This guide assumes that you've successfully installed Arch Linux by following th
 | Software                 | Description                                 | Link                                                                                        |
 | ------------------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Hyprland                 | A dynamic tiling Wayland compositor.        | [Homepage](https://hyprland.org/), [GitHub](https://github.com/hyprwm/Hyprland)             |
+| Hyprpaper                | A wayland wallpaper utility.                | [Project Homepage](https://github.com/hyprwm/hyprpaper)                                     |
 | Kitty                    | A fast, feature-rich, GPU-based Terminal.   | [Homepage](https://sw.kovidgoyal.net/kitty/), [GitHub](https://github.com/kovidgoyal/kitty) |
 | mako                     | A lightweight Wayland notification manager. | [GitHub](https://github.com/emersion/mako)                                                  |
 | Pipewire                 | Audio/Video router and processor.           | [Project Homepage](https://gitlab.freedesktop.org/pipewire/pipewire/)                       |
@@ -39,7 +40,7 @@ usermod -aG wheel,audio,video,storage bob
 1. Install the necessary packages using *pacman* and *paru*.
 
     ```bash
-    sudo pacman -Syu hyprland kitty pipewire qt5-wayland qt6-wayland mako polkit-kde-agent waybar otf-font-awesome
+    sudo pacman -Syu hyprland kitty pipewire qt5-wayland qt6-wayland hyprpaper mako polkit-kde-agent waybar otf-font-awesome
     paru -S sddm-git
     ```
 
