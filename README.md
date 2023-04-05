@@ -4,7 +4,20 @@
 
 ## Installation
 
-This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a non-root user in your system and is currently active, and you are currently connected to the internet.
+This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
+
+### Pre-Customization
+
+#### Setting up a non-root user
+
+For more information, visit the [Arch wiki](https://wiki.archlinux.org/title/Users_and_groups).
+
+```sh
+useradd -m bob  # Create a new user `bob`.
+
+# Add `bob` to the `wheel`, `audio`, `video`, and `storage` groups.
+usermod -aG wheel,audio,video,storage bob
+```
 
 ### 1. Setting up the terminal
 
