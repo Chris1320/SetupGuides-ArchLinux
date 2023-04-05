@@ -71,3 +71,8 @@ usermod -aG wheel,audio,video,storage bob
     alias icat="kitty +kitten icat"
     alias klip="kitty +kitten clipboard"
     ```
+
+### 4. Setting up Mako
+
+To customize Mako, copy `dotfiles/mako/config` to `~/.config/mako/config`.
+
