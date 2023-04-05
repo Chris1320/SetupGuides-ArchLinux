@@ -32,32 +32,37 @@ usermod -aG wheel,audio,video,storage bob
 
 1. [Install ZSH](https://github.com/SetupGuides/ZSH). This will be our default shell.
 2. [Install Paru](https://github.com/Morganamilo/paru). This is the AUR helper that we will use.
+3. Install `sudo`. `$ pacman -Syu sudo`
 
 ### 2. Installing packages
 
-1. Install *hyprland*. `$ sudo pacman -S hyprland`
-2. Install *kitty* terminal. `$ sudo pacman -S kitty`
-3. Install *pipewire*. `$ sudo pacman -S pipewire`
-4. Install *qt5-wayland* and *qt6-wayland* for QT Wayland support. `pacman -S qt5-wayland qt6-wayland`
-5. Install *SDDM* login manager. `$ paru -S sddm-git`
-6. Install *mako* notification manager. `$ pacman -S mako`
-7. Install *KDE authentication agent*. `$ pacman -S polkit-kde-agent`
-8. Install *waybar*. `$ pacman -S waybar otf-font-awesome`
-9. Install [*XDG Desktop Portal* for Hyprland](https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/).
+1. Install the necessary packages using *pacman* and *paru*.
+
+    ```bash
+    sudo pacman -Syu hyprland kitty pipewire qt5-wayland qt6-wayland mako polkit-kde-agent waybar otf-font-awesome
+    paru -S sddm-git
+    ```
+
+2. Install [*XDG Desktop Portal* for Hyprland](https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/).
 
 ### 3. Setting up Kitty
 
 1. Set up the terminal's theme using [Catppuccin](https://github.com/catppuccin/catppuccin). See [catppuccin/kitty](https://github.com/catppuccin/kitty) to install the theme.
-2. Install JetBrains Mono nerdfont. `$ pacman -S ttf-jetbrains-mono ttf-nerd-fonts-symbols-2048-em-mono`
-3. Install `nonicons-font`. `$ paru -S nonicons-font`
-4. Copy the `./dotfiles/kitty/kitty.conf` file to `~/.config/kitty/kitty.conf`.
-5. (Optional) Install *imagemagick* for icat. `$ pacman -S imagemagick`
-6. Alias the following commands. You can change the aliases to whatever you like.
+2. Install JetBrains Mono, nonicons-font, and Nerd Font Symbols.
 
-    | Alias | Command                 |
-    | ----- | ----------------------- |
-    | icat  | kitty +kitten icat      |
-    | klip  | kitty +kitten clipboard |
+    ```bash
+    pacman -Syu ttf-jetbrains-mono ttf-nerd-fonts-symbols-2048-em-mono
+    paru -S nonicons-font
+    ```
+
+3. Copy the `./dotfiles/kitty/kitty.conf` file to `~/.config/kitty/kitty.conf`.
+4. (Optional) Install *imagemagick* for icat. `$ pacman -Syu imagemagick`
+5. (Optional) Alias the following commands. You can change the aliases to whatever you like.
+
+    | Alias   | Command                   |
+    | ------- | ------------------------- |
+    | `icat`  | `kitty +kitten icat`      |
+    | `klip`  | `kitty +kitten clipboard` |
 
     For ZSH and other bash-like terminals, copy the lines below and paste it to `.zshrc` or similar.
 
