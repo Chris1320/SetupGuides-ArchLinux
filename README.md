@@ -6,8 +6,6 @@
 
 This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
 
-This guide will help you install the following:
-
 | Software                 | Description                                 | Link                                                                                        |
 | ------------------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Hyprland                 | A dynamic tiling Wayland compositor.        | [Homepage](https://hyprland.org/), [GitHub](https://github.com/hyprwm/Hyprland)             |
@@ -23,7 +21,7 @@ This guide will help you install the following:
 
 For more information, visit the [Arch wiki](https://wiki.archlinux.org/title/Users_and_groups).
 
-```sh
+```bash
 useradd -m bob  # Create a new user `bob`.
 
 # Add `bob` to the `wheel`, `audio`, `video`, and `storage` groups.
@@ -49,4 +47,21 @@ usermod -aG wheel,audio,video,storage bob
 
 ### 3. Setting up Kitty
 
-First, we will set up the terminal's theme using [Catppuccin](https://github.com/catppuccin/catppuccin). See [catppuccin/kitty](https://github.com/catppuccin/kitty) to install the theme.
+1. Set up the terminal's theme using [Catppuccin](https://github.com/catppuccin/catppuccin). See [catppuccin/kitty](https://github.com/catppuccin/kitty) to install the theme.
+2. Install JetBrains Mono nerdfont. `$ pacman -S ttf-jetbrains-mono ttf-nerd-fonts-symbols-2048-em-mono`
+3. Install `nonicons-font`. `$ paru -S nonicons-font`
+4. Copy the `./dotfiles/kitty/kitty.conf` file to `~/.config/kitty/kitty.conf`.
+5. (Optional) Install *imagemagick* for icat. `$ pacman -S imagemagick`
+6. Alias the following commands. You can change the aliases to whatever you like.
+
+    | Alias | Command                 |
+    | ----- | ----------------------- |
+    | icat  | kitty +kitten icat      |
+    | klip  | kitty +kitten clipboard |
+
+    For ZSH and other bash-like terminals, copy the lines below and paste it to `.zshrc` or similar.
+
+    ```bash
+    alias icat="kitty +kitten icat"
+    alias klip="kitty +kitten clipboard"
+    ```
