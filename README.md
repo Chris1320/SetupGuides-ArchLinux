@@ -14,6 +14,7 @@ This guide assumes that you've successfully installed Arch Linux by following th
 | mako                     | A lightweight Wayland notification manager. | [GitHub](https://github.com/emersion/mako)                                                  |
 | Pipewire                 | Audio/Video router and processor.           | [Project Homepage](https://gitlab.freedesktop.org/pipewire/pipewire/)                       |
 | SDDM                     | A QML-based display manager.                | [GitHub](https://github.com/sddm/sddm)                                                      |
+| Thunar                   | A modern file manager.                      | [Homepage](https://docs.xfce.org/xfce/thunar/start)                                         |
 | Waybar                   | A highly customizable Wayland bar.          | [GitHub](https://github.com/Alexays/Waybar)                                                 |
 
 ### Pre-Customization
@@ -40,7 +41,7 @@ usermod -aG wheel,audio,video,storage bob
 1. Install the necessary packages using *pacman* and *paru*.
 
     ```bash
-    sudo pacman -Syu hyprland kitty pipewire qt5-wayland qt6-wayland hyprpaper mako polkit-kde-agent waybar otf-font-awesome
+    sudo pacman -Syu hyprland kitty pipewire qt5-wayland qt6-wayland hyprpaper mako polkit-kde-agent waybar otf-font-awesome thunar gvfs
     paru -S sddm-git
     ```
 
