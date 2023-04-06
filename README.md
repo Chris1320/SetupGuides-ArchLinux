@@ -6,17 +6,18 @@
 
 This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
 
-| Software                 | Description                                 | Link                                                                                        |
-| ------------------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Firefox                  | A web browser.                              | [Homepage](https://firefox.com/)                                                            |
-| Hyprland                 | A dynamic tiling Wayland compositor.        | [Homepage](https://hyprland.org/), [GitHub](https://github.com/hyprwm/Hyprland)             |
-| Hyprpaper                | A wayland wallpaper utility.                | [Project Homepage](https://github.com/hyprwm/hyprpaper)                                     |
-| Kitty                    | A fast, feature-rich, GPU-based Terminal.   | [Homepage](https://sw.kovidgoyal.net/kitty/), [GitHub](https://github.com/kovidgoyal/kitty) |
-| mako                     | A lightweight Wayland notification manager. | [GitHub](https://github.com/emersion/mako)                                                  |
-| Pipewire                 | Audio/Video router and processor.           | [Project Homepage](https://gitlab.freedesktop.org/pipewire/pipewire/)                       |
-| SDDM                     | A QML-based display manager.                | [GitHub](https://github.com/sddm/sddm)                                                      |
-| Thunar                   | A modern file manager.                      | [Homepage](https://docs.xfce.org/xfce/thunar/start)                                         |
-| Waybar                   | A highly customizable Wayland bar.          | [GitHub](https://github.com/Alexays/Waybar)                                                 |
+| Software                 | Description                                       | Link                                                                                        |
+| ------------------------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Dunst                    | A notification daemon.                            | [GitHub](https://github.com/dunst-project/dunst)                                            |
+| Firefox                  | A web browser.                                    | [Homepage](https://firefox.com/)                                                            |
+| Hyprland                 | A dynamic tiling Wayland compositor.              | [Homepage](https://hyprland.org/), [GitHub](https://github.com/hyprwm/Hyprland)             |
+| Hyprpaper                | A wayland wallpaper utility.                      | [Project Homepage](https://github.com/hyprwm/hyprpaper)                                     |
+| Kitty                    | A fast, feature-rich, GPU-based Terminal.         | [Homepage](https://sw.kovidgoyal.net/kitty/), [GitHub](https://github.com/kovidgoyal/kitty) |
+| Pipewire                 | Audio/Video router and processor.                 | [Project Homepage](https://gitlab.freedesktop.org/pipewire/pipewire/)                       |
+| SDDM                     | A QML-based display manager.                      | [GitHub](https://github.com/sddm/sddm)                                                      |
+| Thunar                   | A modern file manager.                            | [Homepage](https://docs.xfce.org/xfce/thunar/start)                                         |
+| Waybar                   | A highly customizable Wayland bar.                | [GitHub](https://github.com/Alexays/Waybar)                                                 |
+| Wofi                     | A launcher for wlroots-based wayland compositors. | [Project Homepage](https://hg.sr.ht/~scoopta/wofi)                                          |
 
 ### Pre-Customization
 
@@ -42,7 +43,7 @@ usermod -aG wheel,audio,video,storage bob
 1. Install the necessary packages using *pacman* and *paru*.
 
     ```bash
-    sudo pacman -Syu hyprland kitty firefox pipewire qt5-wayland qt6-wayland hyprpaper mako polkit-kde-agent waybar otf-font-awesome thunar gvfs
+    sudo pacman -Syu hyprland kitty firefox pipewire qt5-wayland qt6-wayland hyprpaper polkit-kde-agent waybar otf-font-awesome thunar gvfs wofi
     paru -S sddm-git
     ```
 
@@ -85,7 +86,8 @@ systemctl enable sddm.service
 
 Copy the files from `dotfiles/hyprland/` to `~/.config/hypr/`.
 
-### 6. Setting up Mako
+### 6. Setting up Dunst
 
-To customize Mako, copy `dotfiles/mako/config` to `~/.config/mako/config`.
+1. Install Papirus icon theme. `$ sudo pacman -S papirus-icon-theme`
+2. Copy `dotfiles/dunst/dunstrc` to `~/.config/dunst/dunstrc`.
 
