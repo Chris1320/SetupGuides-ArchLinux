@@ -17,6 +17,7 @@ This guide assumes that you've successfully installed Arch Linux by following th
 | SDDM                     | A QML-based display manager.                      | [GitHub](https://github.com/sddm/sddm)                                                      |
 | Thunar                   | A modern file manager.                            | [Homepage](https://docs.xfce.org/xfce/thunar/start)                                         |
 | Waybar                   | A highly customizable Wayland bar.                | [GitHub](https://github.com/Alexays/Waybar)                                                 |
+| WLogout                  | A wayland logout menu.                            | [GitHub Homepage](https://github.com/ArtsyMacaw/wlogout)                                    |
 | Wofi                     | A launcher for wlroots-based wayland compositors. | [Project Homepage](https://hg.sr.ht/~scoopta/wofi)                                          |
 
 ### Pre-Customization
