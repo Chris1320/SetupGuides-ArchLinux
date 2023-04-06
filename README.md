@@ -8,6 +8,7 @@ This guide assumes that you've successfully installed Arch Linux by following th
 
 | Software                 | Description                                 | Link                                                                                        |
 | ------------------------ | ------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| Firefox                  | A web browser.                              | [Homepage](https://firefox.com/)                                                            |
 | Hyprland                 | A dynamic tiling Wayland compositor.        | [Homepage](https://hyprland.org/), [GitHub](https://github.com/hyprwm/Hyprland)             |
 | Hyprpaper                | A wayland wallpaper utility.                | [Project Homepage](https://github.com/hyprwm/hyprpaper)                                     |
 | Kitty                    | A fast, feature-rich, GPU-based Terminal.   | [Homepage](https://sw.kovidgoyal.net/kitty/), [GitHub](https://github.com/kovidgoyal/kitty) |
@@ -41,7 +42,7 @@ usermod -aG wheel,audio,video,storage bob
 1. Install the necessary packages using *pacman* and *paru*.
 
     ```bash
-    sudo pacman -Syu hyprland kitty pipewire qt5-wayland qt6-wayland hyprpaper mako polkit-kde-agent waybar otf-font-awesome thunar gvfs
+    sudo pacman -Syu hyprland kitty firefox pipewire qt5-wayland qt6-wayland hyprpaper mako polkit-kde-agent waybar otf-font-awesome thunar gvfs
     paru -S sddm-git
     ```
 
@@ -49,17 +50,16 @@ usermod -aG wheel,audio,video,storage bob
 
 ### 3. Setting up Kitty
 
-1. Set up the terminal's theme using [Catppuccin](https://github.com/catppuccin/catppuccin). See [catppuccin/kitty](https://github.com/catppuccin/kitty) to install the theme.
-2. Install JetBrains Mono, nonicons-font, and Nerd Font Symbols.
+1. Install JetBrains Mono, nonicons-font, and Nerd Font Symbols.
 
     ```bash
     pacman -Syu ttf-jetbrains-mono ttf-nerd-fonts-symbols-2048-em-mono
     paru -S nonicons-font
     ```
 
-3. Copy the `./dotfiles/kitty/kitty.conf` file to `~/.config/kitty/kitty.conf`.
-4. (Optional) Install *imagemagick* for icat. `$ pacman -Syu imagemagick`
-5. (Optional) Alias the following commands. You can change the aliases to whatever you like.
+2. Copy the files from `./dotfiles/kitty/` to `~/.config/kitty/`.
+3. (Optional) Install *imagemagick* for icat. `$ pacman -Syu imagemagick`
+4. (Optional) Alias the following commands. You can change the aliases to whatever you like.
 
     | Alias   | Command                   |
     | ------- | ------------------------- |
@@ -73,7 +73,15 @@ usermod -aG wheel,audio,video,storage bob
     alias klip="kitty +kitten clipboard"
     ```
 
-### 4. Setting up Mako
+### 4. Enable SDDM
+
+Enable the SDDM service to start the display manager on boot.
+
+```bash
+systemctl enable sddm.service
+```
+
+### 5. Setting up Mako
 
 To customize Mako, copy `dotfiles/mako/config` to `~/.config/mako/config`.
 
