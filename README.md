@@ -10,6 +10,7 @@ This guide assumes that you've successfully installed Arch Linux by following th
 | ------------------------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
 | Dunst                    | A notification daemon.                            | [GitHub](https://github.com/dunst-project/dunst)                                            |
 | Firefox                  | A web browser.                                    | [Homepage](https://firefox.com/)                                                            |
+| Flameshot                | A screenshot utility.                             | [GitHub](https://github.com/flameshot-org/flameshot)                                        |
 | Hyprland                 | A dynamic tiling Wayland compositor.              | [Homepage](https://hyprland.org/), [GitHub](https://github.com/hyprwm/Hyprland)             |
 | Hyprpaper                | A wayland wallpaper utility.                      | [Project Homepage](https://github.com/hyprwm/hyprpaper)                                     |
 | Kitty                    | A fast, feature-rich, GPU-based Terminal.         | [Homepage](https://sw.kovidgoyal.net/kitty/), [GitHub](https://github.com/kovidgoyal/kitty) |
@@ -44,7 +45,7 @@ usermod -aG wheel,audio,video,storage bob
 1. Install the necessary packages using *pacman* and *paru*.
 
     ```bash
-    sudo pacman -Syu hyprland kitty firefox pipewire pipewire-pulse qt5-wayland qt6-wayland hyprpaper polkit-kde-agent waybar otf-font-awesome thunar gvfs tumbler ffmpegthumbnailer wofi
+    sudo pacman -Syu hyprland kitty firefox pipewire pipewire-pulse qt5-wayland qt6-wayland hyprpaper polkit-kde-agent waybar otf-font-awesome thunar gvfs tumbler ffmpegthumbnailer flameshot grim wofi
     paru -S sddm-git
     ```
 
