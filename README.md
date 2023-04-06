@@ -91,6 +91,8 @@ For more information, visit their [GitHub page](https://github.com/khaneliman/sd
 
 Copy the files from `dotfiles/hyprland/` to `~/.config/hypr/`.
 
+To customize the background, create a `~/.config/hypr/hyprpaper.conf` file and follow the instructions on their [GitHub homepage](https://github.com/hyprwm/hyprpaper).
+
 ### 6. Setting up Dunst
 
 1. Install Papirus icon theme. `$ sudo pacman -S papirus-icon-theme`
