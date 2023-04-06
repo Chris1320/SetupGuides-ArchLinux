@@ -74,13 +74,18 @@ usermod -aG wheel,audio,video,storage bob
     alias klip="kitty +kitten clipboard"
     ```
 
-### 4. Enable SDDM
+### 4. Setting up SDDM
 
-Enable the SDDM service to start the display manager on boot.
+1. Enable the SDDM service to start the display manager on boot.
 
-```bash
-systemctl enable sddm.service
-```
+    ```bash
+    systemctl enable sddm.service
+    ```
+
+2. Install Catppuccin SDDM theme. `$ paru -S sddm-catppuccin-git`
+3. Copy `dotfiles/sddm/sddm.conf` `/etc/sddm.conf.d/sddm.conf`.
+
+For more information, visit their [GitHub page](https://github.com/khaneliman/sddm-catppuccin).
 
 ### 5. Setting up Hyprland
 
@@ -91,3 +96,26 @@ Copy the files from `dotfiles/hyprland/` to `~/.config/hypr/`.
 1. Install Papirus icon theme. `$ sudo pacman -S papirus-icon-theme`
 2. Copy `dotfiles/dunst/dunstrc` to `~/.config/dunst/dunstrc`.
 
+### 7. Setting up waybar
+
+> work-in-progress
+
+#
+
+-----
+
+## Extras
+
+### Grub
+
+If you use Grub as your bootloader, install `catppuccin-mocha-grub-theme-git` from the AUR and set it as your Grub theme.
+
+```bash
+paru -S catppuccin-mocha-grub-theme-git
+```
+
+`/etc/default/grub`:
+
+```
+GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha"
+```
