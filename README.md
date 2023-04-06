@@ -81,7 +81,11 @@ Enable the SDDM service to start the display manager on boot.
 systemctl enable sddm.service
 ```
 
-### 5. Setting up Mako
+### 5. Setting up Hyprland
+
+Copy the files from `dotfiles/hyprland/` to `~/.config/hypr/`.
+
+### 6. Setting up Mako
 
 To customize Mako, copy `dotfiles/mako/config` to `~/.config/mako/config`.
 
