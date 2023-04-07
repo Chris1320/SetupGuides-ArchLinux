@@ -39,7 +39,7 @@
 
         "tooltip": true,
         "tooltip-format": "Connected to {essid} on {ifname} ",
-        "on-click": "notify-send -a 'Internet' 'WIP'",
+        "on-click": "networkmanager_dmenu",
         "max-length": 25
     },
     "bluetooth": {
