@@ -45,7 +45,7 @@ usermod -aG wheel,audio,video,storage bob
 1. Install the necessary packages using *pacman* and *paru*.
 
     ```bash
-    sudo pacman -Syu hyprland kitty firefox pipewire pipewire-pulse qt5-wayland qt6-wayland hyprpaper polkit-kde-agent waybar otf-font-awesome thunar gvfs tumbler ffmpegthumbnailer flameshot grim wofi
+    sudo pacman -Syu hyprland kitty firefox pipewire pipewire-pulse qt5-wayland qt6-wayland hyprpaper polkit-kde-agent waybar otf-font-awesome thunar gvfs tumbler catppuccin-gtk-theme-mocha gnome-tweaks ffmpegthumbnailer flameshot grim wofi cava
     paru -S sddm-git
     ```
 
