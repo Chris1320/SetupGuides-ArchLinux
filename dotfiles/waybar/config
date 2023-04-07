@@ -2,20 +2,12 @@
     "layer": "top", // Waybar at top layer
     "position": "top",
     "height": 30,
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 0, // Gaps between modules (4px)
 
-    "modules-left": ["user", "cpu", "memory", "tray"],
-    "modules-center": [],
-    "modules-right": ["network", "bluetooth", "pulseaudio", "backlight", "battery", "clock"],
+    "modules-left": ["cpu", "memory", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "bluetooth", "pulseaudio", "backlight", "battery"],
 
-    "user": {
-        "format": "{user} | {work_H}:{work_M}",
-        "avatar": "$HOME/.face",
-        "height": 30,
-        "width": 30,
-        "icon": true,
-        "open-on-click": false
-    },
     "cpu": {
         "format": "{usage}% {icon}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
@@ -32,13 +24,13 @@
         "spacing": 10
     },
     "network": {
-        "format-wifi": "{essid} ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
+        "format-wifi": "{essid} 直",
+        "format-linked": "{ifname} (No IP) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "format-disconnected": "Disconnected 睊",
 
         "tooltip": true,
-        "tooltip-format": "Connected to {essid} on {ifname} ",
+        "tooltip-format": "Connected to {essid} on {ifname} ({signalStrength}%) ",
         "on-click": "networkmanager_dmenu",
         "max-length": 25
     },
