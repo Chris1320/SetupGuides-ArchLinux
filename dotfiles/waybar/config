@@ -12,7 +12,7 @@
         "format": "{usage}% {icon}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
         "on-click": "kitty htop",
-        "tooltip": false
+        "tooltip": true
     },
     "memory": {
         "format": "{percentage}% ",
