@@ -6,20 +6,22 @@
 
 This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
 
-| Software                 | Description                                       | Link                                                                                        |
-| ------------------------ | ------------------------------------------------- | ------------------------------------------------------------------------------------------- |
-| Dunst                    | A notification daemon.                            | [GitHub](https://github.com/dunst-project/dunst)                                            |
-| Firefox                  | A web browser.                                    | [Homepage](https://firefox.com/)                                                            |
-| Flameshot                | A screenshot utility.                             | [GitHub](https://github.com/flameshot-org/flameshot)                                        |
-| Hyprland                 | A dynamic tiling Wayland compositor.              | [Homepage](https://hyprland.org/), [GitHub](https://github.com/hyprwm/Hyprland)             |
-| Hyprpaper                | A wayland wallpaper utility.                      | [Project Homepage](https://github.com/hyprwm/hyprpaper)                                     |
-| Kitty                    | A fast, feature-rich, GPU-based Terminal.         | [Homepage](https://sw.kovidgoyal.net/kitty/), [GitHub](https://github.com/kovidgoyal/kitty) |
-| Pipewire                 | Audio/Video router and processor.                 | [Project Homepage](https://gitlab.freedesktop.org/pipewire/pipewire/)                       |
-| SDDM                     | A QML-based display manager.                      | [GitHub](https://github.com/sddm/sddm)                                                      |
-| Thunar                   | A modern file manager.                            | [Homepage](https://docs.xfce.org/xfce/thunar/start)                                         |
-| Waybar                   | A highly customizable Wayland bar.                | [GitHub](https://github.com/Alexays/Waybar)                                                 |
-| WLogout                  | A wayland logout menu.                            | [GitHub Homepage](https://github.com/ArtsyMacaw/wlogout)                                    |
-| Wofi                     | A launcher for wlroots-based wayland compositors. | [Project Homepage](https://hg.sr.ht/~scoopta/wofi)                                          |
+- **Desktop**
+    - Bar: [Waybar](https://github.com/Alexays/Waybar)
+    - Compositor: [Hyprland](https://hyprland.org/)
+    - Display Manager: [SDDM](https://github.com/sddm/sddm)
+    - Launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi)
+    - Logout Menu: [WLogout](https://github.com/ArtsyMacaw/wlogout)
+    - Notifications: [Dunst](https://github.com/dunst-project/dunst)
+    - Wallpaper Utility: [Hyprpaper](https://github.com/hyprwm/hyprpaper)
+- **Productivity**
+    - Browser: [Firefox](https://firefox.com/)
+    - GUI File Manager: [Thunar](https://docs.xfce.org/xfce/thunar/start)
+    - Input Method: Fcitx5
+    - Screenshot Utility: [Flameshot](https://github.com/flameshot-org/flameshot)
+    - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
+- **System Utilities**:
+    - Audio: [Pipewire](https://gitlab.freedesktop.org/pipewire/pipewire/)
 
 ### Pre-Customization
 
