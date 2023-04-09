@@ -17,7 +17,7 @@ This guide assumes that you've successfully installed Arch Linux by following th
 - **Productivity**
     - Browser: [Firefox](https://firefox.com/)
     - GUI File Manager: [Thunar](https://docs.xfce.org/xfce/thunar/start)
-    - Input Method: Fcitx5
+    - Input Method: [Fcitx5](https://github.com/fcitx/fcitx5)
     - Screenshot Utility: [Flameshot](https://github.com/flameshot-org/flameshot)
     - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **System Utilities**:
