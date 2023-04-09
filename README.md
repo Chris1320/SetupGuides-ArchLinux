@@ -23,9 +23,9 @@ This guide assumes that you've successfully installed Arch Linux by following th
     - Shell: [ZSH](https://www.zsh.org/)
     - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **System Utilities**:
-    - Audio: [Pipewire](https://gitlab.freedesktop.org/pipewire/pipewire/)
-    - AUR Helper: [Paru](https://github.com/Morganamilo/paru)
     - Administration: [sudo](https://www.sudo.ws/sudo/)
+    - AUR Helper: [Paru](https://github.com/Morganamilo/paru)
+    - Process Viewer: [htop](https://htop.dev/)
 - **Others**
     - Audio Visualizer: [cava](https://github.com/karlstav/cava)
 
@@ -66,31 +66,27 @@ Switch to the new user after creating it. This will now be your default user acc
     # Other applications that I recommend. You can use alternatives if
     # you like, but you might have to change some things if you
     # continue to follow this guide.
-    sudo pacman -Syu firefox kitty \
-        thunar gvfs tumbler ffmpegthumbnailer \
-        flameshot grim \
-        pipewire pipewire-pulse
-    paru -S cava-git
+    sudo pacman -Syu firefox kitty htop \
+        thunar thunar-volman gvfs tumbler ffmpegthumbnailer \
+        flameshot grim imagemagick
+    paru -S cava-git pfetch
 
     # Install themes and fonts
-    sudo pacman -Syu otf-font-awesome
-    sudo pacman -Syu gnome-tweaks catppuccin-gtk-theme-mocha
+    sudo pacman -Syu otf-font-awesome ttf-jetbrains-mono \
+        ttf-nerd-fonts-symbols-2048-em-mono \
+        ttf-nerd-fonts-symbols-common nonicons-font
+    sudo pacman -Syu gnome-tweaks papirus-icon-theme
+    paru -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha \
+        catppuccin-mocha-grub-theme-git papirus-folders-catppuccin-git \
+        sddm-catppuccin-git sound-theme-freedesktop
     ```
 
 2. Install [*XDG Desktop Portal* for Hyprland](https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/).
 
 ### 3. Setting up Kitty
 
-1. Install JetBrains Mono, nonicons-font, and Nerd Font Symbols.
-
-    ```bash
-    pacman -Syu ttf-jetbrains-mono ttf-nerd-fonts-symbols-2048-em-mono
-    paru -S nonicons-font
-    ```
-
-2. Copy the files from `./dotfiles/kitty/` to `~/.config/kitty/`.
-3. (Optional) Install *imagemagick* for icat. `$ pacman -Syu imagemagick`
-4. (Optional) Alias the following commands. You can change the aliases to whatever you like.
+1. Copy the files from `./dotfiles/kitty/` to `~/.config/kitty/`.
+2. (Optional) Alias the following commands. You can change the aliases to whatever you like.
 
     | Alias   | Command                   |
     | ------- | ------------------------- |
@@ -112,8 +108,7 @@ Switch to the new user after creating it. This will now be your default user acc
     systemctl enable sddm.service
     ```
 
-2. Install Catppuccin SDDM theme. `$ paru -S sddm-catppuccin-git`
-3. Copy `dotfiles/sddm/sddm.conf` `/etc/sddm.conf.d/sddm.conf`.
+2. Copy `dotfiles/sddm/sddm.conf` `/etc/sddm.conf.d/sddm.conf`.
 
 For more information, visit their [GitHub page](https://github.com/khaneliman/sddm-catppuccin).
 
@@ -125,8 +120,7 @@ To customize the background, create a `~/.config/hypr/hyprpaper.conf` file and f
 
 ### 6. Setting up Dunst
 
-1. Install Papirus icon theme. `$ sudo pacman -S papirus-icon-theme`
-2. Copy `dotfiles/dunst/dunstrc` to `~/.config/dunst/dunstrc`.
+Copy `dotfiles/dunst/dunstrc` to `~/.config/dunst/dunstrc`.
 
 ### 7. Setting up waybar
 
@@ -140,13 +134,7 @@ To customize the background, create a `~/.config/hypr/hyprpaper.conf` file and f
 
 ### Grub
 
-If you use Grub as your bootloader, install `catppuccin-mocha-grub-theme-git` from the AUR and set it as your Grub theme.
-
-```bash
-paru -S catppuccin-mocha-grub-theme-git
-```
-
-`/etc/default/grub`:
+If you use Grub as your bootloader, edit `/etc/default/grub`:
 
 ```
 GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha"
