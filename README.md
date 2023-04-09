@@ -137,5 +137,5 @@ Copy `./dotfiles/waybar/` to `~/.config/waybar/`.
 If you use Grub as your bootloader, edit `/etc/default/grub`:
 
 ```
-GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha"
+GRUB_THEME="/usr/share/grub/themes/catppuccin-mocha/theme.txt"
 ```
