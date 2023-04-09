@@ -7,6 +7,7 @@
 This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
 
 - **Desktop**
+    - Authentication UI: [polkit-kde-agent](https://kde.org/plasma-desktop/)
     - Bar: [Waybar](https://github.com/Alexays/Waybar)
     - Compositor: [Hyprland](https://hyprland.org/)
     - Display Manager: [SDDM](https://github.com/sddm/sddm)
@@ -19,9 +20,14 @@ This guide assumes that you've successfully installed Arch Linux by following th
     - GUI File Manager: [Thunar](https://docs.xfce.org/xfce/thunar/start)
     - Input Method: [Fcitx5](https://github.com/fcitx/fcitx5)
     - Screenshot Utility: [Flameshot](https://github.com/flameshot-org/flameshot)
+    - Shell: [ZSH](https://www.zsh.org/)
     - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **System Utilities**:
     - Audio: [Pipewire](https://gitlab.freedesktop.org/pipewire/pipewire/)
+    - AUR Helper: [Paru](https://github.com/Morganamilo/paru)
+    - Administration: [sudo](https://www.sudo.ws/sudo/)
+- **Others**
+    - Audio Visualizer: [cava](https://github.com/karlstav/cava)
 
 ### Pre-Customization
 
@@ -36,19 +42,39 @@ useradd -m bob  # Create a new user `bob`.
 usermod -aG wheel,audio,video,storage bob
 ```
 
+Switch to the new user after creating it. This will now be your default user account.
+
 ### 1. Setting up the terminal
 
 1. [Install ZSH](https://github.com/SetupGuides/ZSH). This will be our default shell.
 2. [Install Paru](https://github.com/Morganamilo/paru). This is the AUR helper that we will use.
-3. Install `sudo`. `$ pacman -Syu sudo`
+3. Install sudo. `$ pacman -Syu sudo`
 
 ### 2. Installing packages
 
-1. Install the necessary packages using *pacman* and *paru*.
+1. Install the packages using *pacman* and *paru*.
 
     ```bash
-    sudo pacman -Syu hyprland kitty firefox pipewire pipewire-pulse qt5-wayland qt6-wayland hyprpaper polkit-kde-agent waybar otf-font-awesome thunar gvfs tumbler catppuccin-gtk-theme-mocha gnome-tweaks ffmpegthumbnailer flameshot grim wofi cava
-    paru -S sddm-git
+    # Note: You can combine them all into one `pacman` command but
+    # I separated them to show you how the packages relate to each other.
+
+    # Desktop packages
+    sudo pacman -Syu hyprland qt5-wayland qt6-wayland \
+        hyprpaper waybar dunst wofi polkit-kde-agent
+    paru -S sddm-git wlogout
+
+    # Other applications that I recommend. You can use alternatives if
+    # you like, but you might have to change some things if you
+    # continue to follow this guide.
+    sudo pacman -Syu firefox kitty \
+        thunar gvfs tumbler ffmpegthumbnailer \
+        flameshot grim \
+        pipewire pipewire-pulse
+    paru -S cava-git
+
+    # Install themes and fonts
+    sudo pacman -Syu otf-font-awesome
+    sudo pacman -Syu gnome-tweaks catppuccin-gtk-theme-mocha
     ```
 
 2. Install [*XDG Desktop Portal* for Hyprland](https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/).
