@@ -124,7 +124,7 @@ Copy `dotfiles/dunst/dunstrc` to `~/.config/dunst/dunstrc`.
 
 ### 7. Setting up waybar
 
-> work-in-progress
+Copy `./dotfiles/waybar/` to `~/.config/waybar/`.
 
 #
 
