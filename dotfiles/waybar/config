@@ -4,9 +4,9 @@
     "height": 30,
     "spacing": 0, // Gaps between modules (4px)
 
-    "modules-left": ["cpu", "memory", "tray"],
+    "modules-left": ["cpu", "memory", "backlight", "battery", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "bluetooth", "pulseaudio", "backlight", "battery"],
+    "modules-right": ["network", "bluetooth", "pulseaudio"],
 
     "cpu": {
         "format": "{usage}% {icon}",
