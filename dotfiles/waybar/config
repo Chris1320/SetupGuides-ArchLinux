@@ -4,7 +4,7 @@
     "height": 30,
     "spacing": 0, // Gaps between modules (4px)
 
-    "modules-left": ["cpu", "memory", "tray"],
+    "modules-left": ["cpu", "memory", "custom/pi_mic", "custom/pi_cam", "tray"],
     "modules-center": ["clock"],
     "modules-right": ["network", "bluetooth", "pulseaudio", "backlight", "battery"],
 
@@ -18,6 +18,20 @@
         "format": "{percentage}% ",
         "tooltip": true,
         "tooltip-format": "{used}/{total} GiB used"
+    },
+    "custom/pi_mic": {
+        "format": "{}",
+        "return-type": "json",
+        "interval": 1,
+        "exec": "echo '{\"text\": \"\", \"class\": \"used\"}'",
+        "exec-if": "~/.config/scripts/privacy_indicator-mic.sh"
+    },
+    "custom/pi_cam": {
+        "format": "{}",
+        "return-type": "json",
+        "interval": 1,
+        "exec": "echo '{\"text\": \"\", \"class\": \"used\"}'",
+        "exec-if": "~/.config/scripts/privacy_indicator-cam.sh"
     },
     "tray": {
         "icon-size": 21,
