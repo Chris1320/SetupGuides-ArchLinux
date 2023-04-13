@@ -54,15 +54,14 @@ checkParuInstallation() {
     if [[ ! -x $(command -v parus) ]]; then
         if gum confirm "Do you want to install paru?"; then
             {
-                # FIXME: Still continues even if pacman fails.
                 # paru dependencies.
-                sudo pacman -S --needed git base-devel
+                sudo pacman -S --needed git base-devel &&
                 # Make a temporary directory.
-                paru_tmpdir=$(mktemp -d)
-                cd "$paru_tmpdir"
-                git clone "$PARU_AUR_URL" "$paru_tmpdir/paru"
-                cd "$paru_tmpdir/paru"
-                makepkg -si
+                paru_tmpdir=$(mktemp -d) &&
+                cd "$paru_tmpdir" &&
+                git clone "$PARU_AUR_URL" "$paru_tmpdir/paru" &&
+                cd "$paru_tmpdir/paru" &&
+                makepkg -si &&
                 cd "$CWD"
             } || {
                 showMessage 2 "Failed to install paru. Please manually install it."
