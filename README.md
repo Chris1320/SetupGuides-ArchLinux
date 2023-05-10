@@ -11,25 +11,31 @@
 
 This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
 
-<table>
-    <thead>
-        <th colspan="2">Environment</th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Audio Visualizer</td>
-            <td><a href="https://github.com/karlstav/cava">cava</a></td>
-        </tr>
-        <tr>
-            <td>Font</td>
-            <td><a href="https://github.com/ryanoasis/nerd-fonts">JetBrains Mono (Nerd Fonts)</a></td>
-        </tr>
-        <tr>
-            <td>Terminal</td>
-            <td><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></td>
-        </tr>
-    </tbody>
-</table>
+<div align="center">
+    <table>
+        <thead>
+            <th colspan="2">Environment</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Audio Visualizer</td>
+                <td><a href="https://github.com/karlstav/cava">cava</a></td>
+            </tr>
+            <tr>
+                <td>Font</td>
+                <td><a href="https://github.com/ryanoasis/nerd-fonts">JetBrains Mono (Nerd Fonts)</a></td>
+            </tr>
+            <tr>
+                <td>Shell</td>
+                <td><a href="https://www.zsh.org/">ZSH</a></td>
+            </tr>
+            <tr>
+                <td>Terminal</td>
+                <td><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 <!-- old list -->
 - **Desktop**
@@ -46,7 +52,6 @@ This guide assumes that you've successfully installed Arch Linux by following th
     - GUI File Manager: [Thunar](https://docs.xfce.org/xfce/thunar/start)
     - Input Method: [Fcitx5](https://github.com/fcitx/fcitx5)
     - Screenshot Utility: [Flameshot](https://github.com/flameshot-org/flameshot)
-    - Shell: [ZSH](https://www.zsh.org/)
 - **System Utilities**:
     - Administration: [sudo](https://www.sudo.ws/sudo/)
     - AUR Helper: [Paru](https://github.com/Morganamilo/paru)
@@ -78,7 +83,7 @@ Switch to the new user after creating it. This will now be your default user acc
 1. Install the packages using *pacman* and *paru*.
 
     ```bash
-    # Note: You can combine them all into one `pacman` command but
+    # Note: You can combine them all into one `paru` command but
     # I separated them to show you how the packages relate to each other.
 
     # Desktop packages
@@ -95,10 +100,8 @@ Switch to the new user after creating it. This will now be your default user acc
     paru -S cava-git pfetch
 
     # Install themes and fonts
-    sudo pacman -Syu otf-font-awesome ttf-jetbrains-mono \
-        ttf-nerd-fonts-symbols-2048-em-mono \
-        ttf-nerd-fonts-symbols-common nonicons-font
-    sudo pacman -Syu gnome-tweaks papirus-icon-theme
+    sudo pacman -Syu otf-font-awesome ttf-jetbrains-mono-nerd \
+        gnome-tweaks papirus-icon-theme
     paru -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha \
         catppuccin-mocha-grub-theme-git papirus-folders-catppuccin-git \
         sddm-catppuccin-git sound-theme-freedesktop
