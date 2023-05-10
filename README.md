@@ -1,4 +1,9 @@
-# Arch Linux
+<div align="center">
+    <h1>Arch Linux Dotfiles</h1>
+    <img src="https://img.shields.io/github/directory-file-count/SetupGuides/ArchLinux/dotfiles?color=%23cba6f7&label=Dotfiles&style=for-the-badge">
+    <img src="https://img.shields.io/github/issues-raw/SetupGuides/ArchLinux?color=%23f38ba8&style=for-the-badge">
+    <img src="https://img.shields.io/github/last-commit/SetupGuides/ArchLinux?color=%23f9e2af&style=for-the-badge">
+</div>
 
 > **NOTE**: This page is a work-in-progress.
 
@@ -6,6 +11,27 @@
 
 This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
 
+<table>
+    <thead>
+        <th colspan="2">Environment</th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Audio Visualizer</td>
+            <td><a href="https://github.com/karlstav/cava">cava</a></td>
+        </tr>
+        <tr>
+            <td>Font</td>
+            <td><a href="https://github.com/ryanoasis/nerd-fonts">JetBrains Mono (Nerd Fonts)</a></td>
+        </tr>
+        <tr>
+            <td>Terminal</td>
+            <td><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- old list -->
 - **Desktop**
     - Authentication UI: [polkit-kde-agent](https://kde.org/plasma-desktop/)
     - Bar: [Waybar](https://github.com/Alexays/Waybar)
@@ -21,13 +47,10 @@ This guide assumes that you've successfully installed Arch Linux by following th
     - Input Method: [Fcitx5](https://github.com/fcitx/fcitx5)
     - Screenshot Utility: [Flameshot](https://github.com/flameshot-org/flameshot)
     - Shell: [ZSH](https://www.zsh.org/)
-    - Terminal: [Kitty](https://sw.kovidgoyal.net/kitty/)
 - **System Utilities**:
     - Administration: [sudo](https://www.sudo.ws/sudo/)
     - AUR Helper: [Paru](https://github.com/Morganamilo/paru)
     - Process Viewer: [htop](https://htop.dev/)
-- **Others**
-    - Audio Visualizer: [cava](https://github.com/karlstav/cava)
 
 ### Pre-Customization
 
