@@ -22,6 +22,10 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://github.com/karlstav/cava">cava</a></td>
             </tr>
             <tr>
+                <td>Display Manager</td>
+                <td><a href="https://github.com/sddm/sddm">SDDM</a></td>
+            </tr>
+            <tr>
                 <td>Font</td>
                 <td><a href="https://github.com/ryanoasis/nerd-fonts">JetBrains Mono (Nerd Fonts)</a></td>
             </tr>
@@ -42,7 +46,6 @@ This guide assumes that you've successfully installed Arch Linux by following th
     - Authentication UI: [polkit-kde-agent](https://kde.org/plasma-desktop/)
     - Bar: [Waybar](https://github.com/Alexays/Waybar)
     - Compositor: [Hyprland](https://hyprland.org/)
-    - Display Manager: [SDDM](https://github.com/sddm/sddm)
     - Launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi)
     - Logout Menu: [WLogout](https://github.com/ArtsyMacaw/wlogout)
     - Notifications: [Dunst](https://github.com/dunst-project/dunst)
@@ -135,6 +138,7 @@ Switch to the new user after creating it. This will now be your default user acc
     ```
 
 2. Copy `dotfiles/sddm/sddm.conf` `/etc/sddm.conf.d/sddm.conf`.
+3. Edit `/usr/share/sddm/themes/catppuccin/theme.conf` to your preferences.
 
 For more information, visit their [GitHub page](https://github.com/khaneliman/sddm-catppuccin).
 
