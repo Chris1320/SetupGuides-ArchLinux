@@ -30,6 +30,10 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://github.com/ryanoasis/nerd-fonts">JetBrains Mono (Nerd Fonts)</a></td>
             </tr>
             <tr>
+                <td>Lockscreen</td>
+                <td><a href="https://github.com/jirutka/swaylock-effects">Swaylock</a></td>
+            </tr>
+            <tr>
                 <td>Shell</td>
                 <td><a href="https://www.zsh.org/">ZSH</a></td>
             </tr>
