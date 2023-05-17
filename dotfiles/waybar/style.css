@@ -41,6 +41,14 @@ tooltip {
     color: @teal;
 }
 
+#cpu.high {
+    color: @red;
+}
+
+#cpu.mid {
+    color: @peach;
+}
+
 #memory {
     color: @sapphire;
 }

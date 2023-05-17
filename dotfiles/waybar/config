@@ -21,6 +21,10 @@
     "cpu": {
         "format": "{usage}% {icon}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "states": {
+            "high": 80,
+            "mid": 40
+        },
         "on-click": "kitty htop",
         "tooltip": true
     },
