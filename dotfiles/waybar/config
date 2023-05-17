@@ -1,0 +1,100 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top",
+    "height": 30,
+    "spacing": 0, // Gaps between modules (4px)
+
+    "modules-left": ["cpu", "memory", "backlight", "battery", "custom/right", "tray"],
+    "modules-center": ["clock"],
+    "modules-right": ["custom/left", "network", "bluetooth", "pulseaudio"],
+
+    "custom/left": {
+        "format": " ",
+        "interval": "once"
+    },
+
+    "custom/right": {
+        "format": " ",
+        "interval": "once"
+    },
+
+    "cpu": {
+        "format": "{usage}% {icon}",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "on-click": "kitty htop",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "{percentage}% 󰍛",
+        "tooltip": true,
+        "tooltip-format": "{used}/{total} GiB used"
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "network": {
+        "format-wifi": "{essid} 󰖩",
+        "format-linked": "{ifname} (No IP) 󰛵",
+        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "format-disconnected": "Disconnected 󰱟",
+
+        "tooltip": true,
+        "tooltip-format": "Connected to {essid} on {ifname} ({signalStrength}%) ",
+        "on-click": "networkmanager_dmenu",
+        "max-length": 25
+    },
+    "bluetooth": {
+        "format": "{status} ",
+        "format-connected": "{status} ({num_connections}) ",
+        "max-length": 15,
+        "on-click": "notify-send -a 'Bluetooth' 'WIP'",
+        "tooltip": true
+    },
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "notify-send -a 'Volume' 'WIP'"
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "on-click": "notify-send -a \"Brightness\" -u low \"WIP\""
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{power}W ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""],
+        "states": {
+            "good": 90,
+            "warning": 40,
+            "critical": 20
+        },
+        "tooltip": true,
+        "format-time": "{H}h {M}m"
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S} ",
+        "format-alt": "{:%Y-%m-%d} ",
+        "timezone": "Asia/Manila",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    }
+}

@@ -1,0 +1,73 @@
+@import "mocha.css";
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: JetBrainsMono Nerd Font Mono, monospace;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: @text;
+}
+
+tooltip {
+    background: alpha(@base, 0.8);
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: alpha(@crust, 0.8);
+}
+
+#cpu, #memory, #tray, #clock, #network, #bluetooth, #pulseaudio, #backlight, #battery, #custom-left, #custom-right {
+    background: @base;
+    padding: 0px 10px;
+    margin: 3px 0px;
+}
+
+#custom-right {
+    border-radius: 0px 10px 10px 0px;
+    padding-right: 0px;
+}
+
+#custom-left {
+    border-radius: 10px 0px 0px 10px;
+    padding-right: 0px;
+}
+
+#cpu {
+    color: @teal;
+}
+
+#memory {
+    color: @sapphire;
+}
+
+#tray {
+    margin: 3px 0px 3px 5px;
+    border-radius: 10px;
+    padding-right: 12px;
+}
+
+#clock {
+    color: @yellow;
+    border-radius: 10px;
+}
+
+#network {
+    color: @peach;
+}
+
+#pulseaudio {
+    color: @sky;
+}
+
+#backlight {
+    color: @mauve;
+}
+
+#battery {
+    color:  @green;
+}
