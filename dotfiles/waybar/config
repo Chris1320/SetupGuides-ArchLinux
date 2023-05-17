@@ -53,7 +53,11 @@
         "format-connected": "{status} ({num_connections}) ",
         "max-length": 15,
         "on-click": "notify-send -a 'Bluetooth' 'WIP'",
-        "tooltip": true
+        "tooltip": true,
+        "tooltip-format-connected": "There are {num_connections} device/s connected.",
+        "tooltip-format-on": "Bluetooth is turned on.",
+        "tooltip-format-off": "Bluetooth is turned off.",
+        "tooltip-format-disabled": "Bluetooth is disabled."
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
