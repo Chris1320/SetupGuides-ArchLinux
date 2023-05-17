@@ -79,3 +79,11 @@ tooltip {
 #battery {
     color:  @green;
 }
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
+}
