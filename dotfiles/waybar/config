@@ -40,11 +40,11 @@
     "network": {
         "format-wifi": "{essid} 󰖩",
         "format-linked": "{ifname} (No IP) 󰛵",
-        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
+        "format-ethernet": "{ipaddr} 󰈀",
         "format-disconnected": "Disconnected 󰱟",
 
         "tooltip": true,
-        "tooltip-format": "Connected to {essid} on {ifname} ({signalStrength}%) ",
+        "tooltip-format": "󰟀 {ipaddr}/{cidr} | 󱂇 {gwaddr} ({signalStrength}%)",
         "on-click": "networkmanager_dmenu",
         "max-length": 25
     },
