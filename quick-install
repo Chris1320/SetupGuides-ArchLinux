@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+echo "[!] Check the content of this script first before proceeding! CTRL+C to cancel."
+read -r -p "    Press ENTER to continue..."
+
+echo "[i] Copying dotfiles..."
+
+echo " + Copying cava dotfiles..."
+cp ./dotfiles/cava/config ~/.config/cava/config
+
+echo " + Copying dunst dotfiles..."
+cp ./dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
+
+echo " + Copying hyprland dotfiles..."
+rm -r ~/.config/hypr
+cp -r ./dotfiles/hypr ~/.config/hypr
+
+echo " + Copying kitty dotfiles..."
+rm -r ~/.config/kitty
+cp -r ./dotfiles/kitty ~/.config/kitty
+
+echo " + Copying sddm dotfiles..."
+sudo cp ./dotfiles/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
+
+echo " + Copying swaylock dotfiles..."
+cp ./dotfiles/swaylock/config ~/.config/swaylock/config
+
+echo " + Copying waybar dotfiles..."
+rm -r ~/.config/waybar
+cp -r ./dotfiles/waybar ~/.config/waybar
+
+echo " + Copying wlogout dotfiles..."
+rm -r ~/.config/wlogout
+cp -r ./dotfiles/wlogout ~/.config/wlogout
+
+echo " + Copying wofi dotfiles..."
+rm -r ~/.config/wofi
+cp -r ./dotfiles/wofi ~/.config/wofi
+
+echo "[i] Copying dotfiles... Done!"
