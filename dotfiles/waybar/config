@@ -4,18 +4,32 @@
     "height": 30,
     "spacing": 0, // Gaps between modules (4px)
 
-    "modules-left": ["cpu", "memory", "backlight", "battery", "tray"],
+    "modules-left": ["cpu", "memory", "backlight", "battery", "custom/right", "tray"],
     "modules-center": ["clock"],
-    "modules-right": ["network", "bluetooth", "pulseaudio"],
+    "modules-right": ["custom/left", "network", "bluetooth", "pulseaudio"],
+
+    "custom/left": {
+        "format": " ",
+        "interval": "once"
+    },
+
+    "custom/right": {
+        "format": " ",
+        "interval": "once"
+    },
 
     "cpu": {
         "format": "{usage}% {icon}",
         "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "states": {
+            "high": 80,
+            "mid": 40
+        },
         "on-click": "kitty htop",
         "tooltip": true
     },
     "memory": {
-        "format": "{percentage}% ",
+        "format": "{percentage}% 󰍛",
         "tooltip": true,
         "tooltip-format": "{used}/{total} GiB used"
     },
@@ -24,28 +38,32 @@
         "spacing": 10
     },
     "network": {
-        "format-wifi": "{essid} 直",
-        "format-linked": "{ifname} (No IP) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "format-disconnected": "Disconnected 睊",
+        "format-wifi": "{essid} 󰖩",
+        "format-linked": "{ifname} (No IP) 󰛵",
+        "format-ethernet": "{ipaddr} 󰈀",
+        "format-disconnected": "Disconnected 󰱟",
 
         "tooltip": true,
-        "tooltip-format": "Connected to {essid} on {ifname} ({signalStrength}%) ",
+        "tooltip-format": "󰟀 {ipaddr}/{cidr} | 󱂇 {gwaddr} ({signalStrength}%)",
         "on-click": "networkmanager_dmenu",
-        "max-length": 25
+        "max-length": 15
     },
     "bluetooth": {
         "format": "{status} ",
         "format-connected": "{status} ({num_connections}) ",
         "max-length": 15,
         "on-click": "notify-send -a 'Bluetooth' 'WIP'",
-        "tooltip": true
+        "tooltip": true,
+        "tooltip-format-connected": "{num_connections} device/s connected",
+        "tooltip-format-on": "Bluetooth is turned on",
+        "tooltip-format-off": "Bluetooth is turned off",
+        "tooltip-format-disabled": "Bluetooth is disabled"
     },
     "pulseaudio": {
         "format": "{volume}% {icon} {format_source}",
+        "format-muted": "  {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
+        "format-bluetooth-muted": "  {icon} {format_source}",
 
         "format-source": "{volume}% ",
         "format-source-muted": "",
@@ -68,13 +86,12 @@
     },
     "battery": {
         "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{power}W ",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""],
         "states": {
-            "good": 90,
-            "warning": 40,
+            "warning": 50,
             "critical": 20
         },
         "tooltip": true,
@@ -83,7 +100,7 @@
     "clock": {
         "interval": 1,
         "format": "{:%H:%M:%S} ",
-        "format-alt": "{:%Y-%m-%d} ",
+        "format-alt": "{:%Y-%m-%d} ",
         "timezone": "Asia/Manila",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     }

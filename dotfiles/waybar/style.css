@@ -3,7 +3,7 @@
 * {
     border: none;
     border-radius: 0;
-    font-family: JetBrains Mono, monospace;
+    font-family: JetBrainsMono Nerd Font Mono, monospace;
     font-size: 14px;
     min-height: 0;
 }
@@ -21,14 +21,32 @@ tooltip {
     border-color: alpha(@crust, 0.8);
 }
 
-#cpu, #memory, #tray, #clock, #network, #bluetooth, #pulseaudio, #backlight, #battery {
+#cpu, #memory, #tray, #clock, #network, #bluetooth, #pulseaudio, #backlight, #battery, #custom-left, #custom-right {
     background: @base;
     padding: 0px 10px;
     margin: 3px 0px;
 }
 
+#custom-right {
+    border-radius: 0px 10px 10px 0px;
+    padding-right: 0px;
+}
+
+#custom-left {
+    border-radius: 10px 0px 0px 10px;
+    padding-right: 0px;
+}
+
 #cpu {
     color: @teal;
+}
+
+#cpu.high {
+    color: @red;
+}
+
+#cpu.mid {
+    color: @peach;
 }
 
 #memory {
@@ -48,8 +66,6 @@ tooltip {
 
 #network {
     color: @peach;
-    border-radius: 10px 0px 0px 10px;
-    padding-right: 12px;
 }
 
 #pulseaudio {
@@ -62,6 +78,12 @@ tooltip {
 
 #battery {
     color:  @green;
-    border-radius: 0px 10px 10px 0px;
-    padding-right: 12px;
+}
+
+#battery.warning {
+    color: @yellow;
+}
+
+#battery.critical {
+    color: @red;
 }

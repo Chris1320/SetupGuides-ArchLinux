@@ -1,7 +1,7 @@
 [global]
 startup_notification = false
 
-font = JetBrains Mono 10
+font = JetBrainsMono Nerd Font Mono 10
 # Enable HTML tags
 markup = yes
 # The format of the message.  Possible variables are:
@@ -35,19 +35,17 @@ follow = mouse
 sticky_history = yes
 history_length = 20
 show_indicators = yes
+notification_limit = 6
 
 browser = firefox
+dmenu = wofi -p "dunst"
+mouse_left_click = open_url, close_current
+mouse_middle_click = do_action
+mouse_right_click = context
+
 icon_position = left
 icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/
 max_icon_size = 32
-
-# Keybindings
-#mod1: alt
-#mod4: win
-#close = mod1+space
-#close_all = ctrl+mod1+space
-#history = ctrl+mod4+h
-#context = ctrl+mod1+c
 
 [urgency_low]
 background = "#1E1E2E"
