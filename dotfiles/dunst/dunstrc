@@ -39,6 +39,10 @@ notification_limit = 6
 
 browser = firefox
 dmenu = wofi -p "dunst"
+mouse_left_click = open_url, close_current
+mouse_middle_click = do_action
+mouse_right_click = context
+
 icon_position = left
 icon_path = /usr/share/icons/Papirus/16x16/status/:/usr/share/icons/Papirus/16x16/devices/
 max_icon_size = 32
