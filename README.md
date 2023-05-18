@@ -18,8 +18,16 @@ This guide assumes that you've successfully installed Arch Linux by following th
         </thead>
         <tbody>
             <tr>
+                <td>Administration</td>
+                <td><a href="https://www.sudo.ws/sudo/">sudo</a></td>
+            </tr>
+            <tr>
                 <td>Audio Visualizer</td>
                 <td><a href="https://github.com/karlstav/cava">cava</a></td>
+            </tr>
+            <tr>
+                <td>AUR Helper</td>
+                <td><a href="https://github.com/Morganamilo/paru">Paru</a></td>
             </tr>
             <tr>
                 <td>Authentication Agent</td>
@@ -30,6 +38,10 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://github.com/Alexays/Waybar">Waybar</a></td>
             </tr>
             <tr>
+                <td>Browser</td>
+                <td><a href="https://firefox.com/">Firefox</a></td>
+            </tr>
+            <tr>
                 <td>Compositor</td>
                 <td><a href="https://hyprland.org/">Hyprland</a></td>
             </tr>
@@ -38,8 +50,16 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://github.com/sddm/sddm">SDDM</a></td>
             </tr>
             <tr>
+                <td>File Managers</td>
+                <td><a href="https://docs.xfce.org/xfce/thunar/start">Thunar</a>, <a href="https://midnight-commander.org/">mc</a></td>
+            </tr>
+            <tr>
                 <td>Font</td>
                 <td><a href="https://github.com/ryanoasis/nerd-fonts">JetBrains Mono (Nerd Fonts)</a></td>
+            </tr>
+            <tr>
+                <td>Input Method</td>
+                <td><a href="https://github.com/fcitx/fcitx5">Fcitx5</a></td>
             </tr>
             <tr>
                 <td>Launcher</td>
@@ -58,6 +78,14 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://github.com/dunst-project/dunst">Dunst</a></td>
             </tr>
             <tr>
+                <td>Process Viewer</td>
+                <td><a href="https://htop.dev/">htop</a></td>
+            </tr>
+            <tr>
+                <td>Screenshot Utility</td>
+                <td><a href="https://github.com/flameshot-org/flameshot">Flameshot</a></td>
+            </tr>
+            <tr>
                 <td>Shell</td>
                 <td><a href="https://www.zsh.org/">ZSH</a></td>
             </tr>
@@ -72,17 +100,6 @@ This guide assumes that you've successfully installed Arch Linux by following th
         </tbody>
     </table>
 </div>
-
-<!-- old list -->
-- **Productivity**
-    - Browser: [Firefox](https://firefox.com/)
-    - GUI File Manager: [Thunar](https://docs.xfce.org/xfce/thunar/start)
-    - Input Method: [Fcitx5](https://github.com/fcitx/fcitx5)
-    - Screenshot Utility: [Flameshot](https://github.com/flameshot-org/flameshot)
-- **System Utilities**:
-    - Administration: [sudo](https://www.sudo.ws/sudo/)
-    - AUR Helper: [Paru](https://github.com/Morganamilo/paru)
-    - Process Viewer: [htop](https://htop.dev/)
 
 ### Pre-Customization
 
