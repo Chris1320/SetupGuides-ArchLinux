@@ -91,7 +91,7 @@
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""],
         "states": {
-            "warning": 40,
+            "warning": 50,
             "critical": 20
         },
         "tooltip": true,
