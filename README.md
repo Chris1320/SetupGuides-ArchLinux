@@ -22,6 +22,18 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://github.com/karlstav/cava">cava</a></td>
             </tr>
             <tr>
+                <td>Authentication Agent</td>
+                <td><a href="https://kde.org/plasma-desktop/">Polkit KDE Agent</a></td>
+            </tr>
+            <tr>
+                <td>Bar</td>
+                <td><a href="https://github.com/Alexays/Waybar">Waybar</a></td>
+            </tr>
+            <tr>
+                <td>Compositor</td>
+                <td><a href="https://hyprland.org/">Hyprland</a></td>
+            </tr>
+            <tr>
                 <td>Display Manager</td>
                 <td><a href="https://github.com/sddm/sddm">SDDM</a></td>
             </tr>
@@ -30,8 +42,20 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://github.com/ryanoasis/nerd-fonts">JetBrains Mono (Nerd Fonts)</a></td>
             </tr>
             <tr>
+                <td>Launcher</td>
+                <td><a href="https://hg.sr.ht/~scoopta/wofi">Wofi</a></td>
+            </tr>
+            <tr>
                 <td>Lockscreen</td>
                 <td><a href="https://github.com/jirutka/swaylock-effects">Swaylock</a></td>
+            </tr>
+            <tr>
+                <td>Logout Menu</td>
+                <td><a href="https://github.com/ArtsyMacaw/wlogout">WLogout</a></td>
+            </tr>
+            <tr>
+                <td>Notification Manager</td>
+                <td><a href="https://github.com/dunst-project/dunst">Dunst</a></td>
             </tr>
             <tr>
                 <td>Shell</td>
@@ -41,19 +65,15 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td>Terminal</td>
                 <td><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></td>
             </tr>
+            <tr>
+                <td>Wallpaper Utility</td>
+                <td><a href="https://github.com/hyprwm/hyprpaper">Hyprpaper</a></td>
+            </tr>
         </tbody>
     </table>
 </div>
 
 <!-- old list -->
-- **Desktop**
-    - Authentication UI: [polkit-kde-agent](https://kde.org/plasma-desktop/)
-    - Bar: [Waybar](https://github.com/Alexays/Waybar)
-    - Compositor: [Hyprland](https://hyprland.org/)
-    - Launcher: [Wofi](https://hg.sr.ht/~scoopta/wofi)
-    - Logout Menu: [WLogout](https://github.com/ArtsyMacaw/wlogout)
-    - Notifications: [Dunst](https://github.com/dunst-project/dunst)
-    - Wallpaper Utility: [Hyprpaper](https://github.com/hyprwm/hyprpaper)
 - **Productivity**
     - Browser: [Firefox](https://firefox.com/)
     - GUI File Manager: [Thunar](https://docs.xfce.org/xfce/thunar/start)
