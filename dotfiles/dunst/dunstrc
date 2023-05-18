@@ -36,6 +36,7 @@ sticky_history = yes
 history_length = 20
 show_indicators = yes
 notification_limit = 6
+progress_bar = true
 
 browser = firefox
 dmenu = wofi -p "dunst"
