@@ -38,3 +38,8 @@ rm -r ~/.config/wofi
 cp -r ./dotfiles/wofi ~/.config/wofi
 
 echo "[i] Copying dotfiles... Done!"
+
+echo "[i] Copying scripts..."
+rm -r ~/.config/scripts/
+cp -r ./scripts ~/.config/scripts/
+echo "[i] Copying scripts... Done!"
