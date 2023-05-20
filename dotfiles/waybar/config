@@ -79,7 +79,7 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "notify-send -a 'Volume' 'WIP'"
+        "on-click": "easyeffects"
     },
     "backlight": {
         "format": "{percent}% {icon}",

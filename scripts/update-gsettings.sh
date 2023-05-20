@@ -2,7 +2,7 @@
 
 FONT="Cantarell 11"
 FONT_MONO="JetBrainsMono Nerd Font Mono 10"
-icon_theme="Catppuccin-Mocha-Teal-Cursors"
+icon_theme="Papirus"
 gtk_theme="Catppuccin-Mocha-Standard-Teal-Dark"
 
 if [[ -z "$CURSOR" || "$CURSOR" == " " ]]; then
