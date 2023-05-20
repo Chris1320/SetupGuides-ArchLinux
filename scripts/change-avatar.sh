@@ -15,8 +15,9 @@ if [ ! -f "$1" ]; then
     exit 1
 fi
 
+# Copy the file to ~/.face
 cp "$1" "$FACE_PATH"
+sudo cp "$FACE_PATH" "/usr/share/sddm/faces/$USER.face.icon"
 
 # Create symlinks.
 ln -sfT "$FACE_PATH" "$HOME/.face.icon"
-sudo ln -sfT "$FACE_PATH" "/usr/share/sddm/faces/$USER.face.icon"
