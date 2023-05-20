@@ -10,11 +10,13 @@
 
     "custom/left": {
         "format": " ",
+        "tooltip": false,
         "interval": "once"
     },
 
     "custom/right": {
         "format": " ",
+        "tooltip": false,
         "interval": "once"
     },
 
