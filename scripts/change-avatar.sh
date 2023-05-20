@@ -5,6 +5,11 @@
 
 FACE_PATH="$HOME/.face"
 
+if [ -z "$1" ]; then
+    echo "Error: no file provided."
+    exit 1
+fi
+
 if [ ! -f "$1" ]; then
     echo "Error: $1 is not a file."
     exit 1
@@ -13,5 +18,5 @@ fi
 cp "$1" "$FACE_PATH"
 
 # Create symlinks.
-ln -sT "$FACE_PATH" "$HOME/.face.icon"
-ln -sT "$FACE_PATH" "/usr/share/sddm/faces/$USER.face.icon"
+ln -sfT "$FACE_PATH" "$HOME/.face.icon"
+sudo ln -sfT "$FACE_PATH" "/usr/share/sddm/faces/$USER.face.icon"
