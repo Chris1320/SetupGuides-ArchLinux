@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-FONT="JetBrainsMono Nerd Font Mono 10"
+FONT="Cantarell 11"
+FONT_MONO="JetBrainsMono Nerd Font Mono 10"
 icon_theme="Catppuccin-Mocha-Teal-Cursors"
 gtk_theme="Catppuccin-Mocha-Standard-Teal-Dark"
 
@@ -14,7 +15,7 @@ fi
 
 gsettings set org.gnome.desktop.interface font-name "$FONT" &&
     gsettings set org.gnome.desktop.interface document-font-name "$FONT" &&
-    gsettings set org.gnome.desktop.interface monospace-font-name "$FONT" &&
+    gsettings set org.gnome.desktop.interface monospace-font-name "$FONT_MONO" &&
     gsettings set org.gnome.desktop.interface cursor-theme "$CURSOR" &&
     gsettings set org.gnome.desktop.interface icon-theme $icon_theme &&
     gsettings set org.gnome.desktop.interface gtk-theme $gtk_theme &&
