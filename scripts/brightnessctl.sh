@@ -17,7 +17,7 @@ function getBrightness {
 }
 
 function sendNotification {
-    icon="preferences-system-brightness-lock"
+    icon="xfpm-brightness-lcd"
     brightness=$(getBrightness)
 
     # Send the notification
