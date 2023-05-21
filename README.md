@@ -22,8 +22,16 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://www.sudo.ws/sudo/">sudo</a></td>
             </tr>
             <tr>
+                <td>Audio Effects</td>
+                <td><a href="https://github.com/wwmm/easyeffects">Easy Effects</a></td>
+            </tr>
+            <tr>
                 <td>Audio Visualizer</td>
                 <td><a href="https://github.com/karlstav/cava">cava</a></td>
+            </tr>
+            <tr>
+                <td>Audio/Video Processor</td>
+                <td><a href="https://pipewire.org">Pipewire</a></td>
             </tr>
             <tr>
                 <td>AUR Helper</td>
