@@ -86,7 +86,8 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "easyeffects"
+        "on-click": "pavucontrol",
+        "on-click-right": "easyeffects"
     },
     "backlight": {
         "format": "{percent}% {icon}",

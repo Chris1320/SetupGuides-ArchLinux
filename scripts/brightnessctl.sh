@@ -21,7 +21,7 @@ function sendNotification {
     brightness=$(getBrightness)
 
     # Send the notification
-    dunstify -a "Brightness" -i "$icon" -r 5555 -u normal -h "int:value:$brightness" "$1"
+    dunstify -a "Brightness" -i "$icon" -r 5555 -u low -h "int:value:$brightness" "$1"
 }
 
 case $1 in
