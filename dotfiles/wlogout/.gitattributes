@@ -1,0 +1,12 @@
+sleep.png filter=lfs diff=lfs merge=lfs -text
+hibernate-hover.png filter=lfs diff=lfs merge=lfs -text
+logout-hover.png filter=lfs diff=lfs merge=lfs -text
+logout.png filter=lfs diff=lfs merge=lfs -text
+restart-hover.png filter=lfs diff=lfs merge=lfs -text
+restart.png filter=lfs diff=lfs merge=lfs -text
+sleep-hover.png filter=lfs diff=lfs merge=lfs -text
+hibernate.png filter=lfs diff=lfs merge=lfs -text
+lock-hover.png filter=lfs diff=lfs merge=lfs -text
+lock.png filter=lfs diff=lfs merge=lfs -text
+power-hover.png filter=lfs diff=lfs merge=lfs -text
+power.png filter=lfs diff=lfs merge=lfs -text

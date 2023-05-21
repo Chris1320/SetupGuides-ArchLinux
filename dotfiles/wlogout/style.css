@@ -1,44 +1,70 @@
 * {
-	background-image: none;
-}
-window {
-	background-color: rgba(17, 17, 27, 0.8);
-}
-button {
-    color: #94E2D5;
-	background-color: #11111B;
-	border-style: solid;
-	border-width: 2px;
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: 25%;
+    background-image: none;
 }
 
-button:focus, button:active, button:hover {
-	background-color: #1E1E2E;
-	outline-style: none;
+window {
+    background-color: rgba(30, 30, 46, 0.75);
+}
+
+button {
+    color: #94e2d5;
+    border: none;
+    margin: 5px;
+    background-size: 25%;
+    background-color: rgba(30, 30, 46, 0);
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: box-shadow 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(49, 50, 68, 0.1);
+}
+
+button:focus {
+    background-color: #94e2d5;
+    color: #1e1e2e;
 }
 
 #lock {
-    background-image: image(url("/usr/share/wlogout/icons/lock.png"), url("/usr/local/share/wlogout/icons/lock.png"));
+    background-image: image(url("./lock.png"));
+}
+#lock:focus {
+    background-image: image(url("./lock-hover.png"));
 }
 
 #logout {
-    background-image: image(url("/usr/share/wlogout/icons/logout.png"), url("/usr/local/share/wlogout/icons/logout.png"));
+    background-image: image(url("./logout.png"));
+}
+#logout:focus {
+    background-image: image(url("./logout-hover.png"));
 }
 
 #suspend {
-    background-image: image(url("/usr/share/wlogout/icons/suspend.png"), url("/usr/local/share/wlogout/icons/suspend.png"));
+    background-image: image(url("./sleep.png"));
+}
+#suspend:focus {
+    background-image: image(url("./sleep-hover.png"));
 }
 
 #hibernate {
-    background-image: image(url("/usr/share/wlogout/icons/hibernate.png"), url("/usr/local/share/wlogout/icons/hibernate.png"));
+    background-image: image(url("./hibernate.png"));
+}
+
+#hibernate:focus {
+    background-image: image(url("./hibernate-hover.png"));
 }
 
 #shutdown {
-    background-image: image(url("/usr/share/wlogout/icons/shutdown.png"), url("/usr/local/share/wlogout/icons/shutdown.png"));
+    background-image: image(url("./power.png"));
+}
+#shutdown:focus {
+    background-image: image(url("./power-hover.png"));
 }
 
 #reboot {
-    background-image: image(url("/usr/share/wlogout/icons/reboot.png"), url("/usr/local/share/wlogout/icons/reboot.png"));
+    background-image: image(url("./restart.png"));
+}
+#reboot:focus {
+    background-image: image(url("./restart-hover.png"));
 }
