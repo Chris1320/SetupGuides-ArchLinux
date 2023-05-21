@@ -5,7 +5,7 @@
     "spacing": 0, // Gaps between modules (4px)
 
     "modules-left": ["cpu", "memory", "backlight", "battery", "custom/right", "tray"],
-    "modules-center": ["clock"],
+    "modules-center": ["custom/search", "clock"],
     "modules-right": ["custom/left", "network", "bluetooth", "pulseaudio"],
 
     "custom/left": {
@@ -18,6 +18,13 @@
         "format": " ",
         "tooltip": false,
         "interval": "once"
+    },
+
+    "custom/search": {
+        "format": "",
+        "tooltip": false,
+        "interval": "once",
+        "on-click": "wofi --show=drun"
     },
 
     "cpu": {
