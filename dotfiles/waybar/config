@@ -5,8 +5,14 @@
     "spacing": 0, // Gaps between modules (4px)
 
     "modules-left": ["cpu", "memory", "backlight", "battery", "custom/right", "tray"],
-    "modules-center": ["custom/search", "clock", "custom/workspace"],
+    "modules-center": ["custom/search", "custom/spacer", "clock", "custom/spacer", "custom/workspace"],
     "modules-right": ["custom/left", "network", "bluetooth", "pulseaudio"],
+
+    "custom/spacer": {
+        "format": " ",
+        "tooltip": false,
+        "interval": "once"
+    },
 
     "custom/left": {
         "format": " ",
