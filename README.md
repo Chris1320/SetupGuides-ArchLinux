@@ -58,6 +58,10 @@ This guide assumes that you've successfully installed Arch Linux by following th
                 <td><a href="https://github.com/sddm/sddm">SDDM</a></td>
             </tr>
             <tr>
+                <td>Document Viewer</td>
+                <td><a href="https://pwmt.org/projects/zathura">Zathura</a></td>
+            </tr>
+            <tr>
                 <td>File Managers</td>
                 <td><a href="https://docs.xfce.org/xfce/thunar/start">Thunar</a>, <a href="https://midnight-commander.org/">mc</a></td>
             </tr>

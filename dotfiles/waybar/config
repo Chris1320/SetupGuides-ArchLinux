@@ -5,7 +5,7 @@
     "spacing": 0, // Gaps between modules (4px)
 
     "modules-left": ["cpu", "memory", "backlight", "battery", "custom/right", "tray"],
-    "modules-center": ["custom/search", "clock"],
+    "modules-center": ["custom/search", "clock", "custom/workspace"],
     "modules-right": ["custom/left", "network", "bluetooth", "pulseaudio"],
 
     "custom/left": {
@@ -25,6 +25,14 @@
         "tooltip": false,
         "interval": "once",
         "on-click": "wofi --show=drun"
+    },
+
+    // FIXME: This polls every 1s, which shows delay when changing workspaces quickly.
+    "custom/workspace": {
+        "format": " {}",
+        "tooltip": false,
+        "interval": 1,
+        "exec": "$HOME/.config/scripts/get_active_workspace.sh"
     },
 
     "cpu": {

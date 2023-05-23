@@ -21,7 +21,7 @@ tooltip {
     border-color: alpha(@crust, 0.8);
 }
 
-#cpu, #memory, #tray, #clock, #network, #bluetooth, #pulseaudio, #backlight, #battery, #custom-left, #custom-right, #custom-search {
+#cpu, #memory, #tray, #clock, #network, #bluetooth, #pulseaudio, #backlight, #battery, #custom-left, #custom-right, #custom-search, #custom-workspace {
     background: @base;
     padding: 0px 10px;
     margin: 3px 0px;
@@ -59,7 +59,7 @@ tooltip {
     padding-right: 12px;
 }
 
-#clock, #custom-search {
+#clock, #custom-search, #custom-workspace {
     color: @yellow;
     border-radius: 10px;
 }
