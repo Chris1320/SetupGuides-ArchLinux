@@ -87,12 +87,15 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol",
-        "on-click-right": "easyeffects"
+        "on-click-right": "easyeffects",
+        "on-scroll-up": "$HOME/.config/scripts/volumectl.sh up",
+        "on-scroll-down": "$HOME/.config/scripts/volumectl.sh down",
     },
     "backlight": {
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-click": "notify-send -a \"Brightness\" -u low \"WIP\""
+        "on-scroll-up": "$HOME/.config/scripts/brightnessctl.sh up",
+        "on-scroll-down": "$HOME/.config/scripts/brightnessctl.sh down"
     },
     "battery": {
         "format": "{capacity}% {icon}",

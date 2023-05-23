@@ -1,11 +1,19 @@
 #!/usr/bin/env bash
 
+VOLUME_INCREMENT=5
+VOLUME_MAX=100
+VOLUME_MIN=0
+
 function getVolume {
     pactl list sinks | \
         grep '^[[:space:]]Volume:' | \
         head -n $(( SINK + 1 )) | \
         tail -n 1 | \
         sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+}
+
+function setVolume {
+    pactl set-sink-volume @DEFAULT_SINK@ $1
 }
 
 function getVolumeIcon {
@@ -28,26 +36,40 @@ function sendNotification {
 
 case $1 in
     up)
-        pactl set-sink-volume @DEFAULT_SINK@ +5%
-        sendNotification "$(getVolume)" "Volume has been increased."
-        ;;
+        current_volume=$(getVolume)
+        if [ $((current_volume + VOLUME_INCREMENT)) -ge $VOLUME_MAX ]; then
+            setVolume $VOLUME_MAX%
+            sendNotification "$VOLUME_MAX" "Volume is already at maximum."
+
+        else
+            setVolume +$VOLUME_INCREMENT%
+            sendNotification "$(getVolume)" "Volume has been increased."
+        fi
+    ;;
 
     down)
-        pactl set-sink-volume @DEFAULT_SINK@ -5%
-        sendNotification "$(getVolume)" "Volume has been decreased."
-        ;;
+        current_volume=$(getVolume)
+        if [ $((current_volume - VOLUME_INCREMENT)) -le $VOLUME_MIN ]; then
+            setVolume $VOLUME_MIN%
+            sendNotification "$VOLUME_MIN" "Volume is already at minimum."
+
+        else
+            setVolume -$VOLUME_INCREMENT%
+            sendNotification "$(getVolume)" "Volume has been decreased."
+        fi
+    ;;
 
     max)
-        pactl set-sink-volume @DEFAULT_SINK@ 100%
+        setVolume $VOLUME_MAX%
         sendNotification "$(getVolume)" "Volume has been set to maximum."
-        ;;
+    ;;
 
-    deafen)
+    min)
         # I don't know if anyone would use this, but I'm adding it anyway.
         # Why wouldn't you use mute instead?
-        pactl set-sink-volume @DEFAULT_SINK@ 0%
-        sendNotification "0" "Volume has been set to minimum."
-        ;;
+        setVolume $VOLUME_MIN%
+        sendNotification "$VOLUME_MIN" "Volume has been set to minimum."
+    ;;
 
     mute)
         pactl set-sink-mute @DEFAULT_SINK@ toggle
@@ -58,5 +80,5 @@ case $1 in
         else
             sendNotification "$(getVolume)" "Volume has been unmuted."
         fi
-        ;;
+    ;;
 esac
