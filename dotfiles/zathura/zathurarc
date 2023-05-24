@@ -10,6 +10,14 @@ set scroll-full-overlap 0.01
 
 set selection-clipboard clipboard
 
+# Keybindings
+## Page Navigation
+map <Left> navigate previous
+map <Right> navigate next
+map <Up> scroll up
+map <Down> scroll down
+
+
 # Theme
 set font "iMWritingMono Nerd Font 12"
 include catppuccin-mocha
