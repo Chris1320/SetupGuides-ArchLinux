@@ -38,7 +38,8 @@
         "format": " {}",
         "tooltip": false,
         "interval": 1,
-        "exec": "$HOME/.config/scripts/get_active_workspace.sh"
+        "exec": "$HOME/.config/scripts/get_active_workspace.sh",
+        "on-click": "$HOME/.config/scripts/get_client_quantity.py"
     },
 
     "cpu": {
