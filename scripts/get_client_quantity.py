@@ -55,6 +55,7 @@ def main() -> int:
                     "notify-send",
                     "-a", "Hyprland",
                     "-u", "low",
+                    "-r", "7314",
                     "-i", "virtual-desktops",
                     getNotificationDescription(quantity)
                 ]
