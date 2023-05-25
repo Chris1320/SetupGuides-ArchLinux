@@ -1,18 +1,54 @@
 #!/usr/bin/env python3
 
 # This script is used to get the number of clients Hyprland has.
-# This is how it should be used:
-#
-# $ ~/.config/scripts/get_client_quantity.py
 
 import sys
 import json
 import subprocess
 
 
+def countClients(clients: dict) -> tuple[int, int, int]:
+    """
+    Counts the normal, scratchpad, and hidden clients.
+    """
+
+    normal_clients = 0
+    hidden_clients = 0
+    scratchpad_clients = 0
+
+    for client in clients:
+        if client["workspace"]["name"] == "special:hidden":
+            hidden_clients += 1
+
+        elif client["workspace"]["name"] == "special:scratchpad":
+            scratchpad_clients += 1
+
+        else:
+            normal_clients += 1
+
+    return (normal_clients, scratchpad_clients, hidden_clients)
+
+
+def getNotificationDescription(quantity: tuple[int, int, int]) -> str:
+    # Get the grammar right.
+    desc = f"{quantity[0]} client connected." if quantity[0] == 1 else f"{quantity[0]} clients connected."
+
+    # Add the number of scratchpad clients if there are any.
+    if quantity[1] != 0:
+        desc += f" ({quantity[1]} on scratchpad"
+        # Add the number of hidden clients if there are any.
+        desc += f", {quantity[2]} hidden)" if quantity[2] != 0 else ")"
+
+    # If there are no scratchpad clients, add the number of hidden clients if there are any.
+    elif quantity[2] != 0:
+        desc += f" ({quantity[2]} hidden)"
+
+    return desc
+
+
 def main() -> int:
     try:
-        quantity = len(json.loads(subprocess.getoutput("hyprctl clients -j")))
+        quantity = countClients(json.loads(subprocess.getoutput("hyprctl clients -j")))
         if "--notify" in sys.argv:
             subprocess.run(
                 [
@@ -20,11 +56,11 @@ def main() -> int:
                     "-a", "Hyprland",
                     "-u", "low",
                     "-i", "virtual-desktops",
-                    f"{quantity} clients connected."
+                    getNotificationDescription(quantity)
                 ]
             )
 
-        print(quantity)
+        print(','.join(map(str, quantity)))  # Also print it to stdout
 
     except Exception as e:
         # If the JSON data could not be parsed, return 1.
