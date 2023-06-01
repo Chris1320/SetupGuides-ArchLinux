@@ -7,6 +7,9 @@ import json
 import subprocess
 
 
+IGNORED_WORKSPACES: set[str] = set(("special:keepassxc",))
+
+
 def countClients(clients: dict) -> tuple[int, int, int]:
     """
     Counts the normal, scratchpad, and hidden clients.
@@ -17,7 +20,10 @@ def countClients(clients: dict) -> tuple[int, int, int]:
     scratchpad_clients = 0
 
     for client in clients:
-        if client["workspace"]["name"] == "special:hidden":
+        if client["workspace"]["name"] in IGNORED_WORKSPACES:
+            continue
+
+        elif client["workspace"]["name"] == "special:hidden":
             hidden_clients += 1
 
         elif client["workspace"]["name"] == "special:scratchpad":
