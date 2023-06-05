@@ -19,7 +19,7 @@ ncmpcpp_directory = ~/.config/ncmpcpp
 ## MPD clients (eg. ncmpc) also use that location.
 ##
 #
-lyrics_directory = ~/.lyrics
+lyrics_directory = ~/.config/ncmpcpp/lyrics
 #
 ##### connection settings #####
 #
@@ -319,7 +319,7 @@ mpd_crossfade_time = 3
 ## Note: Custom command that will be executed each time song changes. Useful for
 ## notifications etc.
 ##
-execute_on_song_change = "~/.config/scripts/show-song-info.sh"
+execute_on_song_change = ~/.config/scripts/show-song-info.sh
 #
 ##
 ## Note: Custom command that will be executed each time player state
@@ -327,7 +327,7 @@ execute_on_song_change = "~/.config/scripts/show-song-info.sh"
 ## state (either unknown, play, pause, or stop) for its duration.
 ##
 #
-#execute_on_player_state_change = ""
+execute_on_player_state_change = ~/.config/scripts/show-player-state.sh
 #
 #playlist_show_mpd_host = no
 #
