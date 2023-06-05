@@ -19,6 +19,10 @@ echo " + Copying kitty dotfiles..."
 rm -r ~/.config/kitty
 cp -r ./dotfiles/kitty ~/.config/kitty
 
+echo " + Copying mpd dotfiles..."
+# do not delete its directory, it contains the database and other user data
+cp ./dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
+
 echo " + Copying sddm dotfiles..."
 sudo cp ./dotfiles/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
 
