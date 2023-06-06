@@ -1,14 +1,23 @@
 #!/usr/bin/env bash
 
+checkDir() {
+    if [ ! -d "$1" ]; then
+        mkdir -p "$1"
+    fi
+}
+
 echo "[!] Check the content of this script first before proceeding! CTRL+C to cancel."
 read -r -p "    Press ENTER to continue..."
 
 echo "[i] Copying dotfiles..."
+checkDir ~/.config  # create .config if it does not exist
 
 echo " + Copying cava dotfiles..."
+checkDir ~/.config/cava
 cp ./dotfiles/cava/config ~/.config/cava/config
 
 echo " + Copying dunst dotfiles..."
+checkDir ~/.config/dunst
 cp ./dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
 
 echo " + Copying hyprland dotfiles..."
@@ -21,15 +30,22 @@ cp -r ./dotfiles/kitty ~/.config/kitty
 
 echo " + Copying mpd dotfiles..."
 # do not delete its directory, it contains the database and other user data
+checkDir ~/.config/mpd
 cp ./dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
 
 echo " + Copying ncmpcpp dotfiles..."
+checkDir ~/.config/ncmpcpp
 cp ./dotfiles/ncmpcpp/config ~/.config/ncmpcpp/config
 
 echo " + Copying sddm dotfiles..."
 sudo cp ./dotfiles/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
 
+echo " + Copying swappy dotfiles..."
+checkDir ~/.config/swappy
+cp ./dotfiles/swappy/config ~/.config/swappy/config
+
 echo " + Copying swaylock dotfiles..."
+checkDir ~/.config/swaylock
 cp ./dotfiles/swaylock/config ~/.config/swaylock/config
 
 echo " + Copying waybar dotfiles..."
