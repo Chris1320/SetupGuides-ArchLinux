@@ -23,34 +23,21 @@ getActiveWindowGeometry() {
 
 grabScreen() {
     # Get screen, annotate, and copy to clipboard.
-    # :param $1 bool: show cursor
-
     grim -t $FORMAT -c - | swappy -f - -o - | wl-copy
 }
 
 grabWindow() {
     # Get window, annotate, and copy to clipboard.
-    # :param $1 bool: show cursor
-
     grim -t $FORMAT -c -g "$(getActiveWindowGeometry)" - | swappy -f - -o - | wl-copy
 }
 
 grabSelection() {
     # Get selection, grab area, annotate, and copy to clipboard.
-    # :param $1 bool: show cursor
-    grim -t $FORMAT -c -g "$(slurp)" - | swappy -f - -o - | wl-copy
+    grim -t $FORMAT -g "$(slurp)" - | swappy -f - -o - | wl-copy
 }
 
-if [ "$1" = "screen" ]; then
-    grabScreen
-
-elif [ "$1" = "window" ]; then
-    grabWindow
-
-elif [ "$1" = "selection" ]; then
-    grabSelection
-
-else
-    echo "Usage: screenshot.sh [screen|window|selection]"
-
+if [ "$1" = "screen" ]; then grabScreen
+elif [ "$1" = "window" ]; then grabWindow
+elif [ "$1" = "selection" ]; then grabSelection
+else echo "Usage: screenshot.sh [screen|window|selection]"
 fi
