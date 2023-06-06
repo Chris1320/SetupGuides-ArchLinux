@@ -21,55 +21,36 @@ getActiveWindowGeometry() {
     echo "$at $size"
 }
 
-getCursor() { if [ "$1" = true ]; then echo "-c"; fi }
-
 grabScreen() {
     # Get screen, annotate, and copy to clipboard.
     # :param $1 bool: show cursor
 
-    cursor_cmd=$(getCursor "$1")
-    grim -t $FORMAT $cursor_cmd - | swappy -f - -o - | wl-copy
+    grim -t $FORMAT -c - | swappy -f - -o - | wl-copy
 }
 
 grabWindow() {
     # Get window, annotate, and copy to clipboard.
     # :param $1 bool: show cursor
 
-    cursor_cmd=$(getCursor "$1")
-    grim -t $FORMAT $cursor_cmd -g "$(getActiveWindowGeometry)" - | swappy -f - -o - | wl-copy
+    grim -t $FORMAT -c -g "$(getActiveWindowGeometry)" - | swappy -f - -o - | wl-copy
 }
 
 grabSelection() {
     # Get selection, grab area, annotate, and copy to clipboard.
     # :param $1 bool: show cursor
-    cursor_cmd=$(getCursor "$1")
-    grim -t $FORMAT $cursor_cmd -g "$(slurp)" - | swappy -f - -o - | wl-copy
+    grim -t $FORMAT -c -g "$(slurp)" - | swappy -f - -o - | wl-copy
 }
 
 if [ "$1" = "screen" ]; then
-    if [ "$2" = "show-cursor" ]; then
-        show_cursor=true
-    else
-        show_cursor=false
-    fi
-    grabScreen "$show_cursor"
+    grabScreen
 
 elif [ "$1" = "window" ]; then
-    if [ "$2" = "show-cursor" ]; then
-        show_cursor=true
-    else
-        show_cursor=false
-    fi
-    grabWindow "$show_cursor"
+    grabWindow
 
 elif [ "$1" = "selection" ]; then
-    if [ "$2" = "show-cursor" ]; then
-        show_cursor=true
-    else
-        show_cursor=false
-    fi
-    grabSelection "$show_cursor"
+    grabSelection
 
 else
-    echo "Usage: screenshot.sh [screen|window|selection] [show-cursor]"
+    echo "Usage: screenshot.sh [screen|window|selection]"
+
 fi
