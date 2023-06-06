@@ -36,8 +36,23 @@ grabSelection() {
     grim -t $FORMAT -g "$(slurp)" - | swappy -f - -o - | wl-copy
 }
 
+showMenu() {
+    PROMPT="Select a screenshot mode"
+    OPTION1="Take a screenshot of the whole screen"
+    OPTION2="Take a screenshot of the active window"
+    OPTION3="Take a screenshot of a specified region"
+
+    CHOICE=$(printf "%s\n%s\n%s" "$OPTION1" "$OPTION2" "$OPTION3" | wofi --show=dmenu --prompt="$PROMPT" -i)
+    sleep 1
+    if [ "$CHOICE" = "$OPTION1" ]; then grabScreen
+    elif [ "$CHOICE" = "$OPTION2" ]; then grabWindow
+    elif [ "$CHOICE" = "$OPTION3" ]; then grabSelection
+    fi
+}
+
 if [ "$1" = "screen" ]; then grabScreen
 elif [ "$1" = "window" ]; then grabWindow
 elif [ "$1" = "selection" ]; then grabSelection
+elif [ "$1" = "interactive" ]; then showMenu
 else echo "Usage: screenshot.sh [screen|window|selection]"
 fi
