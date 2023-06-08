@@ -13,8 +13,8 @@ echo "[i] Copying dotfiles..."
 checkDir ~/.config  # create .config if it does not exist
 
 echo " + Copying btop dotfiles..."
-checkDir ~/.config/btop
-cp ./dotfiles/btop ~/.config/btop
+rm -r ~/.config/btop/
+cp -r ./dotfiles/btop ~/.config/btop
 
 echo " + Copying cava dotfiles..."
 checkDir ~/.config/cava
