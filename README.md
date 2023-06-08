@@ -91,7 +91,7 @@ This guide assumes that you've successfully installed Arch Linux by following th
             </tr>
             <tr>
                 <td>Process Viewer</td>
-                <td><a href="https://htop.dev/">htop</a></td>
+                <td><a href="https://github.com/aristocratos/btop">btop</a></td>
             </tr>
             <tr>
                 <td>Screenshot Utility</td>
@@ -150,7 +150,7 @@ Switch to the new user after creating it. This will now be your default user acc
     # Other applications that I recommend. You can use alternatives if
     # you like, but you might have to change some things if you
     # continue to follow this guide.
-    sudo pacman -Syu firefox kitty htop \
+    sudo pacman -Syu firefox kitty btop \
         thunar thunar-volman gvfs tumbler ffmpegthumbnailer \
         flameshot grim imagemagick
     paru -S cava-git pfetch
