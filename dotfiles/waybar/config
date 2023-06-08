@@ -49,7 +49,7 @@
             "high": 80,
             "mid": 40
         },
-        "on-click": "btop",
+        "on-click": "kitty btop",
         "tooltip": true
     },
     "memory": {
