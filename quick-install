@@ -52,6 +52,10 @@ echo " + Copying swaylock dotfiles..."
 checkDir ~/.config/swaylock
 cp ./dotfiles/swaylock/config ~/.config/swaylock/config
 
+echo " + Copying tmux dotfiles..."
+checkDir ~/.config/tmux
+cp ./dotfiles/tmux/tmux.conf ~/.config/tmux/tmux.conf
+
 echo " + Copying waybar dotfiles..."
 rm -r ~/.config/waybar
 cp -r ./dotfiles/waybar ~/.config/waybar
