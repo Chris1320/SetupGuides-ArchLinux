@@ -1,6 +1,7 @@
 <div align="center">
     <h1>Arch Linux Dotfiles</h1>
     <img src="https://img.shields.io/github/directory-file-count/SetupGuides/ArchLinux/dotfiles?color=%23cba6f7&label=Dotfiles&style=for-the-badge">
+    <img src="https://img.shields.io/github/directory-file-count/SetupGuides/ArchLinux/scripts?color=%23b4befe&label=Scripts&style=for-the-badge">
     <img src="https://img.shields.io/github/issues-raw/SetupGuides/ArchLinux?color=%23f38ba8&style=for-the-badge">
     <img src="https://img.shields.io/github/last-commit/SetupGuides/ArchLinux?color=%23f9e2af&style=for-the-badge">
 </div>
@@ -10,6 +11,8 @@
 ## Installation
 
 This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
+
+Some, if not all of the dotfiles, can also be used on other operating systems/distributions, but it's up to you on how you will do it. Goodluck.
 
 <div align="center">
     <table>
