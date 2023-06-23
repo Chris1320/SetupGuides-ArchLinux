@@ -82,6 +82,7 @@ filemanager_mimetypes=(
     "application/x-bzip2"  # Bzip2 archive
     "application/gzip"  # GZip Compressed Archive
     "application/vnc.rar"  # RAR archive
+    "application/x-rar"  # RAR archive
     "application/x-tar"  # Tape Archive (TAR)
     "application/zip"  # ZIP archive
     "application/x-7z-compressed"  # 7-zip archive
