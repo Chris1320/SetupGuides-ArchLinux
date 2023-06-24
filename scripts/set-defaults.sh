@@ -145,6 +145,7 @@ video_mimetypes=(
     "video/webm"  # WEBM video
     "video/3gpp"  # 3GPP video container
     "video/3gpp2"  # 3GPP2 video container
+    "video/x-matroska"  # Matroska (MKV) video
 )
 audio_mimetypes=(
     "audio/midi"  # Musical Instrument Digital Interface (MIDI)
