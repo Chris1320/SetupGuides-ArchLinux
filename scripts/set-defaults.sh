@@ -77,6 +77,9 @@ function askDefaultApplication() {
 }
 
 filemanager_mimetypes=(
+    "inode/directory"  # Directory
+)
+archivemanager_mimetypes=(
     "application/x-freearc"  # Archive document (multiple files embedded)
     "application/x-bzip"  # Bzip archive
     "application/x-bzip2"  # Bzip2 archive
@@ -86,7 +89,6 @@ filemanager_mimetypes=(
     "application/x-tar"  # Tape Archive (TAR)
     "application/zip"  # ZIP archive
     "application/x-7z-compressed"  # 7-zip archive
-    "inode/directory"  # Directory
 )
 browser_mimetypes=(
     "text/html"  # HyperText Markup Language (HTML)
@@ -163,6 +165,7 @@ audio_mimetypes=(
 # unknown filetype: application/octet-stream
 
 askDefaultApplication "${filemanager_mimetypes[*]}" "Default file manager" "nautilus, thunar"
+askDefaultApplication "${archivemanager_mimetypes[*]}" "Default archive manager" "file-roller, xarchiver"
 askDefaultApplication "${browser_mimetypes[*]}" "Default web browser" "firefox, chromium"
 askDefaultApplication "${ebook_mimetypes[*]}" "Default E-book reader" "zathura, okular"
 askDefaultApplication "${docs_mimetypes[*]}" "Default document viewer" "libreoffice"
