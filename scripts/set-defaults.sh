@@ -123,6 +123,7 @@ texteditor_mimetypes=(
 )
 terminal_mimetypes=(
     "application/x-sh"  # Bourne shell script
+    "text/x-shellscript"  # Bourne shell script
     "terminal"  # Set as default terminal
 )
 image_mimetypes=(
