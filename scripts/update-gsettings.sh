@@ -3,7 +3,7 @@
 FONT="Cantarell 11"
 FONT_MONO="JetBrainsMono Nerd Font Mono 10"
 icon_theme="Papirus"
-gtk_theme="Catppuccin-Mocha-Standard-Teal-Dark"
+gtk_theme="Catppuccin-Mocha-Standard-Teal-dark"
 
 if [[ -z "$CURSOR" || "$CURSOR" == " " ]]; then
     export CURSOR=$XCURSOR_THEME
