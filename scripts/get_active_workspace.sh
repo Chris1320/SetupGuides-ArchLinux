@@ -25,6 +25,7 @@ handle() {
 
 if [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
     echo "[E] \$HYPRLAND_INSTANCE_SIGNATURE is unset."
+    exit 1
 else
     HYPR_SOCKET_PATH="/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
 fi
