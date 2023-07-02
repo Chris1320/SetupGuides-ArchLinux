@@ -1,80 +1,112 @@
 #!/usr/bin/env bash
 
+DOTFILES_PATH="$PWD/dotfiles"
+SCRIPTS_PATH="$PWD/scripts"
+SCRIPTS_DST_PATH="$HOME/.config/scripts"
+
+# Create the directory if it does not exist.
+#
+# :param $1: The directory name
 checkDir() {
     if [ ! -d "$1" ]; then
+        printf "\tCreating directory \"%s\"\n" "$1"
         mkdir -p "$1"
     fi
 }
 
-echo "[!] Check the content of this script first before proceeding! CTRL+C to cancel."
-read -r -p "    Press ENTER to continue..."
+# Inform the user on what's about to happen.
+confirmQuickInstall() {
+    echo "[!] Check the content of this script first before proceeding!"
+    echo
+    printf "\tThis will **COPY ALL DOTFILES** to their respective locations, potentially\n"
+    printf "\toverwriting existing dotfiles in your system.\n"
+    echo
+    while true; do
+        read -rp "Do you want to continue (y/N)? > " -t 30 quick_install_confirmation
+        if [[ "${quick_install_confirmation}" == "" || "${quick_install_confirmation}" =~ ^[n|N].* ]]; then
+            printf "\nInstallation cancelled.\n"
+            exit 1
+        elif [[ "${quick_install_confirmation}" =~ ^[y|Y].* ]]; then
+            break
+        fi
+    done
+}
 
-echo "[i] Copying dotfiles..."
-checkDir ~/.config  # create .config if it does not exist
+# Perform a simple copy of the dotfiles to the target directory.
+#
+# :param $1: Dotfile name
+# :param $2: Source path
+# :param $3: Target path
+simpleDotfileInstall() {
+    # ? Give the parameters a reasonable name.
+    name="$1"
+    src_path="$2"
+    dst_path="$3"
+    dotfile_is_file=false  # determine if src_path is a file or directory
+    if [[ -f $src_path ]]; then
+        dotfile_is_file=true
+    fi
 
-echo " + Copying btop dotfiles..."
-rm -r ~/.config/btop/
-cp -r ./dotfiles/btop ~/.config/btop
+    echo "+ Installing $name dotfiles..."
+    if $dotfile_is_file; then
+        checkDir "$(dirname "$dst_path")"
+        if [[ -f $dst_path ]]; then
+            printf "\tOverwriting existing file \"%s\"...\n" "$dst_path"
+        fi
+        if ! cp "$src_path" "$dst_path"; then
+            echo "[!] Retrying copy with sudo..."
+            sudo cp "$src_path" "$dst_path"
+        fi
 
-echo " + Copying cava dotfiles..."
-checkDir ~/.config/cava
-cp ./dotfiles/cava/config ~/.config/cava/config
+    else
+        if [[ -d $dst_path ]]; then
+            printf "\tRemoving existing directory \"%s\"...\n" "$dst_path"
+            rm -r "$dst_path"
+        fi
+        checkDir "$(dirname "$dst_path")"
+        if ! cp -r "$src_path" "$dst_path"; then
+            echo "[!] Retrying copy with sudo..."
+            sudo cp -r "$src_path" "$dst_path"
+        fi
+    fi
+    echo
+}
 
-echo " + Copying dunst dotfiles..."
-checkDir ~/.config/dunst
-cp ./dotfiles/dunst/dunstrc ~/.config/dunst/dunstrc
+main() {
+    confirmQuickInstall
 
-echo " + Copying hyprland dotfiles..."
-rm -r ~/.config/hypr
-cp -r ./dotfiles/hypr ~/.config/hypr
+    echo
+    echo "[i] Copying dotfiles..."
+    echo "+ Checking .config directory"
+    checkDir "$HOME/.config"  # create .config if it does not exist
 
-echo " + Copying kitty dotfiles..."
-rm -r ~/.config/kitty
-cp -r ./dotfiles/kitty ~/.config/kitty
+    simpleDotfileInstall "btop" "$DOTFILES_PATH/btop" "$HOME/.config/btop"
+    simpleDotfileInstall "cava" "$DOTFILES_PATH/cava/config" "$HOME/.config/cava/config"
+    simpleDotfileInstall "dunst" "$DOTFILES_PATH/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
+    simpleDotfileInstall "Hyprland" "$DOTFILES_PATH/hypr" "$HOME/.config/hypr"
+    simpleDotfileInstall "Kitty" "$DOTFILES_PATH/kitty" "$HOME/.config/kitty"
+    # NOTE: do not delete mpd's directory; it contains the database and other user data
+    simpleDotfileInstall "mpd" "$DOTFILES_PATH/mpd/mpd.conf" "$HOME/.config/mpd/mpd.conf"
+    simpleDotfileInstall "ncmpcpp" "$DOTFILES_PATH/ncmpcpp/config" "$HOME/.config/ncmpcpp/config"
+    simpleDotfileInstall "SDDM" "$DOTFILES_PATH/sddm/sddm.conf" "/etc/sddm.conf.d/sddm.conf"
+    simpleDotfileInstall "swappy" "$DOTFILES_PATH/swappy/config" "$HOME/.config/swappy/config"
+    simpleDotfileInstall "swaylock" "$DOTFILES_PATH/swaylock/config" "$HOME/.config/swaylock/config"
+    simpleDotfileInstall "tmux" "$DOTFILES_PATH/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
+    simpleDotfileInstall "waybar" "$DOTFILES_PATH/waybar" "$HOME/.config/waybar"
+    simpleDotfileInstall "wlogout" "$DOTFILES_PATH/wlogout" "$HOME/.config/wlogout"
+    simpleDotfileInstall "wofi" "$DOTFILES_PATH/wofi" "$HOME/.config/wofi"
+    simpleDotfileInstall "zathura" "$DOTFILES_PATH/zathura" "$HOME/.config/zathura"
 
-echo " + Copying mpd dotfiles..."
-# do not delete its directory, it contains the database and other user data
-checkDir ~/.config/mpd
-cp ./dotfiles/mpd/mpd.conf ~/.config/mpd/mpd.conf
+    echo "[i] Copying dotfiles... Done!"
+    echo "[i] Copying scripts..."
+    if [[ -d $SCRIPTS_DST_PATH ]]; then
+        printf "\tRemoving existing %s directory...\n" "$SCRIPTS_DST_PATH"
+        rm -r "$SCRIPTS_DST_PATH"
+    fi
+    cp -r "$SCRIPTS_PATH" "$SCRIPTS_DST_PATH"
+    echo "[i] Copying scripts... Done!"
 
-echo " + Copying ncmpcpp dotfiles..."
-checkDir ~/.config/ncmpcpp
-cp ./dotfiles/ncmpcpp/config ~/.config/ncmpcpp/config
+    exit 0
+}
 
-echo " + Copying sddm dotfiles..."
-sudo cp ./dotfiles/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
-
-echo " + Copying swappy dotfiles..."
-checkDir ~/.config/swappy
-cp ./dotfiles/swappy/config ~/.config/swappy/config
-
-echo " + Copying swaylock dotfiles..."
-checkDir ~/.config/swaylock
-cp ./dotfiles/swaylock/config ~/.config/swaylock/config
-
-echo " + Copying tmux dotfiles..."
-checkDir ~/.config/tmux
-cp ./dotfiles/tmux/tmux.conf ~/.config/tmux/tmux.conf
-
-echo " + Copying waybar dotfiles..."
-rm -r ~/.config/waybar
-cp -r ./dotfiles/waybar ~/.config/waybar
-
-echo " + Copying wlogout dotfiles..."
-rm -r ~/.config/wlogout
-cp -r ./dotfiles/wlogout ~/.config/wlogout
-
-echo " + Copying wofi dotfiles..."
-rm -r ~/.config/wofi
-cp -r ./dotfiles/wofi ~/.config/wofi
-
-echo " + Copying zathura dotfiles..."
-rm -r ~/.config/zathura
-cp -r ./dotfiles/zathura ~/.config/zathura
-
-echo "[i] Copying dotfiles... Done!"
-
-echo "[i] Copying scripts..."
-rm -r ~/.config/scripts/
-cp -r ./scripts ~/.config/scripts/
-echo "[i] Copying scripts... Done!"
+main
