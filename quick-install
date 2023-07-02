@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+color_info=$(tput setaf 10)
+color_warning=$(tput setaf 11)
+color_error=$(tput setaf 9)
+style_bold=$(tput bold)
+style_reset=$(tput sgr0)
+
 DOTFILES_PATH="$PWD/dotfiles"
 SCRIPTS_PATH="$PWD/scripts"
 SCRIPTS_DST_PATH="$HOME/.config/scripts"
@@ -16,15 +22,15 @@ checkDir() {
 
 # Inform the user on what's about to happen.
 confirmQuickInstall() {
-    echo "[!] Check the content of this script first before proceeding!"
+    echo "[!] ${color_warning}Check the content of this script first before proceeding!${style_reset}"
     echo
-    printf "\tThis will **COPY ALL DOTFILES** to their respective locations, potentially\n"
-    printf "\toverwriting existing dotfiles in your system.\n"
+    printf "\tThis will **%sCOPY ALL DOTFILES%s** to their respective locations,\n" "$style_bold" "$style_reset"
+    printf "\tpotentially overwriting existing dotfiles in your system.\n"
     echo
     while true; do
-        read -rp "Do you want to continue (y/N)? > " -t 30 quick_install_confirmation
+        read -rp "Do you want to continue (y/N)? > " -t 10 quick_install_confirmation
         if [[ "${quick_install_confirmation}" == "" || "${quick_install_confirmation}" =~ ^[n|N].* ]]; then
-            printf "\nInstallation cancelled.\n"
+            printf "\n%sInstallation cancelled.%s\n" "$color_error" "$style_reset"
             exit 1
         elif [[ "${quick_install_confirmation}" =~ ^[y|Y].* ]]; then
             break
@@ -47,14 +53,14 @@ simpleDotfileInstall() {
         dotfile_is_file=true
     fi
 
-    echo "+ Installing $name dotfiles..."
+    echo "[+] ${color_info}Installing $name dotfiles...${style_reset}"
     if $dotfile_is_file; then
         checkDir "$(dirname "$dst_path")"
         if [[ -f $dst_path ]]; then
             printf "\tOverwriting existing file \"%s\"...\n" "$dst_path"
         fi
         if ! cp "$src_path" "$dst_path"; then
-            echo "[!] Retrying copy with sudo..."
+            echo "[!] ${color_warning}Retrying copy with sudo...${style_reset}"
             sudo cp "$src_path" "$dst_path"
         fi
 
@@ -65,19 +71,18 @@ simpleDotfileInstall() {
         fi
         checkDir "$(dirname "$dst_path")"
         if ! cp -r "$src_path" "$dst_path"; then
-            echo "[!] Retrying copy with sudo..."
+            echo "[!] ${color_warning}Retrying copy with sudo...${style_reset}"
             sudo cp -r "$src_path" "$dst_path"
         fi
     fi
-    echo
 }
 
 main() {
     confirmQuickInstall
 
     echo
-    echo "[i] Copying dotfiles..."
-    echo "+ Checking .config directory"
+    echo "[i] ${color_info}Copying dotfiles...${style_reset}"
+    echo "[+] ${color_info}Checking .config directory${style_reset}"
     checkDir "$HOME/.config"  # create .config if it does not exist
 
     simpleDotfileInstall "btop" "$DOTFILES_PATH/btop" "$HOME/.config/btop"
@@ -97,14 +102,15 @@ main() {
     simpleDotfileInstall "wofi" "$DOTFILES_PATH/wofi" "$HOME/.config/wofi"
     simpleDotfileInstall "zathura" "$DOTFILES_PATH/zathura" "$HOME/.config/zathura"
 
-    echo "[i] Copying dotfiles... Done!"
-    echo "[i] Copying scripts..."
+    echo "[i] ${color_info}Copying dotfiles... Done!${style_reset}"
+    echo
+    echo "[i] ${color_info}Copying scripts...${style_reset}"
     if [[ -d $SCRIPTS_DST_PATH ]]; then
         printf "\tRemoving existing %s directory...\n" "$SCRIPTS_DST_PATH"
         rm -r "$SCRIPTS_DST_PATH"
     fi
     cp -r "$SCRIPTS_PATH" "$SCRIPTS_DST_PATH"
-    echo "[i] Copying scripts... Done!"
+    echo "[i] ${color_info}Copying scripts... Done!${style_reset}"
 
     exit 0
 }
