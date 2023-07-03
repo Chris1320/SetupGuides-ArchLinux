@@ -9,6 +9,7 @@ style_reset=$(tput sgr0)
 DOTFILES_PATH="$PWD/dotfiles"
 SCRIPTS_PATH="$PWD/scripts"
 SCRIPTS_DST_PATH="$HOME/.config/scripts"
+PROMPT_CONFIRMATION_TIMEOUT=30  # timeout in seconds
 
 # Create the directory if it does not exist.
 #
@@ -28,7 +29,7 @@ confirmQuickInstall() {
     printf "\tpotentially overwriting existing dotfiles in your system.\n"
     echo
     while true; do
-        read -rp "Do you want to continue (y/N)? > " -t 10 quick_install_confirmation
+        read -rp "Do you want to continue (y/N)? > " -t $PROMPT_CONFIRMATION_TIMEOUT quick_install_confirmation
         if [[ "${quick_install_confirmation}" == "" || "${quick_install_confirmation}" =~ ^[n|N].* ]]; then
             printf "\n%sInstallation cancelled.%s\n" "$color_error" "$style_reset"
             exit 1
