@@ -37,6 +37,7 @@
         "format": " {}",
         "tooltip": false,
         "restart-interval": 5,  // Restart the module when it fails to connect.
+        "max-length": 10,
         "exec": "$HOME/.config/scripts/get_active_workspace.sh",
         "on-click": "$HOME/.config/scripts/get_client_quantity.py --notify",
         "on-scroll-up": "hyprctl dispatch workspace +1",   // ? Should we allow the user to use more than 10 workspaces?
