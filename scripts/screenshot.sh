@@ -42,7 +42,7 @@ showMenu() {
     OPTION2="Take a screenshot of the active window"
     OPTION3="Take a screenshot of a specified region"
 
-    CHOICE=$(printf "%s\n%s\n%s" "$OPTION1" "$OPTION2" "$OPTION3" | wofi --show=dmenu --prompt="$PROMPT" -i --location="top_right" --xoffset=-20 --yoffset=10)
+    CHOICE=$(printf "%s\n%s\n%s" "$OPTION1" "$OPTION2" "$OPTION3" | rofi -dmenu -p "$PROMPT" -location 3)
     sleep 1
     if [ "$CHOICE" = "$OPTION1" ]; then grabScreen
     elif [ "$CHOICE" = "$OPTION2" ]; then grabWindow

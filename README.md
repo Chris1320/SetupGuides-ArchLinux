@@ -78,7 +78,7 @@ Some, if not all of the dotfiles, can also be used on other operating systems/di
             </tr>
             <tr>
                 <td>Launcher</td>
-                <td><a href="https://hg.sr.ht/~scoopta/wofi">Wofi</a></td>
+                <td><a href="https://github.com/lbonn/rofi">Rofi</a></td>
             </tr>
             <tr>
                 <td>Lockscreen</td>
@@ -147,8 +147,8 @@ Switch to the new user after creating it. This will now be your default user acc
 
     # Desktop packages
     sudo pacman -Syu hyprland qt5-wayland qt6-wayland \
-        hyprpaper waybar dunst wofi polkit-gnome
-    paru -S sddm-git wlogout
+        hyprpaper waybar dunst polkit-gnome
+    paru -S sddm-git wlogout rofi-lbonn-wayland-git
 
     # Other applications that I recommend. You can use alternatives if
     # you like, but you might have to change some things if you

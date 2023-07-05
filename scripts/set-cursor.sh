@@ -5,9 +5,9 @@ export CURSOR=""
 export CURSORSIZE=""
 
 ls /usr/share/icons/ && \
-    CURSORTHEME=$(find /usr/share/icons -maxdepth 1 -type d | cut -d '/' -f 5 | sort | tail -n +2 | wofi -d -i -p "Select cursor theme")
+    CURSORTHEME=$(find /usr/share/icons -maxdepth 1 -type d | cut -d '/' -f 5 | sort | tail -n +2 | rofi -dmenu -p "Select cursor theme")
 
-export CURSORSIZE=$(wofi -d -p "Set cursor size")
+export CURSORSIZE=$(rofi -dmenu -p "Set cursor size")
 export CURSOR=$CURSORTHEME
 
 if [[ -z "$CURSOR" || "$CURSOR" == " " ]]; then
