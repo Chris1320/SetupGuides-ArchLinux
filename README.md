@@ -42,7 +42,7 @@ Some, if not all of the dotfiles, can also be used on other operating systems/di
             </tr>
             <tr>
                 <td>Authentication Agent</td>
-                <td><a href="https://kde.org/plasma-desktop/">Polkit KDE Agent</a></td>
+                <td><a href="https://gitlab.gnome.org/Archive/policykit-gnome">GNOME Polkit Authentication Agent</a></td>
             </tr>
             <tr>
                 <td>Bar</td>
@@ -147,7 +147,7 @@ Switch to the new user after creating it. This will now be your default user acc
 
     # Desktop packages
     sudo pacman -Syu hyprland qt5-wayland qt6-wayland \
-        hyprpaper waybar dunst wofi polkit-kde-agent
+        hyprpaper waybar dunst wofi polkit-gnome
     paru -S sddm-git wlogout
 
     # Other applications that I recommend. You can use alternatives if
