@@ -40,7 +40,7 @@ notification_limit = 6
 progress_bar = true
 
 browser = firefox
-dmenu = rofi -dmenu -prompt "Notification actions"
+dmenu = rofi -dmenu -no-custom -i -p "Notification actions"
 mouse_left_click = open_url, close_current
 mouse_middle_click = do_action
 mouse_right_click = context

@@ -100,7 +100,7 @@ main() {
     simpleDotfileInstall "tmux" "$DOTFILES_PATH/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
     simpleDotfileInstall "waybar" "$DOTFILES_PATH/waybar" "$HOME/.config/waybar"
     simpleDotfileInstall "wlogout" "$DOTFILES_PATH/wlogout" "$HOME/.config/wlogout"
-    simpleDotfileInstall "wofi" "$DOTFILES_PATH/wofi" "$HOME/.config/wofi"
+    # simpleDotfileInstall "wofi" "$DOTFILES_PATH/wofi" "$HOME/.config/wofi"
     simpleDotfileInstall "zathura" "$DOTFILES_PATH/zathura" "$HOME/.config/zathura"
 
     echo "[i] ${color_info}Copying dotfiles... Done!${style_reset}"

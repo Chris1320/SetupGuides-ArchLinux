@@ -7,6 +7,7 @@
 # - screen
 # - window
 # - selection
+# - interactive
 
 FORMAT="png"
 FILENAME="%Y-%m-%d_%H-%M-%S"
@@ -42,7 +43,7 @@ showMenu() {
     OPTION2="Take a screenshot of the active window"
     OPTION3="Take a screenshot of a specified region"
 
-    CHOICE=$(printf "%s\n%s\n%s" "$OPTION1" "$OPTION2" "$OPTION3" | rofi -dmenu -p "$PROMPT" -location 3)
+    CHOICE=$(printf "%s\n%s\n%s" "$OPTION1" "$OPTION2" "$OPTION3" | rofi -dmenu -no-custom -i -p "$PROMPT" -location 3)
     sleep 1
     if [ "$CHOICE" = "$OPTION1" ]; then grabScreen
     elif [ "$CHOICE" = "$OPTION2" ]; then grabWindow
@@ -54,5 +55,5 @@ if [ "$1" = "screen" ]; then grabScreen
 elif [ "$1" = "window" ]; then grabWindow
 elif [ "$1" = "selection" ]; then grabSelection
 elif [ "$1" = "interactive" ]; then showMenu
-else echo "Usage: screenshot.sh [screen|window|selection]"
+else echo "Usage: screenshot.sh [screen|window|selection|interactive]"
 fi

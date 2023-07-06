@@ -30,7 +30,7 @@
         "format": "",
         "tooltip": false,
         "interval": "once",
-        "on-click": "rofi -drun"
+        "on-click": "~/.config/scripts/show-application-launcher.sh"
     },
 
     "custom/workspace": {
