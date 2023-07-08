@@ -155,7 +155,7 @@ Switch to the new user after creating it. This will now be your default user acc
     # continue to follow this guide.
     sudo pacman -Syu firefox kitty btop \
         thunar thunar-volman gvfs tumbler ffmpegthumbnailer \
-        flameshot grim imagemagick
+        flameshot grim imagemagick rofimoji
     paru -S cava-git pfetch
 
     # Install themes and fonts
