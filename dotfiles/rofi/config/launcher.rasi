@@ -2,6 +2,7 @@ configuration {
     show-icons: true;
     display-drun: "Applications";
     display-run: "Executables";
+    display-window: "Windows";
     display-ssh: "SSH";
     drun-display-format: "{icon} {name}";
     disable-history: false;
