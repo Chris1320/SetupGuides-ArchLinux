@@ -20,7 +20,10 @@ def countClients(clients: dict) -> tuple[int, int, int]:
     scratchpad_clients = 0
 
     for client in clients:
-        if client["workspace"]["name"] in IGNORED_WORKSPACES:
+        if client["workspace"]["name"] in IGNORED_WORKSPACES \
+            or not client["mapped"]:
+            # Do not count clients in ignored workspaces and
+            # all unmapped clients.
             continue
 
         elif client["workspace"]["name"] == "special:hidden":
@@ -37,7 +40,9 @@ def countClients(clients: dict) -> tuple[int, int, int]:
 
 def getNotificationDescription(quantity: tuple[int, int, int]) -> str:
     # Get the grammar right.
-    desc = f"{quantity[0]} client connected." if quantity[0] == 1 else f"{quantity[0]} clients connected."
+    desc = f"{quantity[0]} client connected." \
+        if quantity[0] == 1 \
+        else f"{quantity[0]} clients connected."
 
     # Add the number of scratchpad clients if there are any.
     if quantity[1] != 0:
@@ -45,7 +50,8 @@ def getNotificationDescription(quantity: tuple[int, int, int]) -> str:
         # Add the number of hidden clients if there are any.
         desc += f", {quantity[2]} hidden)" if quantity[2] != 0 else ")"
 
-    # If there are no scratchpad clients, add the number of hidden clients if there are any.
+    # If there are no scratchpad clients,
+    # add the number of hidden clients if there are any.
     elif quantity[2] != 0:
         desc += f" ({quantity[2]} hidden)"
 
@@ -54,7 +60,11 @@ def getNotificationDescription(quantity: tuple[int, int, int]) -> str:
 
 def main() -> int:
     try:
-        quantity = countClients(json.loads(subprocess.getoutput("hyprctl clients -j")))
+        quantity = countClients(
+            json.loads(
+                subprocess.getoutput("hyprctl clients -j")
+            )
+        )
         if "--notify" in sys.argv:
             subprocess.run(
                 [
