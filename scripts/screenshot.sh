@@ -34,19 +34,19 @@ sendNotification() {
 grabScreen() {
     # Get screen, annotate, and copy to clipboard.
     grim -t $FORMAT -c - | swappy -f - -o - | wl-copy
-    sendNotification "Screenshot copied to clipboard." "gtk-fullscreen"
+    sendNotification "Copied to clipboard." "gtk-fullscreen"
 }
 
 grabWindow() {
     # Get window, annotate, and copy to clipboard.
     grim -t $FORMAT -c -g "$(getActiveWindowGeometry)" - | swappy -f - -o - | wl-copy
-    sendNotification "Window screenshot copied to clipboard." "window"
+    sendNotification "Window copied to clipboard." "window"
 }
 
 grabSelection() {
     # Get selection, grab area, annotate, and copy to clipboard.
     grim -t $FORMAT -g "$(slurp)" - | swappy -f - -o - | wl-copy
-    sendNotification "Region screenshot copied to clipboard." "image-crop"
+    sendNotification "Region copied to clipboard." "image-crop"
 }
 
 showMenu() {
@@ -60,6 +60,7 @@ showMenu() {
     if [ "$CHOICE" = "$OPTION1" ]; then grabScreen
     elif [ "$CHOICE" = "$OPTION2" ]; then grabWindow
     elif [ "$CHOICE" = "$OPTION3" ]; then grabSelection
+    else sendNotification "Aborted." "cancel"
     fi
 }
 
