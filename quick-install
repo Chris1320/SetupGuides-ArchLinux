@@ -102,6 +102,7 @@ main() {
     # NOTE: do not delete mpd's directory; it contains the database and other user data
     simpleDotfileInstall "mpd" "$DOTFILES_PATH/mpd/mpd.conf" "$HOME/.config/mpd/mpd.conf"
     simpleDotfileInstall "ncmpcpp" "$DOTFILES_PATH/ncmpcpp/config" "$HOME/.config/ncmpcpp/config"
+    simpleDotfileInstall "networkmanager-dmenu" "$DOTFILES_PATH/networkmanager-dmenu/config.ini" "$HOME/.config/networkmanager-dmenu/config.ini"
     simpleDotfileInstall "rofi (.config)" "$DOTFILES_PATH/rofi/config" "$HOME/.config/rofi/config"
     simpleDotfileInstall "rofi (.local)" "$DOTFILES_PATH/rofi/local/catppuccin-mocha.rasi" "$HOME/.local/share/rofi/themes/catppuccin-mocha.rasi"
     simpleDotfileInstall "SDDM" "$DOTFILES_PATH/sddm/sddm.conf" "/etc/sddm.conf.d/sddm.conf"
