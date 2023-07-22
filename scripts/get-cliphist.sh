@@ -10,7 +10,7 @@ sendNotification() {
         "$1"
 }
 
-selection=$(cliphist list | rofi -dmenu -no-custom -i -theme "$ROFI_THEME")
+selection=$(cliphist list | rofi -dmenu -no-custom -i -scroll-method 1 -theme "$ROFI_THEME")
 
 if [[ -z "$selection" ]]; then
     sendNotification "No selection copied."
