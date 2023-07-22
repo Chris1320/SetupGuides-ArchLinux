@@ -17,33 +17,45 @@ getScreenshotPath() {
 }
 
 getActiveWindowGeometry() {
-    at=$(hyprctl activewindow | grep "at:" | tr -d ' ' | cut -d ':' -f 2)
-    size=$(hyprctl activewindow | grep "size:" | tr -d ' ' | cut -d ':' -f 2 | tr ',' 'x')
+    window_info=$(hyprctl activewindow)
+    at=$(echo "$window_info" | grep "at:" | tr -d ' ' | cut -d ':' -f 2)
+    size=$(echo "$window_info" | grep "size:" | tr -d ' ' | cut -d ':' -f 2 | tr ',' 'x')
     echo "$at $size"
+}
+
+sendNotification() {
+    notify-send \
+        --app-name="Screenshot" \
+        --urgency=low \
+        --icon="$2" \
+        "$1"
 }
 
 grabScreen() {
     # Get screen, annotate, and copy to clipboard.
     grim -t $FORMAT -c - | swappy -f - -o - | wl-copy
+    sendNotification "Screenshot copied to clipboard." "gtk-fullscreen"
 }
 
 grabWindow() {
     # Get window, annotate, and copy to clipboard.
     grim -t $FORMAT -c -g "$(getActiveWindowGeometry)" - | swappy -f - -o - | wl-copy
+    sendNotification "Window screenshot copied to clipboard." "window"
 }
 
 grabSelection() {
     # Get selection, grab area, annotate, and copy to clipboard.
     grim -t $FORMAT -g "$(slurp)" - | swappy -f - -o - | wl-copy
+    sendNotification "Region screenshot copied to clipboard." "image-crop"
 }
 
 showMenu() {
-    PROMPT="Select a screenshot mode"
-    OPTION1="Take a screenshot of the whole screen"
-    OPTION2="Take a screenshot of the active window"
-    OPTION3="Take a screenshot of a specified region"
+    ROFI_THEME="$HOME/.config/rofi/config/screenshot.rasi"
+    OPTION1=" Whole Screen"
+    OPTION2=" Active Window"
+    OPTION3="󰆞 Specified Region"
 
-    CHOICE=$(printf "%s\n%s\n%s" "$OPTION1" "$OPTION2" "$OPTION3" | rofi -dmenu -no-custom -i -p "$PROMPT" -location 3)
+    CHOICE=$(printf "%s\n%s\n%s" "$OPTION1" "$OPTION2" "$OPTION3" | rofi -dmenu -no-custom -i -theme "$ROFI_THEME")
     sleep 1
     if [ "$CHOICE" = "$OPTION1" ]; then grabScreen
     elif [ "$CHOICE" = "$OPTION2" ]; then grabWindow
