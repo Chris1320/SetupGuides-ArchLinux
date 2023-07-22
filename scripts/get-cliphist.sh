@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+ROFI_THEME="$HOME/.config/rofi/config/cliphist.rasi"
+
 sendNotification() {
     notify-send \
         --app-name="Clipboard History" \
@@ -8,7 +10,7 @@ sendNotification() {
         "$1"
 }
 
-selection=$(cliphist list | rofi -dmenu -no-custom -i -p "Clipboard" -location 3)
+selection=$(cliphist list | rofi -dmenu -no-custom -i -theme "$ROFI_THEME")
 
 if [[ -z "$selection" ]]; then
     sendNotification "No selection copied."
