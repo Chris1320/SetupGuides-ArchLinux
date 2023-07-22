@@ -21,9 +21,9 @@ def countClients(clients: dict) -> tuple[int, int, int]:
 
     for client in clients:
         if client["workspace"]["name"] in IGNORED_WORKSPACES \
-            or not client["mapped"]:
+            or (not client["mapped"] and client["xwayland"]):
             # Do not count clients in ignored workspaces and
-            # all unmapped clients.
+            # all unmapped x11 clients.
             continue
 
         elif client["workspace"]["name"] == "special:hidden":
