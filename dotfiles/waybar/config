@@ -39,7 +39,7 @@
         "restart-interval": 5,  // Restart the module when it fails to connect.
         "max-length": 10,
         "exec": "$HOME/.config/scripts/get_active_workspace.sh",
-        "on-click": "$HOME/.config/scripts/get_client_quantity.py --notify",
+        "on-click": "$HOME/.config/scripts/window_switcher.sh --workspace",
         "on-scroll-up": "hyprctl dispatch workspace +1",   // ? Should we allow the user to use more than 10 workspaces?
         "on-scroll-down": "hyprctl dispatch workspace -1"  // ? because this definitely allows just that.
     },
