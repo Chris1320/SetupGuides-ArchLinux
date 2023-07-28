@@ -77,7 +77,12 @@ def main() -> int:
                 ]
             )
 
-        print(','.join(map(str, quantity)))  # Also print it to stdout
+        if "--desc" in sys.argv:
+            print(getNotificationDescription(quantity))
+
+        else:
+            # Also print it to stdout if `--desc` is not specified.
+            print(','.join(map(str, quantity)))
 
     except Exception as e:
         # If the JSON data could not be parsed, return 1.

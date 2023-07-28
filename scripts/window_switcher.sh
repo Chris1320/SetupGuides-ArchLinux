@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+"$HOME/.config/scripts/get_client_quantity.py" --notify
 rofi \
     -modes "window,workspace:$HOME/.config/scripts/workspace_switcher.sh" \
     -show window \

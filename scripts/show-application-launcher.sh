@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 rofi \
-    -modes "drun,run,window,ssh" \
+    -modes "drun,run,ssh" \
     -show drun \
     -drun-match-fields all \
     -no-drun-show-actions \
