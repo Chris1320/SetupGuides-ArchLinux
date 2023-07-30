@@ -6,7 +6,7 @@ QUESTION="Enable Privacy lockscreen?"
 yes=""
 no=""
 
-lock_opaque=$(printf "%s\n%s" "$yes" "$no" | rofi -dmenu -i -p "$QUESTION" -theme "$ROFI_THEME")
+lock_opaque=$(printf "%s\n%s" "$no" "$yes" | rofi -dmenu -i -p "$QUESTION" -theme "$ROFI_THEME")
 
 sleep 1
 if [ "$lock_opaque" = "$yes" ]; then
