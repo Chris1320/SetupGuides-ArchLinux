@@ -147,8 +147,8 @@ Switch to the new user after creating it. This will now be your default user acc
 
     # Desktop packages
     sudo pacman -Syu hyprland qt5-wayland qt6-wayland \
-        hyprpaper waybar dunst polkit-gnome
-    paru -S sddm-git wlogout rofi-lbonn-wayland-git
+        hyprpaper dunst polkit-gnome blueman
+    paru -S sddm-git wlogout rofi-lbonn-wayland-git waybar-hyprland-git
 
     # Other applications that I recommend. You can use alternatives if
     # you like, but you might have to change some things if you

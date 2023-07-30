@@ -8,7 +8,9 @@ style_reset=$(tput sgr0)
 
 DOTFILES_PATH="$PWD/dotfiles"
 SCRIPTS_PATH="$PWD/scripts"
+DOTFILES_ASSETS="$PWD/dotfiles_custom"
 SCRIPTS_DST_PATH="$HOME/.config/scripts"
+DOTFILES_ASSETS_DST_PATH="$HOME/.config/dotfiles_custom"
 PROMPT_CONFIRMATION_TIMEOUT=30  # timeout in seconds
 
 failed_operations_num=0
@@ -107,7 +109,7 @@ main() {
     simpleDotfileInstall "rofi (.local)" "$DOTFILES_PATH/rofi/local/catppuccin-mocha.rasi" "$HOME/.local/share/rofi/themes/catppuccin-mocha.rasi"
     simpleDotfileInstall "SDDM" "$DOTFILES_PATH/sddm/sddm.conf" "/etc/sddm.conf.d/sddm.conf"
     simpleDotfileInstall "swappy" "$DOTFILES_PATH/swappy/config" "$HOME/.config/swappy/config"
-    simpleDotfileInstall "swaylock" "$DOTFILES_PATH/swaylock/config" "$HOME/.config/swaylock/config"
+    simpleDotfileInstall "swaylock" "$DOTFILES_PATH/swaylock" "$HOME/.config/swaylock"
     simpleDotfileInstall "tmux" "$DOTFILES_PATH/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
     simpleDotfileInstall "waybar" "$DOTFILES_PATH/waybar" "$HOME/.config/waybar"
     simpleDotfileInstall "wlogout" "$DOTFILES_PATH/wlogout" "$HOME/.config/wlogout"
@@ -125,6 +127,18 @@ main() {
         echo "[i] ${color_info}Copying scripts... Done!${style_reset}"
     else
         echo "[E] ${color_error} Failed to copy scripts.${style_reset}"
+        declare -g failed_operations_num=$((failed_operations_num + 1))
+    fi
+
+    echo "[i] ${color_info}Copying the dotfiles' assets...${style_reset}"
+    if [[ -d $DOTFILES_ASSETS_DST_PATH ]]; then
+        printf "\tRemoving existing %s directory...\n" "$DOTFILES_ASSETS_DST_PATH"
+        rm -r "$DOTFILES_ASSETS_DST_PATH"
+    fi
+    if cp -r "$DOTFILES_ASSETS" "$DOTFILES_ASSETS_DST_PATH"; then
+        echo "[i] ${color_info}Copying the dotfiles' assets... Done!${style_reset}"
+    else
+        echo "[E] ${color_error} Failed to copy the dotfiles' assets.${style_reset}"
         declare -g failed_operations_num=$((failed_operations_num + 1))
     fi
 

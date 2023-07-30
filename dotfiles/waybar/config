@@ -78,7 +78,7 @@
         "format": "{status} ",
         "format-connected": "{status} ({num_connections}) ",
         "max-length": 15,
-        "on-click": "bash ~/.config/scripts/bluetooth_toggle.sh",
+        "on-click": "blueman-manager",
         "tooltip": true,
         "tooltip-format-connected": "{num_connections} device/s connected",
         "tooltip-format-on": "Bluetooth is turned on",
