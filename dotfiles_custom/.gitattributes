@@ -1,1 +1,2 @@
-assets/lockscreen/privacy_bg.png filter=lfs diff=lfs merge=lfs -text
+assets/wallpapers/exodus_v02_5120x2880.png filter=lfs diff=lfs merge=lfs -text
+assets/wallpapers/evening-sky.png filter=lfs diff=lfs merge=lfs -text
