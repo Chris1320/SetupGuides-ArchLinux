@@ -1,18 +1,3 @@
-### Pre-Customization
-
-#### Setting up a non-root user
-
-For more information, visit the [Arch wiki](https://wiki.archlinux.org/title/Users_and_groups).
-
-```bash
-useradd -m bob  # Create a new user `bob`.
-
-# Add `bob` to the `wheel`, `audio`, `video`, and `storage` groups.
-usermod -aG wheel,audio,video,storage bob
-```
-
-Switch to the new user after creating it. This will now be your default user account.
-
 ### 1. Setting up the terminal
 
 1. [Install ZSH](https://github.com/SetupGuides/ZSH). This will be our default shell.

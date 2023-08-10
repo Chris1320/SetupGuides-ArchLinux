@@ -144,3 +144,20 @@ Fonts used: [JetBrains Mono (Nerd Fonts)](https://github.com/ryanoasis/nerd-font
 ### Manual Installation
 
 > **NOTE**: Work-in-progress
+
+#### Setting up a non-root user
+
+A common security practice is that you should **not** use the root account unless needed and you know that it is safe to run. To create a non-root user, run the commands below and change the parameters to the values you desire.
+
+> For more information, visit the [Arch wiki](https://wiki.archlinux.org/title/Users_and_groups).
+
+```bash
+useradd -m bob  # Create a new user `bob`. Change this to something you want.
+
+# Add `bob` to the `wheel`, `audio`, `video`, and `storage` groups.
+# Change `bob` to the username you've set in the command above.
+usermod -aG wheel,audio,video,storage bob
+```
+
+Switch to the new user after creating it by running `su <username>` or re-logging in. This will now be your default user account.
+
