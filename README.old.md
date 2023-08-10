@@ -1,9 +1,3 @@
-### 1. Setting up the terminal
-
-1. [Install ZSH](https://github.com/SetupGuides/ZSH). This will be our default shell.
-2. [Install Paru](https://github.com/Morganamilo/paru). This is the AUR helper that we will use.
-3. Install sudo. `$ pacman -Syu sudo`
-
 ### 2. Installing packages
 
 1. Install the packages using *pacman* and *paru*.

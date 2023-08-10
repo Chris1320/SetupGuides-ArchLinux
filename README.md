@@ -12,6 +12,9 @@
 - [Installation](#installation)
     - [Automatic](#automatic-installation)
     - [Manual](#manual-installation)
+        - [Pre-customization](#pre-customization)
+            - [Setting up a non-root user](#setting-up-a-non-root-user)
+        - [Customization](#customization)
 
 -----
 
@@ -22,7 +25,7 @@ This repository contains most of my dotfiles that are used in my Arch Linux inst
 However, I don't guarantee that the installer covers all your needs. In such cases (or you probably do not want to start from scratch), this guide assumes that...
 
 - You've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/).
-- You have made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active.
+- You have made a [non-root user](#setting-up-a-non-root-user) in your system and is currently active.
 - You are currently connected to the internet.
 
 Some, if not all of the dotfiles, can also be used in other operating systems/distributions, but it's up to you on how you will do it since I haven't tested it on other systems yet.
@@ -145,7 +148,13 @@ Fonts used: [JetBrains Mono (Nerd Fonts)](https://github.com/ryanoasis/nerd-font
 
 > **NOTE**: Work-in-progress
 
-#### Setting up a non-root user
+To manually set up your system, follow the [pre-customization](#pre-customization) section guide.
+
+#### Pre-customization
+
+This section assumes that you have just finished installing Arch Linux in your system.
+
+##### Setting up a non-root user
 
 A common security practice is that you should **not** use the root account unless needed and you know that it is safe to run. To create a non-root user, run the commands below and change the parameters to the values you desire.
 
@@ -160,4 +169,12 @@ usermod -aG wheel,audio,video,storage bob
 ```
 
 Switch to the new user after creating it by running `su <username>` or re-logging in. This will now be your default user account.
+
+#### Customization
+
+##### 1. Setting up the terminal
+
+1. [Install ZSH](https://github.com/SetupGuides/ZSH). This will be our default shell.
+2. [Install Paru](https://github.com/Morganamilo/paru). This is the AUR helper that we will use.
+3. Install sudo. `$ pacman -Syu sudo`
 
