@@ -6,7 +6,18 @@
     <img src="https://img.shields.io/github/last-commit/SetupGuides/ArchLinux?color=%23f9e2af&style=for-the-badge">
 </div>
 
-This repository contains most of my dotfiles that are used in my Arch Linux installation. You can use the *auto-install script* (WIP) to automatically install Arch Linux and the dotfiles in your system.
+-----
+
+- [Description](#description)
+- [Installation](#installation)
+    - [Automatic](#automatic-installation)
+    - [Manual](#manual-installation)
+
+-----
+
+## Description
+
+This repository contains most of my dotfiles that are used in my Arch Linux installation. You can use the [auto-install script](#automatic-installation) (WIP) to automatically install Arch Linux and the dotfiles in your system.
 
 However, I don't guarantee that the installer covers all your needs. In such cases (or you probably do not want to start from scratch), this guide assumes that...
 
@@ -65,7 +76,7 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
                 <td><a href="https://firefox.com/">Firefox</a></td>
             </tr>
             <tr>
-                <td>File Manager</td>
+                <td>File Manager (GUI)</td>
                 <td><a href="https://docs.xfce.org/xfce/thunar/start">Thunar</a></td>
             </tr>
             <tr>
@@ -86,7 +97,7 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
                 <td><a href="https://github.com/Morganamilo/paru">Paru</a></td>
             </tr>
             <tr>
-                <td>File Manager</td>
+                <td>File Manager (TUI)</td>
                 <td><a href="https://midnight-commander.org/">mc</a></td>
             </tr>
             <tr>
@@ -123,3 +134,13 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
 </div>
 
 Fonts used: [JetBrains Mono (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts)
+
+## Installation
+
+### Automatic Installation
+
+> **NOTE**: Work-in-progress
+
+### Manual Installation
+
+> **NOTE**: Work-in-progress
