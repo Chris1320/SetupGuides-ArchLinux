@@ -6,9 +6,15 @@
     <img src="https://img.shields.io/github/last-commit/SetupGuides/ArchLinux?color=%23f9e2af&style=for-the-badge">
 </div>
 
-This repository contains most of my dotfiles that are used in my Arch Linux installation. This guide assumes that you've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/). This guide also assumes that you've made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active, and you are currently connected to the internet.
+This repository contains most of my dotfiles that are used in my Arch Linux installation. You can use the *auto-install script* (WIP) to automatically install Arch Linux and the dotfiles in your system.
 
-Some, if not all of the dotfiles, can also be used in other operating systems/distributions, but it's up to you on how you will do it.
+However, I don't guarantee that the installer covers all your needs. In such cases (or you probably do not want to start from scratch), this guide assumes that...
+
+- You've successfully installed Arch Linux by following their [installation guide](https://wiki.archlinux.org/title/Installation_guide) which can be found in their [wiki](https://wiki.archlinux.org/).
+- You have made a [non-root user](#Setting-up-a-non-root-user) in your system and is currently active.
+- You are currently connected to the internet.
+
+Some, if not all of the dotfiles, can also be used in other operating systems/distributions, but it's up to you on how you will do it since I haven't tested it on other systems yet.
 
 > **NOTE**: This page is currently under active development. Documentation might be outdated because the dotfiles/scripts are updated frequently.
 
@@ -17,7 +23,7 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
         <thead><th colspan="3">Environment</th></thead>
         <tbody>
             <tr>
-                <td rowspan="7">Desktop</td>
+                <td rowspan="8">Desktop</td>
                 <td>Compositor</td>
                 <td><a href="https://hyprland.org/">Hyprland</a></td>
             </tr>
@@ -46,7 +52,11 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
                 <td><a href="https://github.com/sddm/sddm">SDDM</a></td>
             </tr>
             <tr>
-                <td rowspan="6">Desktop Applications</td>
+                <td>Logout Menu</td>
+                <td><a href="https://github.com/ArtsyMacaw/wlogout">WLogout</a></td>
+            </tr>
+            <tr>
+                <td rowspan="5">Desktop Applications</td>
                 <td>Terminal</td>
                 <td><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a></td>
             </tr>
@@ -65,10 +75,6 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
             <tr>
                 <td>Document Viewer</td>
                 <td><a href="https://pwmt.org/projects/zathura">Zathura</a></td>
-            </tr>
-            <tr>
-                <td>Logout Menu</td>
-                <td><a href="https://github.com/ArtsyMacaw/wlogout">WLogout</a></td>
             </tr>
             <tr>
                 <td rowspan="5"> Terminal Applications</td>
@@ -92,7 +98,7 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
                 <td><a href="https://github.com/karlstav/cava">cava</a></td>
             </tr>
             <tr>
-                <td rowspan="4">Back-End/Utilities</td>
+                <td rowspan="5">Back-End/Utilities</td>
                 <td>Administration</td>
                 <td><a href="https://www.sudo.ws/sudo/">sudo</a></td>
             </tr>
