@@ -125,6 +125,14 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
                 <td><a href="https://keepassxc.org/">KeePassXC</a></td>
             </tr>
             <tr>
+                <td>Network Manager</td>
+                <td<a href="https://networkmanager.dev/">NetworkManager</a></td>
+            </tr>
+            <tr>
+                <td>Bluetooth Manager</td>
+                <td<a href="https://github.com/blueman-project/blueman">Blueman</a></td>
+            </tr>
+            <tr>
                 <td>Audio/Video Processor</td>
                 <td><a href="https://pipewire.org">Pipewire</a></td>
             </tr>
@@ -136,7 +144,8 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
     </table>
 </div>
 
-Fonts used: [JetBrains Mono (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts)
+- Fonts used: [JetBrains Mono (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts) & [Font Awesome](https://fontawesome.com/)
+- Colorscheme: [Catppuccin](https://github.com/catppuccin/catppuccin)
 
 ## Installation
 
@@ -187,21 +196,21 @@ Switch to the new user after creating it by running `su <username>` or re-loggin
     # I separated them just to show you how the packages relate to each other.
 
     # Desktop
-    paru -Syu hyprland qt5-wayland qt6-wayland \
+    paru -Syu hyprland qt5-wayland qt6-wayland xdg-desktop-portal-hyprland-git \
         waybar-hyprland-git \
-        rofi-lbonn-wayland-git \
+        rofi-lbonn-wayland-git rofimoji \
         dunst \
         hyprpaper \
-        swaylock-effects \
+        swaylock-effects-git \
         sddm-git \
         wlogout
 
     # Desktop Applications
-    paru -Syu kitty \
+    paru -Syu kitty imagemagick python-pygments \
         firefox \
-        thunar thunar-volman gvfs tumbler ffmpegthumbnailer \
-        # easyeffects
-        # zathura
+        thunar thunar-archive-plugin thunar-volman gvfs tumbler ffmpegthumbnailer file-roller \
+        easyeffects calf lsp-plugins-lv2 zam-plugins-lv2 mda.lv2 \
+        zathura zathura-cb zathura-djvu zathura-pdf-mupdf
 
     # Terminal Applications
     paru -Syu mc \
@@ -212,15 +221,23 @@ Switch to the new user after creating it by running `su <username>` or re-loggin
     # Utilities
     paru -Syu polkit-gnome \
         keepassxc \
+        networkmanager \
         blueman \
-        grim imagemagick rofimoji
+        pipewire \
+        fcitx5 \
+        grim gnome-tweaks
 
-    # WIP
-    paru -Syu otf-font-awesome ttf-jetbrains-mono-nerd \
-    gnome-tweaks papirus-icon-theme \
-    catppuccin-gtk-theme-mocha catppuccin-cursors-mocha \
-    catppuccin-mocha-grub-theme-git papirus-folders-catppuccin-git \
-    sddm-catppuccin-git sound-theme-freedesktop
+    # Fonts
+    paru -Syu otf-font-awesome ttf-jetbrains-mono-nerd
+
+    # Icon themes
+    paru -Syu papirus-icon-theme
+
+    # Catpuccin theme for certain applications
+    paru -Syu catppuccin-gtk-theme-mocha catppuccin-cursors-mocha \
+        catppuccin-mocha-grub-theme-git papirus-folders-catppuccin-git \
+        sddm-catppuccin-git
+
+    # Sound theme
+    paru -Syu sound-theme-freedesktop
     ```
-
-2. Install [*XDG Desktop Portal* for Hyprland](https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/).
