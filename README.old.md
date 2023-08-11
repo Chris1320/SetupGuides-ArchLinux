@@ -1,34 +1,3 @@
-### 2. Installing packages
-
-1. Install the packages using *pacman* and *paru*.
-
-    ```bash
-    # Note: You can combine them all into one `paru` command but
-    # I separated them to show you how the packages relate to each other.
-
-    # Desktop packages
-    sudo pacman -Syu hyprland qt5-wayland qt6-wayland \
-        hyprpaper dunst polkit-gnome blueman
-    paru -S sddm-git wlogout rofi-lbonn-wayland-git waybar-hyprland-git
-
-    # Other applications that I recommend. You can use alternatives if
-    # you like, but you might have to change some things if you
-    # continue to follow this guide.
-    sudo pacman -Syu firefox kitty btop \
-        thunar thunar-volman gvfs tumbler ffmpegthumbnailer \
-        flameshot grim imagemagick rofimoji
-    paru -S cava-git pfetch
-
-    # Install themes and fonts
-    sudo pacman -Syu otf-font-awesome ttf-jetbrains-mono-nerd \
-        gnome-tweaks papirus-icon-theme
-    paru -S catppuccin-gtk-theme-mocha catppuccin-cursors-mocha \
-        catppuccin-mocha-grub-theme-git papirus-folders-catppuccin-git \
-        sddm-catppuccin-git sound-theme-freedesktop
-    ```
-
-2. Install [*XDG Desktop Portal* for Hyprland](https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/).
-
 ### 3. Setting up Kitty
 
 1. Copy the files from `./dotfiles/kitty/` to `~/.config/kitty/`.

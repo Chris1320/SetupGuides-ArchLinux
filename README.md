@@ -178,3 +178,49 @@ Switch to the new user after creating it by running `su <username>` or re-loggin
 2. [Install Paru](https://github.com/Morganamilo/paru). This is the AUR helper that we will use.
 3. Install sudo. `$ pacman -Syu sudo`
 
+##### 2. Installing the necessary packages
+
+1. Install the needed packages using *paru*.
+
+    ```bash
+    # Note: You can combine them all into one `paru` command but
+    # I separated them just to show you how the packages relate to each other.
+
+    # Desktop
+    paru -Syu hyprland qt5-wayland qt6-wayland \
+        waybar-hyprland-git \
+        rofi-lbonn-wayland-git \
+        dunst \
+        hyprpaper \
+        swaylock-effects \
+        sddm-git \
+        wlogout
+
+    # Desktop Applications
+    paru -Syu kitty \
+        firefox \
+        thunar thunar-volman gvfs tumbler ffmpegthumbnailer \
+        # easyeffects
+        # zathura
+
+    # Terminal Applications
+    paru -Syu mc \
+        btop \
+        cava-git \
+        pfetch
+
+    # Utilities
+    paru -Syu polkit-gnome \
+        keepassxc \
+        blueman \
+        grim imagemagick rofimoji
+
+    # WIP
+    paru -Syu otf-font-awesome ttf-jetbrains-mono-nerd \
+    gnome-tweaks papirus-icon-theme \
+    catppuccin-gtk-theme-mocha catppuccin-cursors-mocha \
+    catppuccin-mocha-grub-theme-git papirus-folders-catppuccin-git \
+    sddm-catppuccin-git sound-theme-freedesktop
+    ```
+
+2. Install [*XDG Desktop Portal* for Hyprland](https://wiki.hyprland.org/Useful-Utilities/Hyprland-desktop-portal/).
