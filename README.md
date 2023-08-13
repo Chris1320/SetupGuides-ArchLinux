@@ -46,6 +46,10 @@ Some, if not all of the dotfiles, can also be used in other operating systems/di
                 <td><a href="https://github.com/Alexays/Waybar">Waybar</a></td>
             </tr>
             <tr>
+                <td>Widgets</td>
+                <td><a href="https://github.com/elkowar/eww">ElKowars wacky widgets</a></td>
+            </tr>
+            <tr>
                 <td>Launcher</td>
                 <td><a href="https://github.com/lbonn/rofi">Rofi</a></td>
             </tr>
@@ -198,6 +202,7 @@ Switch to the new user after creating it by running `su <username>` or re-loggin
     # Desktop
     paru -Syu hyprland qt5-wayland qt6-wayland xdg-desktop-portal-hyprland-git \
         waybar-hyprland-git \
+        eww-wayland-git \
         rofi-lbonn-wayland-git rofimoji \
         dunst \
         hyprpaper \
