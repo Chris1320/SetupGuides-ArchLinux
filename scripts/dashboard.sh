@@ -21,8 +21,10 @@ fi
 case "$1" in
     open) open_eww;;
     close) close_eww;;
+    *)
+        if [[ ! -f "$TEMP_FILE" ]]; then open_eww
+        else close_eww
+        fi
+    ;;
 esac
 
-if [[ ! -f "$TEMP_FILE" ]]; then open_eww
-else close_eww
-fi
