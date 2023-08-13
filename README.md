@@ -202,7 +202,7 @@ Switch to the new user after creating it by running `su <username>` or re-loggin
     # Desktop
     paru -Syu hyprland qt5-wayland qt6-wayland xdg-desktop-portal-hyprland-git \
         waybar-hyprland-git \
-        eww-wayland-git \
+        eww-wayland-git jq \
         rofi-lbonn-wayland-git rofimoji \
         dunst \
         hyprpaper \
