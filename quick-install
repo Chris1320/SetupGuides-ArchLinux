@@ -99,7 +99,7 @@ main() {
     simpleDotfileInstall "btop" "$DOTFILES_PATH/btop" "$HOME/.config/btop"
     simpleDotfileInstall "cava" "$DOTFILES_PATH/cava/config" "$HOME/.config/cava/config"
     simpleDotfileInstall "dunst" "$DOTFILES_PATH/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
-    simpleDotfileInstall "eww" "$DOTFILES_PATH/eww" "$HOME/.config/eww"
+    #simpleDotfileInstall "eww" "$DOTFILES_PATH/eww" "$HOME/.config/eww"
     simpleDotfileInstall "Hyprland" "$DOTFILES_PATH/hypr" "$HOME/.config/hypr"
     simpleDotfileInstall "Kitty" "$DOTFILES_PATH/kitty" "$HOME/.config/kitty"
     # NOTE: do not delete mpd's directory; it contains the database and other user data
