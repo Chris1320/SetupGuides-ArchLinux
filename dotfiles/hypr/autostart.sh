@@ -15,5 +15,6 @@ if [ -z "${SSH_AGENT_PID}" ] || [ -z "${SSH_AUTH_SOCK}" ] || ! ps -p "${SSH_AGEN
 fi
 
 # Start secrets provider
-keepassxc &
 fcitx5 -d
+keepassxc &
+blueman-applet &
