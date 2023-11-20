@@ -11,7 +11,7 @@ SCRIPTS_PATH="$PWD/scripts"
 DOTFILES_ASSETS="$PWD/dotfiles_custom"
 SCRIPTS_DST_PATH="$HOME/.config/scripts"
 DOTFILES_ASSETS_DST_PATH="$HOME/.config/dotfiles_custom"
-PROMPT_CONFIRMATION_TIMEOUT=30  # timeout in seconds
+PROMPT_CONFIRMATION_TIMEOUT=30 # timeout in seconds
 
 failed_operations_num=0
 
@@ -53,7 +53,7 @@ simpleDotfileInstall() {
     name="$1"
     src_path="$2"
     dst_path="$3"
-    dotfile_is_file=false  # determine if src_path is a file or directory
+    dotfile_is_file=false # determine if src_path is a file or directory
     if [[ -f $src_path ]]; then
         dotfile_is_file=true
     fi
@@ -94,7 +94,7 @@ main() {
     echo
     echo "[i] ${color_info}Copying dotfiles...${style_reset}"
     echo "[+] ${color_info}Checking .config directory${style_reset}"
-    checkDir "$HOME/.config"  # create .config if it does not exist
+    checkDir "$HOME/.config" # create .config if it does not exist
 
     simpleDotfileInstall "btop" "$DOTFILES_PATH/btop" "$HOME/.config/btop"
     simpleDotfileInstall "cava" "$DOTFILES_PATH/cava/config" "$HOME/.config/cava/config"
