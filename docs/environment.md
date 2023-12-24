@@ -1,5 +1,15 @@
 # Environment
 
+## Hardware
+
+I am using Arch Linux on my laptop because it gives me a functional system
+while having low resource usage. I am using an old Lenovo G50-70 laptop with
+an Intel Core i3-4030U, 4GB RAM, and 500GB HDD storage.
+
+## Software
+
+This Arch Linux configuration is using the following programs:
+
 <div align="center">
   <table>
     <tbody>
@@ -135,3 +145,4 @@
 ---
 
 - Previous: [Home](../README.md)
+- Next: [Automatic Installation](./automatic_installation.md)
