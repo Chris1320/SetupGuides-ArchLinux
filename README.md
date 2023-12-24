@@ -48,6 +48,6 @@ haven't tested it on other systems yet.
 > Documentation might be outdated because the dotfiles/scripts are updated
 > frequently.
 
----
+## Table of Contents
 
-- Next: [Environment](./docs/1-environment.md)
+- [Environment](./docs/1-environment.md)
