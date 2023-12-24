@@ -49,7 +49,7 @@ haven't tested it on other systems yet.
 
 ## Table of Contents
 
-- [Introduction](./README.md)
+- Introduction (you are here!)
 - [Environment](./docs/environment.md)
 - [Automatic Installation](./docs/automatic_installation.md)
 - Manual Installation
