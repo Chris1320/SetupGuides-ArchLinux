@@ -13,12 +13,12 @@ an Intel Core i3-4030U, 4GB RAM, and 500GB HDD storage.
 During the installation I've configured my machine to have the following
 disk partitions:
 
-| Device      | Size                    | Mountpoint | Filesystem | Label | Description       |
-| ----------- | ----------------------- | ---------- | ---------- | ----- | ----------------- |
-| `/dev/sda1` | 300M                    | /mnt/boot  | FAT32      | EFI   | EFI Partition     |
-| `/dev/sda2` | 8G                      | SWAP       | SWAP       | SWAP  | Swap Partition    |
-| `/dev/sda3` | 60G                     | /mnt       | BTRFS      | ROOT  | `/` Partition     |
-| `/dev/sda4` | Remaining of the Device | /mnt/home  | EXT4       | HOME  | `/home` Partition |
+| Device      | Size                    | Mountpoint  | Filesystem | Label | Description       |
+| ----------- | ----------------------- | ----------- | ---------- | ----- | ----------------- |
+| `/dev/sda1` | 300M                    | `/mnt/boot` | FAT32      | EFI   | EFI Partition     |
+| `/dev/sda2` | 8G                      | SWAP        | SWAP       | SWAP  | Swap Partition    |
+| `/dev/sda3` | 60G                     | `/mnt`      | BTRFS      | ROOT  | `/` Partition     |
+| `/dev/sda4` | Remaining of the Device | `/mnt/home` | EXT4       | HOME  | `/home` Partition |
 
 ### Programs Used
 
