@@ -1,4 +1,6 @@
-<!-- WIP -->
+# Automatic Installation
+
+This installation method is still under development. <!-- TODO -->
 
 ---
 
