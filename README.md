@@ -24,7 +24,7 @@
 
 This repository contains most of my dotfiles and notes that are used in
 my Arch Linux installation. You can use the
-[auto-install script](./docs/automatic_installation.md)
+[auto-install script](./docs/automatic_customization.md)
 to automatically install Arch Linux and the dotfiles in your system.
 However, I don't guarantee that the installer covers all your needs. In
 such cases (or you probably do not want to start from scratch), this
@@ -34,9 +34,10 @@ guide assumes that...
   [installation guide](https://wiki.archlinux.org/title/Installation_guide)
   which can be found in their [wiki](https://wiki.archlinux.org/).
   Otherwise, follow the
-  [system installation guide](./docs/2-system_installation.md) before
+  [system installation guide](./docs/system_installation.md) before
   proceeding.
-- You have made a [non-root user](#) in your system and is currently active.
+- You have made a [non-root user](./docs/system_installation.md#add-a-non-root-user-account)
+  in your system and is currently active.
 - You are currently connected to the internet.
 
 Some, if not all of the dotfiles, can also be used in other operating
@@ -51,5 +52,7 @@ haven't tested it on other systems yet.
 
 - Introduction (you are here!)
 - [Environment](./docs/environment.md)
-- [Automatic Installation](./docs/automatic_installation.md)
-- [Manual Installation](./docs/manual_installation.md)
+- [System Installation](./docs/system_installation.md)
+- [Automatic Customization](./docs/automatic_customization.md)
+- [Manual Customization](./docs/manual_customization.md)
+  - [Installing and Setting Up Hyprland](./docs/installing_and_setting_up_hyprland.md)

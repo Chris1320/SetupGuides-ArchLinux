@@ -159,4 +159,4 @@ This Arch Linux configuration is using the following programs:
 ---
 
 - Previous: [Introduction](../README.md)
-- Next: [Automatic Installation](./automatic_installation.md)
+- Next: [System Installation](./system_installation.md)

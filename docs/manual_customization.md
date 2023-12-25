@@ -27,9 +27,9 @@ unset $PARU_TMP_DIR
 
 ## Next Steps
 
-- [Installing the Desktop](./installing_the_desktop.md)
+- [Installing and Setting Up Hyprland](./installing_and_setting_up_hyprland.md)
 
 ---
 
-- Previous: [Manual Installation](./manual_installation.md)
-- Next: [Installing the Desktop](./installing_the_desktop.md)
+- Previous: [Automatic Installation](./automatic_customization.md)
+- Next: [Installing and Setting Up Hyprland](./installing_and_setting_up_hyprland.md)
