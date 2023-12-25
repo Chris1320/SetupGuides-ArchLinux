@@ -158,5 +158,5 @@ This Arch Linux configuration is using the following programs:
 
 ---
 
-- Previous: [Home](../README.md)
+- Previous: [Introduction](../README.md)
 - Next: [Automatic Installation](./automatic_installation.md)

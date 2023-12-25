@@ -52,5 +52,4 @@ haven't tested it on other systems yet.
 - Introduction (you are here!)
 - [Environment](./docs/environment.md)
 - [Automatic Installation](./docs/automatic_installation.md)
-- Manual Installation
-  - [System Installation](./docs/system_installation.md)
+- [Manual Installation](./docs/manual_installation.md)
