@@ -55,4 +55,4 @@ haven't tested it on other systems yet.
 - [System Installation](./docs/system_installation.md)
 - [Automatic Customization](./docs/automatic_customization.md)
 - [Manual Customization](./docs/manual_customization.md)
-  - [Installing and Setting Up Hyprland](./docs/installing_and_setting_up_hyprland.md)
+  - [Installing and Setting Up Hyprland](./docs/installing_and_setting_up_the_desktop.md)
