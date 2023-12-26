@@ -75,19 +75,23 @@ steps.
 
 - [Hyprland Master Tutorial](https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
 
-Copy the configuration files from this repository to their
-respective locations.
+## Setting Up Hyprland
 
 ```bash
 cp -r ./dotfiles/hypr ~/.config/hypr
-cp -r ./dotfiles/kitty ~/.config/kitty
-cp -r ./dotfiles/waybar ~/.config/waybar
-
-sudo cp -r ./dotfiles/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
 ```
 
 > **NOTE**: If you are having problems with Hyprland, see their
 > [wiki](https://wiki.hyprland.org/Crashes-and-Bugs/).
+
+## Setting Up Kitty
+
+Copy the Kitty configuration file and enable the Catppuccin colorscheme.
+
+```bash
+cp -r ./dotfiles/kitty/kitty.conf ~/.config/kitty/kitty.conf
+kitty +kitten themes --reload-in=all Catppuccin-Mocha
+```
 
 ---
 

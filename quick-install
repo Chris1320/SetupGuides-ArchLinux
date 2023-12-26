@@ -101,8 +101,9 @@ main() {
     simpleDotfileInstall "dunst" "$DOTFILES_PATH/dunst/dunstrc" "$HOME/.config/dunst/dunstrc"
     #simpleDotfileInstall "eww" "$DOTFILES_PATH/eww" "$HOME/.config/eww"
     simpleDotfileInstall "Hyprland" "$DOTFILES_PATH/hypr" "$HOME/.config/hypr"
-    simpleDotfileInstall "Kitty" "$DOTFILES_PATH/kitty" "$HOME/.config/kitty"
+    simpleDotfileInstall "Kitty" "$DOTFILES_PATH/kitty/kitty.conf" "$HOME/.config/kitty/kitty.conf"
     # NOTE: do not delete mpd's directory; it contains the database and other user data
+    # FIXME: Move the mpd directory to a different location.
     simpleDotfileInstall "mpd" "$DOTFILES_PATH/mpd/mpd.conf" "$HOME/.config/mpd/mpd.conf"
     simpleDotfileInstall "ncmpcpp" "$DOTFILES_PATH/ncmpcpp/config" "$HOME/.config/ncmpcpp/config"
     simpleDotfileInstall "networkmanager-dmenu" "$DOTFILES_PATH/networkmanager-dmenu/config.ini" "$HOME/.config/networkmanager-dmenu/config.ini"
