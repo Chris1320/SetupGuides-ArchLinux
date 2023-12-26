@@ -25,12 +25,37 @@ rm -rf $PARU_TMP_DIR
 unset $PARU_TMP_DIR
 ```
 
-## Custom Fonts
+## Custom Fonts and Icons
 
-We are going to use the following fonts, so it's best to install it now.
+We are going to use the following fonts and icons, so it's best to install it now.
 
 ```bash
-paru -Syu otf-font-awesome ttf-jetbrains-mono-nerd
+paru -Syu otf-font-awesome ttf-jetbrains-mono-nerd papirus-icon-theme
+```
+
+## Useful Packages
+
+It is recommended to install and enable the following packages.
+
+```bash
+paru -S acpid avahi
+systemctl enable acpid.service avahi-daemon.service
+```
+
+### Enable Printer Support
+
+```bash
+paru -S system-config-printer sane \
+    foomatic-db foomatic-db-engine \
+    gutenprint gsfonts \
+    cups cups-pdf cups-filters
+systemctl enable cups.service saned.socket
+```
+
+### Enable TRIM for SSDs
+
+```bash
+systemctl enable fstrim.timer
 ```
 
 ## Next Steps
