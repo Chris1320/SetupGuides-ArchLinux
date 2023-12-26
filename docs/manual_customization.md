@@ -43,7 +43,8 @@ unless specified.
 We are going to use the following fonts and icons, so it's best to install it now.
 
 ```bash
-paru -Syu otf-font-awesome ttf-jetbrains-mono-nerd papirus-icon-theme
+paru -Syu otf-font-awesome ttf-jetbrains-mono-nerd \
+    papirus-icon-theme papirus-folders-catppuccin-git
 ```
 
 ## Useful Packages

@@ -6,6 +6,7 @@ the following programs and their dependencies:
 - [blueman](https://github.com/blueman-project/blueman) Bluetooth manager
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) brightness
   control tool
+- [btop](https://github.com/aristocratos/btop) system resources monitor
 - [dunst](https://dunst-project.org/) notification daemon
   - [libnotify](https://gitlab.gnome.org/GNOME/libnotify) desktop notification library
 - [fcitx5](https://github.com/fcitx/fcitx5) input method
@@ -28,6 +29,7 @@ the following programs and their dependencies:
 - [rofi](https://github.com/lbonn/rofi) window switcher, run dialog, and dmenu replacement
   - [rofimoji](https://github.com/fdw/rofimoji) character picker for rofi
 - [SDDM](https://github.com/sddm/sddm/) display manager
+  - [Catppuccin for SDDM](https://github.com/khaneliman/catppuccin-sddm-corners)
 - [swaylock-effects](https://github.com/jirutka/swaylock-effects) screen locker
 - [Thunar](https://docs.xfce.org/xfce/thunar/start) file manager
   - [Gnome Virtual File System](https://wiki.gnome.org/Projects/gvfs)
@@ -47,6 +49,7 @@ the following programs and their dependencies:
 paru -S \
     blueman \
     brightnessctl \
+    btop \
     dunst libnotify \
     fcitx5 \
     firefox \
@@ -58,7 +61,7 @@ paru -S \
     pipewire pipewire-audio pipewire-pulse lib32-pipewire \
         easyeffects playerctl wireplumber \
     rofi-lbonn-wayland-git rofimoji \
-    sddm-git \
+    sddm-git sddm-catppuccin-git \
     swaylock-effects-git \
     thunar gvfs \
         thunar-archive-plugin file-roller \

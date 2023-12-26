@@ -22,10 +22,11 @@ For ZSH and other bash-like terminals, copy the lines below and paste it to
 alias icat="kitty +kitten icat"
 ```
 
-> **NOTE**: If you are using my [Custom ZSH Configuration](https://github.com/SetupGuides/ZSH),
+> **NOTE**: If you are going to use my [Custom ZSH Configuration](https://github.com/SetupGuides/ZSH),
 > create a new file in `~/.config/zsh/custom/envs/` (e.g., `~/.config/zsh/custom/envs/kitty.env`)
 > instead of pasting to `~/.zshrc`.
 
 ---
 
 - Previous: [Setting Up Hyprland](./setting_up_hyprland.md)
+- Next: [Setting Up SDDM](./setting_up_sddm.md)
