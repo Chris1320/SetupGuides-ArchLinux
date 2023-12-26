@@ -1,27 +1,10 @@
-### 3. Setting up Kitty
-
-1. Copy the files from `./dotfiles/kitty/` to `~/.config/kitty/`.
-2. (Optional) Alias the following commands. You can change the aliases to whatever you like.
-
-    | Alias   | Command                   |
-    | ------- | ------------------------- |
-    | `icat`  | `kitty +kitten icat`      |
-    | `klip`  | `kitty +kitten clipboard` |
-
-    For ZSH and other bash-like terminals, copy the lines below and paste it to `.zshrc` or similar.
-
-    ```bash
-    alias icat="kitty +kitten icat"
-    alias klip="kitty +kitten clipboard"
-    ```
-
 ### 4. Setting up SDDM
 
 1. Enable the SDDM service to start the display manager on boot.
 
-    ```bash
-    systemctl enable sddm.service
-    ```
+   ```bash
+   systemctl enable sddm.service
+   ```
 
 2. Copy `dotfiles/sddm/sddm.conf` `/etc/sddm.conf.d/sddm.conf`.
 3. Edit `/usr/share/sddm/themes/catppuccin/theme.conf` to your preferences.
@@ -44,7 +27,7 @@ Copy `./dotfiles/waybar/` to `~/.config/waybar/`.
 
 #
 
------
+---
 
 ## Extras
 
