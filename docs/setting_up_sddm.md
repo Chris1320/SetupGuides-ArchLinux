@@ -19,3 +19,4 @@ For more information, visit their [GitHub page](https://github.com/khaneliman/sd
 ---
 
 - Previous: [Setting Up Kitty](./setting_up_kitty.md)
+- Next: [Setting Up dunst](./setting_up_dunst.md)
