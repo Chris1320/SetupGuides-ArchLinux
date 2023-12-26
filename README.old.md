@@ -1,11 +1,3 @@
-### 7. Setting up waybar
-
-Copy `./dotfiles/waybar/` to `~/.config/waybar/`.
-
-#
-
----
-
 ## Extras
 
 ### Grub

@@ -58,3 +58,6 @@ haven't tested it on other systems yet.
   - [Installing and Setting Up The Desktop](./docs/installing_and_setting_up_the_desktop.md)
     - [Setting Up Hyprland](./docs/setting_up_hyprland.md)
     - [Setting Up Kitty](./docs/setting_up_kitty.md)
+    - [Setting Up SDDM](./docs/setting_up_sddm.md)
+    - [Setting Up dunst](./docs/setting_up_dunst.md)
+    - [Setting Up Waybar](./docs/setting_up_waybar.md)

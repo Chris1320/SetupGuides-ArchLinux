@@ -5,6 +5,7 @@ enable_posix_regex = true
 notification_limit = 6
 indicate_hidden = true
 origin = bottom-right
+offset = 15x15
 follow = mouse
 
 sort = true
