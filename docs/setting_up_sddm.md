@@ -7,6 +7,8 @@
 ```bash
 systemctl enable sddm.service
 sudo cp -r ./dotfiles/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
+sudo cp -r ./dotfiles/sddm/sddm-catppuccin-theme/src/catppuccin-mocha /usr/share/sddm/themes/catppuccin-mocha
+sudo cp -r ./dotfiles/sddm/custom-theme.conf /usr/share/sddm/themes/catppuccin-mocha/theme.conf
 ```
 
 > **NOTE**: Make sure that git submodules are pulled before attempting to copy
