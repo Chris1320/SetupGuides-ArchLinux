@@ -1,5 +1,9 @@
 # Setting Up Hyprland
 
+To start customizing Hyprland, just copy the dotfiles to `~/.config/`. Running
+Hyprland at this time is not yet recommended since we haven't customized the
+rest of the programs yet.
+
 ```bash
 cp -r ./dotfiles/hypr ~/.config/hypr
 ```

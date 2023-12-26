@@ -15,11 +15,11 @@ Alias the following commands. You can change the aliases to whatever you like.
 | ------ | -------------------- |
 | `icat` | `kitty +kitten icat` |
 
-For ZSH and other bash-like terminals, copy the lines below and paste it to
-`.zshrc` or similar.
+For bash-like terminals, run the following command.
 
 ```bash
-alias icat="kitty +kitten icat"
+echo 'alias icat="kitty +kitten icat"' >> ~/.bashrc  # For bash
+echo 'alias icat="kitty +kitten icat"' >> ~/.zshrc  # For ZSH
 ```
 
 > **NOTE**: If you are going to use my [Custom ZSH Configuration](https://github.com/SetupGuides/ZSH),

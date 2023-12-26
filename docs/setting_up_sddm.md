@@ -1,18 +1,20 @@
 # Setting Up SDDM
 
-<!--
-TODO: Update SDDM configuration. Basically, our customizations
-in SDDM (except for the `sddm.conf` file) aren't documented.
--->
-
 1. Enable the SDDM service to start the display manager on boot.
+2. Copy the SDDM configuration file and catppuccin theme configuration to their
+   designated locations.
 
-   ```bash
-   systemctl enable sddm.service
-   ```
+```bash
+systemctl enable sddm.service
+sudo cp -r ./dotfiles/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
+```
 
-2. Copy `dotfiles/sddm/sddm.conf` `/etc/sddm.conf.d/sddm.conf`.
-3. Edit `/usr/share/sddm/themes/catppuccin/theme.conf` to your preferences.
+> **NOTE**: Make sure that git submodules are pulled before attempting to copy
+> the files from `./dotfiles/sddm/sddm-catppuccin-theme` directory.
+>
+> ```bash
+> git submodule update --recursive --remote
+> ```
 
 For more information, visit their [GitHub page](https://github.com/khaneliman/sddm-catppuccin).
 

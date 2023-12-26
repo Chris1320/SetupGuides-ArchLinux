@@ -1,0 +1,3 @@
+[submodule "dotfiles/sddm/sddm-catppuccin-theme"]
+	path = dotfiles/sddm/sddm-catppuccin-theme
+	url = https://github.com/catppuccin/sddm.git

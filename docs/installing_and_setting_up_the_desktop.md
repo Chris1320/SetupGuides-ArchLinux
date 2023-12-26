@@ -62,6 +62,7 @@ paru -S \
         easyeffects playerctl wireplumber \
     rofi-lbonn-wayland-git rofimoji \
     sddm-git sddm-catppuccin-git \
+        qt5-graphicaleffects qt5-svg qt5-quickcontrols2 \
     swaylock-effects-git \
     thunar gvfs \
         thunar-archive-plugin file-roller \
@@ -75,8 +76,6 @@ paru -S \
 You may want to read the installation instructions of each programs
 in case your hardware/software configuration needs extra installation
 steps.
-
-- [Hyprland Master Tutorial](https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
 
 ---
 

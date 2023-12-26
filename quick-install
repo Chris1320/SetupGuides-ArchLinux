@@ -7,10 +7,13 @@ style_bold=$(tput bold)
 style_reset=$(tput sgr0)
 
 DOTFILES_PATH="$PWD/dotfiles"
+
 SCRIPTS_PATH="$PWD/scripts"
-DOTFILES_ASSETS="$PWD/dotfiles_custom"
 SCRIPTS_DST_PATH="$HOME/.config/scripts"
-DOTFILES_ASSETS_DST_PATH="$HOME/.config/dotfiles_custom"
+
+ASSETS_PATH="$PWD/assets"
+WALLPAPERS_PATH="$ASSETS_PATH/wallpapers"
+WALLPAPERS_DST_PATH="/usr/share/wallpapers"
 PROMPT_CONFIRMATION_TIMEOUT=30 # timeout in seconds
 
 failed_operations_num=0
@@ -110,6 +113,7 @@ main() {
     simpleDotfileInstall "rofi (default)" "$DOTFILES_PATH/rofi/config.rasi" "$HOME/.config/rofi/config.rasi"
     simpleDotfileInstall "rofi (custom)" "$DOTFILES_PATH/rofi/config" "$HOME/.config/rofi/config"
     simpleDotfileInstall "SDDM" "$DOTFILES_PATH/sddm/sddm.conf" "/etc/sddm.conf.d/sddm.conf"
+    simpleDotfileInstall "SDDM (theme)" "$DOTFILES_PATH/sddm/sddm-catppuccin-theme/src/catppuccin-mocha" "/usr/share/sddm/themes/catppuccin-mocha"
     simpleDotfileInstall "swappy" "$DOTFILES_PATH/swappy/config" "$HOME/.config/swappy/config"
     simpleDotfileInstall "swaylock" "$DOTFILES_PATH/swaylock" "$HOME/.config/swaylock"
     simpleDotfileInstall "tmux" "$DOTFILES_PATH/tmux/tmux.conf" "$HOME/.config/tmux/tmux.conf"
@@ -132,15 +136,15 @@ main() {
         declare -g failed_operations_num=$((failed_operations_num + 1))
     fi
 
-    echo "[i] ${color_info}Copying the dotfiles' assets...${style_reset}"
-    if [[ -d $DOTFILES_ASSETS_DST_PATH ]]; then
-        printf "\tRemoving existing %s directory...\n" "$DOTFILES_ASSETS_DST_PATH"
-        rm -r "$DOTFILES_ASSETS_DST_PATH"
+    echo "[i] ${color_info}Copying wallpapers...${style_reset}"
+    if [[ -d $WALLPAPERS_DST_PATH ]]; then
+        printf "\tRemoving existing %s directory...\n" "$WALLPAPERS_DST_PATH"
+        sudo rm -r "$WALLPAPERS_DST_PATH" # FIX: Should we NOT remove the directory?
     fi
-    if cp -r "$DOTFILES_ASSETS" "$DOTFILES_ASSETS_DST_PATH"; then
-        echo "[i] ${color_info}Copying the dotfiles' assets... Done!${style_reset}"
+    if sudo cp -r "$WALLPAPERS_PATH" "$WALLPAPERS_DST_PATH"; then
+        echo "[i] ${color_info}Copying wallpapers... Done!${style_reset}"
     else
-        echo "[E] ${color_error} Failed to copy the dotfiles' assets.${style_reset}"
+        echo "[E] ${color_error} Failed to copy wallpapers.${style_reset}"
         declare -g failed_operations_num=$((failed_operations_num + 1))
     fi
 
