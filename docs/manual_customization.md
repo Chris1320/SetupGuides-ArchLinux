@@ -25,6 +25,14 @@ rm -rf $PARU_TMP_DIR
 unset $PARU_TMP_DIR
 ```
 
+## Custom Fonts
+
+We are going to use the following fonts, so it's best to install it now.
+
+```bash
+paru -Syu otf-font-awesome ttf-jetbrains-mono-nerd
+```
+
 ## Next Steps
 
 - [Installing and Setting Up The Desktop](./installing_and_setting_up_the_desktop.md)

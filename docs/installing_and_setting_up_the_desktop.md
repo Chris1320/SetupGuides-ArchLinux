@@ -12,6 +12,12 @@ the following programs and their dependencies:
 paru -S hyprland kitty sddm-git waybar-hyprland-git
 ```
 
+You may want to read the installation instructions of each programs
+in case your hardware/software configuration needs extra installation
+steps.
+
+- [Hyprland Master Tutorial](https://wiki.hyprland.org/Getting-Started/Master-Tutorial/)
+
 Copy the configuration files from this repository to their
 respective locations.
 
