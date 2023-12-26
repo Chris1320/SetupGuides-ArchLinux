@@ -25,6 +25,19 @@ rm -rf $PARU_TMP_DIR
 unset $PARU_TMP_DIR
 ```
 
+## Downloading the Dotfiles
+
+Install `git` and `git-lfs`, and clone this repository.
+
+```bash
+paru -S git git-lfs
+git clone https://github.com/SetupGuides/ArchLinux.git ~/ArchLinuxDotfiles
+cd ~/ArchLinuxDotfiles
+```
+
+From now on, this guide will assume that you are in `~/ArchLinuxDotfiles` directory
+unless specified.
+
 ## Custom Fonts and Icons
 
 We are going to use the following fonts and icons, so it's best to install it now.
