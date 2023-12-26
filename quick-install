@@ -78,7 +78,7 @@ simpleDotfileInstall() {
     else
         if [[ -d $dst_path ]]; then
             printf "\tRemoving existing directory \"%s\"...\n" "$dst_path"
-            rm -r "$dst_path"
+            rm -rf "$dst_path"
         fi
         checkDir "$(dirname "$dst_path")"
         if ! cp -r "$src_path" "$dst_path"; then
