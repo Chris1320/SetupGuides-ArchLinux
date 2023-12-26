@@ -153,7 +153,8 @@ This Arch Linux configuration is using the following programs:
   </table>
 </div>
 
-- Fonts used: [JetBrains Mono (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts) & [Font Awesome](https://fontawesome.com/)
+- Fonts used: [JetBrains Mono (Nerd Fonts)](https://github.com/ryanoasis/nerd-fonts)
+  & [Font Awesome](https://fontawesome.com/)
 - Colorscheme: [Catppuccin Mocha](https://github.com/catppuccin/catppuccin)
 
 ---

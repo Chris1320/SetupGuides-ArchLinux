@@ -56,3 +56,5 @@ haven't tested it on other systems yet.
 - [Automatic Customization](./docs/automatic_customization.md)
 - [Manual Customization](./docs/manual_customization.md)
   - [Installing and Setting Up The Desktop](./docs/installing_and_setting_up_the_desktop.md)
+    - [Setting Up Hyprland](./docs/setting_up_hyprland.md)
+    - [Setting Up Kitty](./docs/setting_up_kitty.md)
