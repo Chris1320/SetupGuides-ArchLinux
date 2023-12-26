@@ -24,7 +24,9 @@ failed_operations_num=0
 checkDir() {
     if [ ! -d "$1" ]; then
         printf "\tCreating directory \"%s\"\n" "$1"
-        mkdir -p "$1"
+        if ! mkdir -p "$1" >/dev/null 2>&1; then
+            sudo mkdir -p "$1"
+        fi
     fi
 }
 
@@ -67,7 +69,7 @@ simpleDotfileInstall() {
         if [[ -f $dst_path ]]; then
             printf "\tOverwriting existing file \"%s\"...\n" "$dst_path"
         fi
-        if ! cp "$src_path" "$dst_path"; then
+        if ! cp "$src_path" "$dst_path" >/dev/null 2>&1; then
             echo "[!] ${color_warning}Retrying copy with sudo...${style_reset}"
             if ! sudo cp "$src_path" "$dst_path"; then
                 echo "[E] ${color_error} Failed to copy $name dotfiles.${style_reset}"
@@ -78,10 +80,13 @@ simpleDotfileInstall() {
     else
         if [[ -d $dst_path ]]; then
             printf "\tRemoving existing directory \"%s\"...\n" "$dst_path"
-            rm -rf "$dst_path"
+            if ! rm -rf "$dst_path" >/dev/null 2>&1; then
+                sudo rm -rf "$dst_path"
+            fi
+
         fi
         checkDir "$(dirname "$dst_path")"
-        if ! cp -r "$src_path" "$dst_path"; then
+        if ! cp -r "$src_path" "$dst_path" >/dev/null 2>&1; then
             echo "[!] ${color_warning}Retrying copy with sudo...${style_reset}"
             if ! sudo cp -r "$src_path" "$dst_path"; then
                 echo "[E] ${color_error} Failed to copy $name dotfiles.${style_reset}"
