@@ -13,7 +13,7 @@ sudo cp -r ./dotfiles/sddm/sddm.conf /etc/sddm.conf.d/sddm.conf
 > the files from `./dotfiles/sddm/sddm-catppuccin-theme` directory.
 >
 > ```bash
-> git submodule update --recursive --remote
+> git submodule update --init --recursive --remote
 > ```
 
 For more information, visit their [GitHub page](https://github.com/khaneliman/sddm-catppuccin).
