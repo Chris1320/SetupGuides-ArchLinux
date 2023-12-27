@@ -30,6 +30,7 @@ the following programs and their dependencies:
   - [rofimoji](https://github.com/fdw/rofimoji) character picker for rofi
 - [SDDM](https://github.com/sddm/sddm/) display manager
   - [Catppuccin for SDDM](https://github.com/khaneliman/catppuccin-sddm-corners)
+- [socat](http://www.dest-unreach.org/socat/)
 - [swaylock-effects](https://github.com/jirutka/swaylock-effects) screen locker
 - [Thunar](https://docs.xfce.org/xfce/thunar/start) file manager
   - [Gnome Virtual File System](https://wiki.gnome.org/Projects/gvfs)
@@ -63,6 +64,7 @@ paru -S \
     rofi-lbonn-wayland-git rofimoji \
     sddm-git sddm-catppuccin-git \
         qt5-graphicaleffects qt5-svg qt5-quickcontrols2 \
+    socat \
     swaylock-effects-git \
     thunar gvfs \
         thunar-archive-plugin file-roller \
