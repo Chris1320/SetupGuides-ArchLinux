@@ -16,7 +16,7 @@ fi
 
 sleep 1
 if [ "$lock_opaque" = "$yes" ]; then
-    swaylock -C ~/.config/swaylock/privacy.config
+    swaylock -C ~/.config/swaylock/privacy.config &
 else
-    swaylock # Use the default config
+    swaylock & # Use the default config
 fi
