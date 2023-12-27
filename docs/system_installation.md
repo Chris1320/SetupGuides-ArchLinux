@@ -139,7 +139,7 @@ Use the `pacstrap` command to install Arch Linux into your system.
 
 ```bash
 pacstrap -K /mnt \
-    base base-devel linux linux-firmware \
+    base base-devel linux linux-firmware linux-headers \
     networkmanager wpa_supplicant \
     sysfsutils usbutils btrfs-progs e2fsprogs \
     inetutils dhcping traceroute \
@@ -312,6 +312,19 @@ any command:
 systemctl enable NetworkManager.service
 systemctl start NetworkManager.service
 ```
+
+### Enable Wireless Network Interface
+
+You can enable the WLAN interface by using the `nmcli` command.
+
+```bash
+nmcli radio wifi on                # turn on the WLAN interface
+nmcli device status                # check the status of the interfaces
+nmcli device wifi list             # list available APs
+nmcli device wifi connect <BSSID>  # connect to an AP
+```
+
+More information: [Arch Linux Wiki > Wireless](https://wiki.archlinux.org/title/Network_configuration/Wireless)
 
 ## Reboot
 
