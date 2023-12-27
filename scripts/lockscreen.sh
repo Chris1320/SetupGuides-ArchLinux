@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 ROFI_THEME="$HOME/.config/rofi/config/confirm.rasi"
+PRIVACY_CONFIG_PATH="$HOME/.config/swaylock/privacy.config"
 QUESTION="Enable Privacy lockscreen?"
 
 yes=""
@@ -16,7 +17,7 @@ fi
 
 sleep 1
 if [ "$lock_opaque" = "$yes" ]; then
-    swaylock -C ~/.config/swaylock/privacy.config &
+    swaylock -C "$PRIVACY_CONFIG_PATH" &
 else
     swaylock & # Use the default config
 fi
