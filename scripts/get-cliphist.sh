@@ -10,6 +10,8 @@ sendNotification() {
         "$1"
 }
 
+# TODO: Filter out passwords
+# and if possible, add a feature to preview images
 selection=$(cliphist list | rofi -dmenu -no-custom -i -scroll-method 1 -theme "$ROFI_THEME")
 
 if [[ -z "$selection" ]]; then

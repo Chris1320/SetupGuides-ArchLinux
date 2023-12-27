@@ -49,9 +49,9 @@ mouse_right_click = context
 
 # Icon settings
 icon_position = left
-icon_theme = Papirus
+icon_theme = "Papirus-Dark, Adwaita, default"
 enable_recursive_icon_lookup = true
-max_icon_size = 32
+min_icon_size = 16
 icon_corner_radius = 5
 
 [urgency_low]
