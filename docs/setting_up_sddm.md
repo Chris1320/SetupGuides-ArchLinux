@@ -18,7 +18,10 @@ sudo cp -r ./dotfiles/sddm/custom-theme.conf /usr/share/sddm/themes/catppuccin-m
 > git submodule update --init --recursive --remote
 > ```
 
-For more information, visit their [GitHub page](https://github.com/khaneliman/sddm-catppuccin).
+Related Links:
+
+- [Arch Linux Wiki > SDDM](https://wiki.archlinux.org/title/SDDM)
+- [Catppuccin for SDDM](https://github.com/catppuccin/sddm)
 
 ---
 
