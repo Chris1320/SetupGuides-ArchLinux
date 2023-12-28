@@ -12,10 +12,10 @@ user_selection=$(printf "%s\n%s\n%s\n%s\n%s\n" "$lock" "$sleep" "$logout" "$rest
 
 case "$user_selection" in
 "$lock")
-    ~/.config/scripts/backend/lockscreen.sh
+    ~/.config/scripts/frontend/lockscreen.sh
     ;;
 "$sleep")
-    ~/.config/scripts/backend/lockscreen.sh --no-private && systemctl suspend
+    ~/.config/scripts/frontend/lockscreen.sh --no-private && systemctl suspend
     ;;
 "$logout")
     hyprctl dispatch exit
