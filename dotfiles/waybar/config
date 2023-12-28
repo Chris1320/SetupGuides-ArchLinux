@@ -30,7 +30,7 @@
         "format": "",
         "tooltip": false,
         "interval": "once",
-        "on-click": "~/.config/scripts/show-application-launcher.sh"
+        "on-click": "~/.config/scripts/frontend/launcher.sh"
     },
 
     "custom/workspace": {
