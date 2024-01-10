@@ -3,7 +3,6 @@
 In this part of the customization process, we will install
 the following programs and their dependencies:
 
-- [blueman](https://github.com/blueman-project/blueman) Bluetooth manager
 - [brightnessctl](https://github.com/Hummer12007/brightnessctl) brightness
   control tool
 - [btop](https://github.com/aristocratos/btop) system resources monitor
@@ -48,7 +47,6 @@ the following programs and their dependencies:
 
 ```bash
 paru -S \
-    blueman \
     brightnessctl \
     btop \
     dunst libnotify \

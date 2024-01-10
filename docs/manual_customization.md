@@ -56,6 +56,14 @@ paru -S acpid avahi
 systemctl enable acpid.service avahi-daemon.service
 ```
 
+### Enable Bluetooth support
+
+```bash
+paru -S bluez bluez-utils blueman
+systemctl enable bluetooth.service
+systemctl start bluetooth.service
+```
+
 ### Enable Printer Support
 
 ```bash
