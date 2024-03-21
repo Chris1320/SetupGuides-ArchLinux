@@ -18,7 +18,7 @@
 #
 # :param $1: The Hyprland event received from the socket.
 handle() {
-    if [[ "$1" =~ ^(workspace).* ]]; then
+    if [[ "$1" =~ ^(workspace>).* ]]; then
         echo "$1" | cut -d '>' -f 3
     fi
 }
