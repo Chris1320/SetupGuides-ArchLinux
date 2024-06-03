@@ -71,14 +71,14 @@
 
         "tooltip": true,
         "tooltip-format": "󰟀 {ipaddr}/{cidr} | 󱂇 {gwaddr} ({signalStrength}%)",
-        "on-click": "networkmanager_dmenu",
+        "on-click": "iwgtk",
         "max-length": 15
     },
     "bluetooth": {
         "format": "{status} ",
         "format-connected": "{status} ({num_connections}) ",
         "max-length": 15,
-        "on-click": "blueman-manager",
+        "on-click": "overskride",
         "tooltip": true,
         "tooltip-format-connected": "{num_connections} device/s connected",
         "tooltip-format-on": "Bluetooth is turned on",
