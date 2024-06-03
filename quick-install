@@ -6,6 +6,8 @@ color_error=$(tput setaf 9)
 style_bold=$(tput bold)
 style_reset=$(tput sgr0)
 
+echo "[E] ${color_error}This script is deprecated!${style_reset}"
+
 DOTFILES_PATH="$PWD/dotfiles"
 
 SCRIPTS_PATH="$PWD/scripts"
