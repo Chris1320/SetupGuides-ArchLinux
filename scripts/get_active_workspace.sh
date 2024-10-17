@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# return the number of the active workspace.
+# return the number of the active workspaces.
 
 # ? Old command:
 # $ hyprctl activeworkspace | head -n 1 | cut -d ' ' -f 3
@@ -27,7 +27,7 @@ if [ -z "$HYPRLAND_INSTANCE_SIGNATURE" ]; then
     echo "[E] \$HYPRLAND_INSTANCE_SIGNATURE is unset."
     exit 1
 else
-    HYPR_SOCKET_PATH="/tmp/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
+    HYPR_SOCKET_PATH="$XDG_RUNTIME_DIR/hypr/$HYPRLAND_INSTANCE_SIGNATURE/.socket2.sock"
 fi
 
 # The script won't echo the workspace number until Hyprland receives a `workspace`
