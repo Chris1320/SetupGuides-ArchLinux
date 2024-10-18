@@ -5,15 +5,11 @@ VOLUME_MAX=100
 VOLUME_MIN=0
 
 function getVolume {
-    pactl list sinks |
-        grep '^[[:space:]]Volume:' |
-        head -n $((SINK + 1)) |
-        tail -n 1 |
-        sed -e 's,.* \([0-9][0-9]*\)%.*,\1,'
+    wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100, $3}'
 }
 
 function setVolume {
-    pactl set-sink-volume @DEFAULT_SINK@ "$1"
+    wpctl set-volume @DEFAULT_AUDIO_SINK@ "$1"
 }
 
 function getVolumeIcon {
@@ -36,32 +32,32 @@ function sendNotification {
 
 case $1 in
 up)
-    current_volume=$(getVolume)
+    current_volume=$(getVolume | awk '{print $1}')
     if [ $((current_volume + VOLUME_INCREMENT)) -ge $VOLUME_MAX ]; then
         setVolume $VOLUME_MAX%
         sendNotification "$VOLUME_MAX" "Volume is already at maximum."
 
     else
-        setVolume +$VOLUME_INCREMENT%
+        setVolume $VOLUME_INCREMENT%+
         sendNotification "$(getVolume)" "Volume has been increased."
     fi
     ;;
 
 down)
-    current_volume=$(getVolume)
+    current_volume=$(getVolume | awk '{print $1}')
     if [ $((current_volume - VOLUME_INCREMENT)) -le $VOLUME_MIN ]; then
         setVolume $VOLUME_MIN%
         sendNotification "$VOLUME_MIN" "Volume is already at minimum."
 
     else
-        setVolume -$VOLUME_INCREMENT%
+        setVolume $VOLUME_INCREMENT%-
         sendNotification "$(getVolume)" "Volume has been decreased."
     fi
     ;;
 
 max)
     setVolume $VOLUME_MAX%
-    sendNotification "$(getVolume)" "Volume has been set to maximum."
+    sendNotification "$(getVolume | awk '{print $1}')" "Volume has been set to maximum."
     ;;
 
 min)
@@ -72,13 +68,12 @@ min)
     ;;
 
 mute)
-    pactl set-sink-mute @DEFAULT_SINK@ toggle
-    if [ "$(pactl get-sink-mute @DEFAULT_SINK@)" = "Mute: yes" ]; then
-        # Pass 0 instead of $(getVolume) because the volume value is
-        # still unchanged, just muted.
+    wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
+    status="$(getVolume)"
+    if [ "$(echo "$status" | awk '{print $2}')" = "[MUTED]" ]; then
         sendNotification "0" "Volume has been muted."
     else
-        sendNotification "$(getVolume)" "Volume has been unmuted."
+        sendNotification "$(echo "$status" | awk '{print $1}')" "Volume has been unmuted."
     fi
     ;;
 esac
