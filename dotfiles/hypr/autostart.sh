@@ -14,6 +14,4 @@ if [ -z "${SSH_AGENT_PID}" ] || [ -z "${SSH_AUTH_SOCK}" ] || ! ps -p "${SSH_AGEN
     source "${SSH_AGENT_ENV}"
 fi
 
-# Start secrets provider
-keepassxc &
 blueman-applet &
