@@ -71,7 +71,7 @@
 
         "tooltip": true,
         "tooltip-format": "󰟀 {ipaddr}/{cidr} | 󱂇 {gwaddr} ({signalStrength}%)",
-        "on-click": "iwgtk",
+        "on-click": "nm-connection-editor",
         "max-length": 15
     },
     "bluetooth": {
