@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
-# This script is used to lock the screen with swaylock,
+# This script is used to lock the screen with hyprlock,
 # with an option to enable the privacy lockscreen.
 
 ROFI_THEME="$HOME/.config/rofi/config/confirm.rasi"
-PRIVACY_CONFIG_PATH="$HOME/.config/swaylock/privacy.config"
+PRIVACY_CONFIG_PATH="$HOME/.config/hypr/hyprlock_privacy.conf"
 QUESTION="Enable Privacy lockscreen?"
 
 yes=""
@@ -24,7 +24,7 @@ fi
 
 sleep 1
 if [ "$lock_opaque" = "$yes" ]; then
-    swaylock -C "$PRIVACY_CONFIG_PATH" &
+    hyprlock -c "$PRIVACY_CONFIG_PATH" &
 else
-    swaylock & # Use the default config
+    hyprlock & # Use the default config
 fi
