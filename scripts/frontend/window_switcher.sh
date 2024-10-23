@@ -2,14 +2,14 @@
 
 MODE="window"
 
-"$HOME/.config/scripts/get_client_quantity.py" --notify
+"$HOME/.config/scripts/backend/get_client_quantity.py" --notify
 
 if [[ "$1" == "--workspace" ]]; then
     MODE="workspace"
 fi
 
 rofi \
-    -modes "window,workspace:$HOME/.config/scripts/workspace_switcher.sh" \
+    -modes "window,workspace:$HOME/.config/scripts/frontend/workspace_switcher.sh" \
     -show $MODE \
     -show-icons \
     -icon-theme "Papirus" \

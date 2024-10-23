@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# This script gets the active window in Hyprland and kills it.
+
 APPNAME="Hyprland"
 URGENCY="normal"
 ICON_NAME="window-close"

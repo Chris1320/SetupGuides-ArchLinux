@@ -5,7 +5,20 @@ VOLUME_MAX=100
 VOLUME_MIN=0
 
 function getVolume {
-    wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100, $3}'
+    vol=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $2 * 100}')
+    muted=$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | awk '{print $3}')
+
+    if [ -z "$muted" ]; then
+        muted="false"
+
+    elif [ "$muted" = "[MUTED]" ]; then
+        muted="true"
+
+    else
+        muted="false"
+    fi
+
+    printf "%d %s" "$vol" "$muted"
 }
 
 function setVolume {
@@ -39,7 +52,7 @@ up)
 
     else
         setVolume $VOLUME_INCREMENT%+
-        sendNotification "$(getVolume)" "Volume has been increased."
+        sendNotification "$(getVolume | awk '{print $1}')" "Volume has been increased."
     fi
     ;;
 
@@ -51,13 +64,13 @@ down)
 
     else
         setVolume $VOLUME_INCREMENT%-
-        sendNotification "$(getVolume)" "Volume has been decreased."
+        sendNotification "$(getVolume | awk '{print $1}')" "Volume has been decreased."
     fi
     ;;
 
 max)
     setVolume $VOLUME_MAX%
-    sendNotification "$(getVolume | awk '{print $1}')" "Volume has been set to maximum."
+    sendNotification "$VOLUME_MAX" "Volume has been set to maximum."
     ;;
 
 min)
@@ -70,10 +83,14 @@ min)
 mute)
     wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle
     status="$(getVolume)"
-    if [ "$(echo "$status" | awk '{print $2}')" = "[MUTED]" ]; then
+    if [ "$(echo "$status" | awk '{print $2}')" = "true" ]; then
         sendNotification "0" "Volume has been muted."
     else
         sendNotification "$(echo "$status" | awk '{print $1}')" "Volume has been unmuted."
     fi
+    ;;
+
+*)
+    getVolume
     ;;
 esac

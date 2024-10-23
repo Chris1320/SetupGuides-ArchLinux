@@ -12,9 +12,10 @@ getWorkspaces() {
     echo "$workspaces_display"
 }
 
-if [ -z "$1" ]; then getWorkspaces
+if [ -z "$1" ]; then
+    getWorkspaces
 else
     # Strip the workspace name from the input and get only the ID.
     workspace_id=$(echo "$1" | sed -E "s/^(-?[0-9]+) .*/\1/g")
-    hyprctl dispatch workspace "$workspace_id" > /dev/null
+    hyprctl dispatch workspace "$workspace_id" >/dev/null
 fi

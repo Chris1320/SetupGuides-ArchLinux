@@ -38,10 +38,10 @@
         "tooltip": false,
         "restart-interval": 5,  // Restart the module when it fails to connect.
         "max-length": 10,
-        "exec": "$HOME/.config/scripts/get_active_workspace.sh",
-        "on-click": "$HOME/.config/scripts/window_switcher.sh --workspace",
-        "on-scroll-up": "hyprctl dispatch workspace +1",   // ? Should we allow the user to use more than 10 workspaces?
-        "on-scroll-down": "hyprctl dispatch workspace -1"  // ? because this definitely allows just that.
+        "exec": "$HOME/.config/scripts/backend/get_active_workspace.sh",
+        "on-click": "$HOME/.config/scripts/frontend/window_switcher.sh --workspace",
+        "on-scroll-up": "hyprctl dispatch workspace +1",   // TODO: Should we allow the user to use more than 10 workspaces?
+        "on-scroll-down": "hyprctl dispatch workspace -1"  // because this definitely allows just that.
     },
 
     "cpu": {
@@ -51,7 +51,7 @@
             "high": 80,
             "mid": 40
         },
-        "on-click": "kitty btop",
+        "on-click": "$HOME/.config/scripts/backend/resource-monitor.sh",
         "tooltip": true
     },
     "memory": {
@@ -78,7 +78,7 @@
         "format": "{status} ",
         "format-connected": "{status} ({num_connections}) ",
         "max-length": 15,
-        "on-click": "overskride",
+        "on-click": "bluetooth-manager",
         "tooltip": true,
         "tooltip-format-connected": "{num_connections} device/s connected",
         "tooltip-format-on": "Bluetooth is turned on",
@@ -105,14 +105,14 @@
         },
         "on-click": "pavucontrol",
         "on-click-right": "easyeffects",
-        "on-scroll-up": "$HOME/.config/scripts/volumectl.sh up",
-        "on-scroll-down": "$HOME/.config/scripts/volumectl.sh down",
+        "on-scroll-up": "$HOME/.config/scripts/backend/volumectl.sh up",
+        "on-scroll-down": "$HOME/.config/scripts/backend/volumectl.sh down"
     },
     "backlight": {
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
-        "on-scroll-up": "$HOME/.config/scripts/brightnessctl.sh up",
-        "on-scroll-down": "$HOME/.config/scripts/brightnessctl.sh down"
+        "on-scroll-up": "$HOME/.config/scripts/backend/brightnessctl.sh up",
+        "on-scroll-down": "$HOME/.config/scripts/backend/brightnessctl.sh down"
     },
     "battery": {
         "format": "{capacity}% {icon}",

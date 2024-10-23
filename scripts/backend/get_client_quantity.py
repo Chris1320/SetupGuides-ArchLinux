@@ -2,12 +2,11 @@
 
 # This script is used to get the number of clients Hyprland has.
 
-import sys
 import json
 import subprocess
+import sys
 
-
-IGNORED_WORKSPACES: set[str] = set(("special:keepassxc",))
+IGNORED_WORKSPACES: set[str] = set(("special:keepassxc", "special:resmon"))
 
 
 def countClients(clients: dict) -> tuple[int, int, int]:
@@ -20,8 +19,9 @@ def countClients(clients: dict) -> tuple[int, int, int]:
     scratchpad_clients = 0
 
     for client in clients:
-        if client["workspace"]["name"] in IGNORED_WORKSPACES \
-            or (not client["mapped"] and client["xwayland"]):
+        if client["workspace"]["name"] in IGNORED_WORKSPACES or (
+            not client["mapped"] and client["xwayland"]
+        ):
             # Do not count clients in ignored workspaces and
             # all unmapped x11 clients.
             continue
@@ -40,9 +40,11 @@ def countClients(clients: dict) -> tuple[int, int, int]:
 
 def getNotificationDescription(quantity: tuple[int, int, int]) -> str:
     # Get the grammar right.
-    desc = f"{quantity[0]} client connected." \
-        if quantity[0] == 1 \
+    desc = (
+        f"{quantity[0]} client connected."
+        if quantity[0] == 1
         else f"{quantity[0]} clients connected."
+    )
 
     # Add the number of scratchpad clients if there are any.
     if quantity[1] != 0:
@@ -60,20 +62,20 @@ def getNotificationDescription(quantity: tuple[int, int, int]) -> str:
 
 def main() -> int:
     try:
-        quantity = countClients(
-            json.loads(
-                subprocess.getoutput("hyprctl clients -j")
-            )
-        )
+        quantity = countClients(json.loads(subprocess.getoutput("hyprctl clients -j")))
         if "--notify" in sys.argv:
             subprocess.run(
                 [
                     "notify-send",
-                    "-a", "Hyprland",
-                    "-u", "low",
-                    "-r", "7314",
-                    "-i", "virtual-desktops",
-                    getNotificationDescription(quantity)
+                    "-a",
+                    "Hyprland",
+                    "-u",
+                    "low",
+                    "-r",
+                    "7314",
+                    "-i",
+                    "virtual-desktops",
+                    getNotificationDescription(quantity),
                 ]
             )
 
@@ -82,7 +84,7 @@ def main() -> int:
 
         else:
             # Also print it to stdout if `--desc` is not specified.
-            print(','.join(map(str, quantity)))
+            print(",".join(map(str, quantity)))
 
     except Exception as e:
         # If the JSON data could not be parsed, return 1.

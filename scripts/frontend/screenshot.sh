@@ -17,9 +17,8 @@ getScreenshotPath() {
 }
 
 getActiveWindowGeometry() {
-    window_info=$(hyprctl activewindow)
-    at=$(echo "$window_info" | grep "at:" | tr -d ' ' | cut -d ':' -f 2)
-    size=$(echo "$window_info" | grep "size:" | tr -d ' ' | cut -d ':' -f 2 | tr ',' 'x')
+    at=$(hyprctl activewindow -j | jq -r '.at | join(",")')
+    size=$(hyprctl activewindow -j | jq -r '.size | join("x")')
     echo "$at $size"
 }
 
@@ -57,16 +56,25 @@ showMenu() {
 
     CHOICE=$(printf "%s\n%s\n%s" "$OPTION1" "$OPTION2" "$OPTION3" | rofi -dmenu -no-custom -i -theme "$ROFI_THEME")
     sleep 1
-    if [ "$CHOICE" = "$OPTION1" ]; then grabScreen
-    elif [ "$CHOICE" = "$OPTION2" ]; then grabWindow
-    elif [ "$CHOICE" = "$OPTION3" ]; then grabSelection
-    else sendNotification "Aborted." "cancel"
+    if [ "$CHOICE" = "$OPTION1" ]; then
+        grabScreen
+    elif [ "$CHOICE" = "$OPTION2" ]; then
+        grabWindow
+    elif [ "$CHOICE" = "$OPTION3" ]; then
+        grabSelection
+    else
+        sendNotification "Aborted." "cancel"
     fi
 }
 
-if [ "$1" = "screen" ]; then grabScreen
-elif [ "$1" = "window" ]; then grabWindow
-elif [ "$1" = "selection" ]; then grabSelection
-elif [ "$1" = "interactive" ]; then showMenu
-else echo "Usage: screenshot.sh [screen|window|selection|interactive]"
+if [ "$1" = "screen" ]; then
+    grabScreen
+elif [ "$1" = "window" ]; then
+    grabWindow
+elif [ "$1" = "selection" ]; then
+    grabSelection
+elif [ "$1" = "interactive" ]; then
+    showMenu
+else
+    echo "Usage: screenshot.sh [screen|window|selection|interactive]"
 fi
