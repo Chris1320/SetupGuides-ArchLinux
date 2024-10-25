@@ -1,0 +1,27 @@
+# Run as background daemon
+# -b
+# Cause notifications to expire
+-e
+# Show "Charging" and "Discharging" notifications
+-p
+# Check every <n> seconds
+-m
+60
+# Full
+-f
+100
+# Warning
+-w
+20
+# Critical
+-c
+10
+# Danger
+-d
+5
+# Notification app name
+-a
+Battery
+# Notification icon
+-I
+battery-profile-performance
