@@ -20,7 +20,7 @@ case "$user_selection" in
     ~/.config/scripts/frontend/lockscreen.sh
     ;;
 "$sleep")
-    sleep_confirm=$(printf "%s\n%s" "$no" "$yes" | rofi -dmenu -i -p "Do you really want to suspend the system?" -theme "$CONF_ROFI_THEME")
+    sleep_confirm=$(printf "%s\n%s" "$no" "$yes" | rofi -dmenu -i -p "Suspend the system?" -theme "$CONF_ROFI_THEME")
     if [ -z "$sleep_confirm" ]; then
         exit 1
     elif [ "$sleep_confirm" = "$yes" ]; then
@@ -36,7 +36,7 @@ case "$user_selection" in
     fi
     ;;
 "$restart")
-    restart_confirm=$(printf "%s\n%s" "$no" "$yes" | rofi -dmenu -i -p "Do you really want to restart the system?" -theme "$CONF_ROFI_THEME")
+    restart_confirm=$(printf "%s\n%s" "$no" "$yes" | rofi -dmenu -i -p "Restart the system?" -theme "$CONF_ROFI_THEME")
     if [ -z "$restart_confirm" ]; then
         exit 1
     elif [ "$restart_confirm" = "$yes" ]; then
@@ -44,7 +44,7 @@ case "$user_selection" in
     fi
     ;;
 "$poweroff")
-    poweroff_confirm=$(printf "%s\n%s" "$no" "$yes" | rofi -dmenu -i -p "Do you really want to shut down the system?" -theme "$CONF_ROFI_THEME")
+    poweroff_confirm=$(printf "%s\n%s" "$no" "$yes" | rofi -dmenu -i -p "Shut the system down?" -theme "$CONF_ROFI_THEME")
     if [ -z "$poweroff_confirm" ]; then
         exit 1
     elif [ "$poweroff_confirm" = "$yes" ]; then

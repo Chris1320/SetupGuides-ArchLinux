@@ -5,7 +5,7 @@
 
 ROFI_THEME="$HOME/.config/rofi/config/confirm.rasi"
 PRIVACY_CONFIG_PATH="$HOME/.config/hypr/hyprlock_privacy.conf"
-QUESTION="Enable Privacy lockscreen?"
+QUESTION="Enable privacy lockscreen?"
 
 yes=""
 no=""
