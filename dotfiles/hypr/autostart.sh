@@ -16,4 +16,5 @@
 #     source "${SSH_AGENT_ENV}"
 # fi
 
+fcitx5 &
 blueman-applet &
