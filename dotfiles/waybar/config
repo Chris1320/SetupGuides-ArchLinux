@@ -4,7 +4,7 @@
     "height": 30,
     "spacing": 0, // Gaps between modules (4px)
 
-    "modules-left": ["cpu", "memory", "backlight", "battery", "custom/right", "tray"],
+    "modules-left": ["cpu", "memory", "backlight", "battery", "custom/right", "custom/drives", "tray"],
     "modules-center": ["custom/search", "custom/spacer", "clock", "custom/spacer", "custom/workspace"],
     "modules-right": ["custom/left", "network", "bluetooth", "pulseaudio"],
 
@@ -42,6 +42,16 @@
         "on-click": "$HOME/.config/scripts/frontend/window_switcher.sh --workspace",
         "on-scroll-up": "hyprctl dispatch workspace +1",   // TODO: Should we allow the user to use more than 10 workspaces?
         "on-scroll-down": "hyprctl dispatch workspace -1"  // because this definitely allows just that.
+    },
+
+    "custom/drives": {
+        "format": " {}",
+        "tooltip": true,
+        "tooltip-format": "There are {} removable drive/s connected",
+        "restart-interval": 5,
+        "hide-empty-text": true,
+        "exec": "$HOME/.config/scripts/backend/get_removable_drives.sh --monitor",
+        "on-click": "$HOME/.config/scripts/backend/get_removable_drives.sh --rofi"
     },
 
     "cpu": {
