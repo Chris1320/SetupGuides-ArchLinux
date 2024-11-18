@@ -1,3 +1,0 @@
-- [fcitx5](https://github.com/fcitx/fcitx5) input method
-- [Firefox](https://www.mozilla.org/en-US/firefox/new/) browser
-- [KeePassXC](https://keepassxc.org/) password manager
