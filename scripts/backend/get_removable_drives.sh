@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# TODO: add support for disk operations and locking/unlocking of encrypted partitions.
+
 DELAY=1
 SCRIPT_NOTIFICATION_ID=91622
 INCLUDE_ONLY="/run/media/$(whoami)" # Include only partitions mounted under this directory.
@@ -142,6 +144,11 @@ case "$1" in
         fi
     done
 
+    if [ ${#partitions[@]} -eq 0 ]; then
+        dunstify -a "Disks" -u low -i "drive-removable-media-usb-pendrive" -r "$SCRIPT_NOTIFICATION_ID" "No removable partitions found"
+        exit 2
+    fi
+
     # Ask the user to select a partition.
     selection=$(printf "%s\n" "${partitions[@]}" | rofi -dmenu -i -theme "$ROFI_THEME")
     if [ -z "$selection" ]; then
@@ -151,10 +158,11 @@ case "$1" in
     [ "$DRIVE_DEBUG_MODE" == "true" ] && printf "Selected: \"%s\"\n" "$selection"
     if [[ $selection == " "* ]]; then
         selection=${selection//' '/''}
+        # nightmare nightmare nightmare nightmare nightmare nightmare nightmare nightmare nightmare nightmare
         part_name=$(echo "$selection" | awk '{print $1}' | tr -d '[]')
-        part_label=$(echo "$selection" | awk -F 'G' '{print $2}' | awk -F '(' '{print $1}' | sed 's/^ *//;s/ *$//')
         part_path=$(echo "$selection" | awk -F '@' '{print $2}' | awk -F ')' '{print $1}' | sed 's/^ *//;s/ *$//')
         part_info=$(echo "$devs_json" | jq -s "map(select(.name == \"$part_name\" and .mountpoint == \"$part_path\")) | .[0]")
+        part_label=$(echo "$part_info" | jq -r '.label')
 
         [ "$DRIVE_DEBUG_MODE" == "true" ] && printf "Name: \"%s\"\nLabel: \"%s\"\nPath: \"%s\"\n%s\n" "$part_name" "$part_label" "$part_path" "$part_info"
         available_operations=(
@@ -187,10 +195,11 @@ case "$1" in
         *) ;;
         esac
     else
+        # still nightmare still nightmare still nightmare still nightmare still nightmare
         part_name=$(echo "$selection" | awk '{print $1}' | tr -d '[]')
-        part_label=$(echo "$selection" | awk -F ']' '{print $2}' | awk -F '(' '{print $1}' | sed 's/^ *//;s/ *$//')
         part_path=$(echo "$selection" | awk -F '@' '{print $2}' | awk -F ')' '{print $1}' | sed 's/^ *//;s/ *$//')
         part_info=$(echo "$devs_json" | jq -s "map(select(.name == \"$part_name\" and .path == \"$part_path\")) | .[0]")
+        part_label=$(echo "$part_info" | jq -r '.label')
 
         [ "$DRIVE_DEBUG_MODE" == "true" ] && printf "Name: \"%s\"\nLabel: \"%s\"\nPath: \"%s\"\n%s\n" "$part_name" "$part_label" "$part_path" "$part_info"
         available_operations=(
