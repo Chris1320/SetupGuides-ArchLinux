@@ -6,7 +6,7 @@
 
     "modules-left": ["cpu", "memory", "backlight", "battery", "custom/right", "custom/drives", "tray"],
     "modules-center": ["custom/search", "custom/spacer", "clock", "custom/spacer", "custom/workspace"],
-    "modules-right": ["custom/left", "network", "bluetooth", "pulseaudio"],
+    "modules-right": ["cava", "custom/left", "network", "bluetooth", "pulseaudio"],
 
     "custom/spacer": {
         "format": " ",
@@ -72,6 +72,14 @@
     "tray": {
         "icon-size": 21,
         "spacing": 10
+    },
+    // WARN: If this module is not working, your Waybar build
+    // most likely does not have cava support enabled.
+    // https://github.com/Alexays/Waybar/issues/2781
+    "cava": {
+        "cava_config": "$HOME/.config/cava/config",
+        "hide_on_silence": true,
+        "actions": { "on-click-right": "mode" }
     },
     "network": {
         "format-wifi": "{essid} 󰖩",
