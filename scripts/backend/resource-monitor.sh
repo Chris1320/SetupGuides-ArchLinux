@@ -24,5 +24,5 @@ if resmonIsRunning; then
 fi
 
 # Hyprland's window rule will move this to the designated workspace
-hyprctl dispatch exec "[workspace special:$WORKSPACE_NAME silent]" "kitty --detach --class=$CLASS_NAME \"$RESOURCE_MONITOR\""
-toggleWorkspace
+hyprctl dispatch exec "[workspace special:$WORKSPACE_NAME]" "kitty --detach --class=$CLASS_NAME \"$RESOURCE_MONITOR\""
+# toggleWorkspace
