@@ -17,4 +17,5 @@
 # fi
 
 fcitx5 &
+nm-applet &
 blueman-applet &
